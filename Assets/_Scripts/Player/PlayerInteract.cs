@@ -1,5 +1,9 @@
 using UnityEngine;
 
+
+/// <summary>
+/// THIS CLASS IS OBSOLETE>
+/// </summary>
 public class PlayerInteract : MonoBehaviour
 {
     public GameObject heldPoint;
