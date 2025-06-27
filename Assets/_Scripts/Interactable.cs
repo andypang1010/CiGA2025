@@ -16,6 +16,12 @@ public enum InteractionType
 // 2) Create an abstract base class (or interface) that your objects implement:
 public abstract class Interactable : MonoBehaviour
 {
+    bool canInteract = true;
+    /// <summary>
+    /// Tells you if this Interactable can be interacted now.
+    /// </summary>
+    /// <returns></returns>
+    public bool CanInteract() { return canInteract; }
     /// <summary>
     /// Called by your InteractionManager or PlayerController
     /// when the player interacts with this GameObject.
