@@ -179,7 +179,7 @@ MonoBehaviour:
   waterLevel: 1.52
   sunLevel: 0
   isDead: 0
-  musicPlayed: 1
+  musicPlayed: 0
   pooCount: 1
   isPerfect: 0
   waterNeeded: 1
