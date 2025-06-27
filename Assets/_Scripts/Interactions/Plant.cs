@@ -1,19 +1,21 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Plant : Interactable
 {
 
     public override void React(InteractionType type)
-{
-    // React is unused in area-based interaction
-    Debug.LogWarning("Plant doesn't use direct interaction anymore.");
-}
+    {
+        // React is unused in area-based interaction
+        Debug.LogWarning("Plant doesn't use direct interaction anymore.");
+    }
 
     [Header("Read-Only Plant Stats (view-only)")]
     [SerializeField] private float waterLevel = 0f;
     [SerializeField] private float sunLevel = 0f;
     [SerializeField] private bool isDead = false;
-    [SerializeField] private float musicLevel = 0f;
+    [SerializeField] private bool musicPlayed = false;
+    [SerializeField] private int pooCount = 0;
 
     [Header("Growth Settings")]
     public float waterNeeded = 1f;
@@ -22,18 +24,18 @@ public class Plant : Interactable
     public float sunNeeded = 1f;
     public float tooMuchSun = 2f;
 
-    public float musicNeeded = 1f;
-    public float tooMuchMusic = 2f;
+    public int pooNeeded = 1;
 
     [Header("Growth Rates (units per second)")]
     public float waterRate = 0.2f;
     public float sunRate = 0.2f;
-    public float musicRate = 0.2f;
+    //public float musicRate = 0.2f;
 
     [Header("Trigger Areas")]
     public GameObject sunArea;
     public GameObject waterArea;
     public GameObject musicArea;
+    public GameObject pooArea;
 
 
     private void OnTriggerStay(Collider other)
@@ -51,6 +53,10 @@ public class Plant : Interactable
         else if (other.gameObject == musicArea)
         {
             ListenToMusic();
+        }
+        else if (other.gameObject == pooArea)
+        {
+            PooPoo();
         }
     }
 
@@ -93,17 +99,26 @@ public class Plant : Interactable
 
     private void ListenToMusic()
     {
-        musicLevel += musicRate * Time.deltaTime;
-        Debug.Log($"Music level: {musicLevel}");
+        musicPlayed = true;
+        Debug.Log("nice music!");
+    }
 
-        if (musicLevel >= tooMuchMusic)
+    private void PooPoo()
+    {
+        pooCount += 1;
+        if (pooCount > pooNeeded)
         {
-            Debug.Log("overstimulated!");
-            isDead = true;
+            Debug.Log("too much poo TT!");
         }
-        else if (musicLevel >= musicNeeded)
+        else if (pooCount < pooNeeded)
         {
-            Debug.Log("grooving!");
+            Debug.Log("more poo required!");
         }
+        else if (pooCount == pooNeeded)
+        {
+            Debug.Log("poopoo is goodgood");
+        }
+
+
     }
 }
