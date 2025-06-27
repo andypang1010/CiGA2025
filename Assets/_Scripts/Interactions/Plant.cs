@@ -32,7 +32,7 @@ public class Plant : Interactable
     //public float musicRate = 0.2f;
 
     [Header("Trigger Areas")]
-    public GameObject sunArea;
+    public Collider sunArea;
     public GameObject waterArea;
     public GameObject musicArea;
     public GameObject pooArea;
