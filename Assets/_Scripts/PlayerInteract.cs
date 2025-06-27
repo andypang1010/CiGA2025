@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public GameObject heldObject;
     public GameObject heldPoint;
 
-    public GameObject interactableObject;
+    GameObject heldObject;
+    GameObject interactableObject;
 
     void Update()
     {
@@ -16,13 +16,14 @@ public class PlayerInteract : MonoBehaviour
                 heldObject = interactable.gameObject;
                 heldObject.transform.SetParent(heldPoint.transform);
                 heldObject.transform.localPosition = Vector3.zero;
-                Destroy(heldObject.GetComponent<Rigidbody>());
+                heldObject.GetComponent<Rigidbody>().isKinematic = true;
             }
 
             else if (heldObject != null && Input.GetKeyDown(KeyCode.E))
             {
                 heldObject.transform.SetParent(null);
-                heldObject.AddComponent<Rigidbody>();
+                heldObject.GetComponent<Rigidbody>().isKinematic = false;
+                heldObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 3 + Vector3.forward * 3, ForceMode.Impulse);
                 heldObject = null; // Clear the held object after dropping it
             }
         }
