@@ -22,7 +22,7 @@ public class Plant : Interactable
     [Header("Read-Only Plant Stats (view-only)")]
     [SerializeField] private float waterLevel = 0f;
     [SerializeField] private float sunLevel = 0f;
-    [SerializeField] private bool isDead = false;
+    [SerializeField] public bool isDead = false;
     [SerializeField] private bool musicPlayed = false;
     [SerializeField] private int pooCount = 0;
     [SerializeField] private bool isPerfect = false;
@@ -65,7 +65,7 @@ public class Plant : Interactable
         }
     }
 
-    private void Water()
+    public void Water()
     {
         if (isPerfect) return;
         

@@ -9,27 +9,37 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (interactableObject != null && Input.GetKeyDown(KeyCode.E))
+        if (interactableObject != null)
         {
+            // PLANT
             if (interactableObject.TryGetComponent(out Plant plant))
             {
-                if (heldObject == null)
+                if (heldObject == null && Input.GetKeyDown(KeyCode.E))
                 {
                     HoldPlant(plant);
                 }
 
-                else if (heldObject != null)
+                else if (heldObject != null && Input.GetKeyDown(KeyCode.E))
                 {
                     ThrowPlant();
                 }
             }
 
+            // ACCIDENT
             else if (interactableObject.TryGetComponent(out Accident accident))
             {
-                if (!accident.isAccidentActive)
+                if (heldObject == null && !accident.isAccidentActive && Input.GetKeyDown(KeyCode.E))
                 {
                     accident.isAccidentActive = true;
                     accident.accidentStartTime = Time.time;
+                }
+            }
+
+            else if (interactableObject.TryGetComponent(out WaterSource water))
+            {
+                if (heldObject == null && Input.GetKey(KeyCode.Space))
+                {
+                    water.StartWatering();
                 }
             }
         }
