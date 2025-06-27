@@ -59,12 +59,12 @@ public class PlantsSpawner : MonoBehaviour
             GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);
             newPlant.tag = "Plant"; // Just in case the prefab isn't tagged already
             spawnedPlants.Add(newPlant);
-            Debug.Log("🌱 Spawned plant at " + spawnPos);
+           // Debug.Log("🌱 Spawned plant at " + spawnPos);
             return;
         }
     }
 
-    Debug.LogWarning("⚠️ Could not find a clear spot to spawn after 10 attempts.");
+    Debug.LogWarning("Could not find a clear spot to spawn after 10 attempts.");
 }
 
     private Vector3 GetRandomPositionInArea()

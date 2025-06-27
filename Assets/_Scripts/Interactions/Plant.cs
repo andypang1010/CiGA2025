@@ -1,12 +1,9 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Plant : Interactable
 {
-
     public override void React(InteractionType type)
     {
-        // React is unused in area-based interaction
         Debug.LogWarning("Plant doesn't use direct interaction anymore.");
     }
 
@@ -16,6 +13,7 @@ public class Plant : Interactable
     [SerializeField] public bool isDead = false;
     [SerializeField] private bool musicPlayed = false;
     [SerializeField] private int pooCount = 0;
+    [SerializeField] private bool isPerfect = false;
 
     [Header("Growth Settings")]
     public float waterNeeded = 1f;
@@ -29,12 +27,44 @@ public class Plant : Interactable
     [Header("Growth Rates (units per second)")]
     public float waterRate = 0.2f;
     public float sunRate = 0.2f;
-    //public float musicRate = 0.2f;
 
+    [Header("Visuals")]
+    public Material perfectMaterial;
+    private Renderer plantRenderer;
+
+    [Header("Return Logic")]
+    public float returnTime = 5f;
+    private float returnTimer = 0f;
+    private bool isInReturnArea = false;
+
+    private void Start()
+    {
+        plantRenderer = GetComponent<Renderer>();
+        if (plantRenderer == null)
+        {
+            plantRenderer = GetComponentInChildren<Renderer>();
+        }
+    }
+
+    private void Update()
+{
+    if (isPerfect && isInReturnArea)
+    {
+        returnTimer -= Time.deltaTime;
+
+        Debug.Log($"⏳ Return Timer: {Mathf.Max(0f, returnTimer):F2} seconds remaining");
+
+        if (returnTimer <= 0f)
+        {
+            Debug.Log("🌿 PLANT SENT");
+            Destroy(gameObject);
+        }
+    }
+}
 
     private void OnTriggerStay(Collider other)
     {
-        if (isDead) return;
+        if (isDead || isPerfect) return;
 
         if (other.CompareTag("WaterArea"))
         {
@@ -54,6 +84,25 @@ public class Plant : Interactable
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isPerfect && other.CompareTag("ReturnArea"))
+        {
+            isInReturnArea = true;
+             Debug.Log("ENTER");
+            returnTimer = returnTimer;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isPerfect && other.CompareTag("ReturnArea"))
+        {
+            isInReturnArea = false;
+            returnTimer = 0f;
+        }
+    }
+
     public void Water()
     {
         waterLevel += waterRate * Time.deltaTime;
@@ -67,10 +116,8 @@ public class Plant : Interactable
         else if (waterLevel >= waterNeeded)
         {
             Debug.Log("watered up!");
-
+            CheckPerfection();
         }
-        // waterLevel = Mathf.Min(1f, waterLevel + 0.2f);
-        // update visuals, stats, etc.
     }
 
     private void ExposeToLight()
@@ -86,19 +133,23 @@ public class Plant : Interactable
         else if (sunLevel >= sunNeeded)
         {
             Debug.Log("enough sun!");
+            CheckPerfection();
         }
-        // e.g. increase growth rate
     }
-
 
     private void ListenToMusic()
     {
+        if (musicPlayed || isPerfect) return;
+
         musicPlayed = true;
         Debug.Log("nice music!");
+        CheckPerfection();
     }
 
     private void PooPoo()
     {
+        if (isPerfect) return;
+
         pooCount += 1;
         if (pooCount > pooNeeded)
         {
@@ -111,8 +162,28 @@ public class Plant : Interactable
         else if (pooCount == pooNeeded)
         {
             Debug.Log("poopoo is goodgood");
+            CheckPerfection();
         }
+    }
 
+    private void CheckPerfection()
+    {
+        if (isPerfect) return;
 
+        if (
+            waterLevel >= waterNeeded &&
+            sunLevel >= sunNeeded &&
+            pooCount == pooNeeded &&
+            musicPlayed
+        )
+        {
+            isPerfect = true;
+            Debug.Log("🌟 Plant is perfect!");
+
+            if (perfectMaterial != null && plantRenderer != null)
+            {
+                plantRenderer.material = perfectMaterial;
+            }
+        }
     }
 }
