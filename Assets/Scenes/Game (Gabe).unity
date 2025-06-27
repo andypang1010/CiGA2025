@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3718092875209147362, guid: 053d6101a83589e42b40e1ecaf608ae5, type: 3}
       propertyPath: interactRange
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3946290769904088618, guid: 053d6101a83589e42b40e1ecaf608ae5, type: 3}
       propertyPath: speed
