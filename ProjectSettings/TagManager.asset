@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Interactable
+  - Plant
+  - MusicArea
+  - SunArea
+  - WaterArea
+  - PooArea
   layers:
   - Default
   - TransparentFX
@@ -13,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Interactable
+  - Grid
   - 
   - 
   - 

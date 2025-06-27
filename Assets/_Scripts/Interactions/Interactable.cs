@@ -5,6 +5,7 @@ public enum InteractionType
 {
     Pickup,
     Drop,
+    Plant,
     Water,
     ShineLight,
     PlayMusic,
