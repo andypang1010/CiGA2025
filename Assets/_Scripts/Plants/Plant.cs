@@ -25,6 +25,11 @@ public class Plant : Interactable
     public float musicNeeded = 1f;
     public float tooMuchMusic = 2f;
 
+    [Header("Growth Rates (units per second)")]
+    public float waterRate = 0.2f;
+    public float sunRate = 0.2f;
+    public float musicRate = 0.2f;
+
     [Header("Trigger Areas")]
     public GameObject sunArea;
     public GameObject waterArea;
@@ -51,7 +56,7 @@ public class Plant : Interactable
 
     private void Water()
     {
-        waterLevel += 0.2f;
+        waterLevel += waterRate * Time.deltaTime;
         Debug.Log($"Water level: {waterLevel}");
 
         if (waterLevel >= tooMuchWater)
@@ -70,7 +75,7 @@ public class Plant : Interactable
 
     private void ExposeToLight()
     {
-        sunLevel += 0.2f;
+        sunLevel += sunRate * Time.deltaTime;
         Debug.Log($"Sun level: {sunLevel}");
 
         if (sunLevel >= tooMuchSun)
@@ -88,7 +93,7 @@ public class Plant : Interactable
 
     private void ListenToMusic()
     {
-        musicLevel += 0.2f * Time.deltaTime;
+        musicLevel += musicRate * Time.deltaTime;
         Debug.Log($"Music level: {musicLevel}");
 
         if (musicLevel >= tooMuchMusic)
