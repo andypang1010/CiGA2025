@@ -1,5 +1,9 @@
 using UnityEngine;
 
+
+/// <summary>
+/// THIS CLASS IS OBSOLETE>
+/// </summary>
 public class PlayerInteract : MonoBehaviour
 {
     public GameObject heldPoint;
@@ -15,7 +19,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 if (heldObject == null)
                 {
-                    HoldPlant(plant);
+                    // HoldPlant(plant); THIS CLASS IS OBSOLETE.
                 }
 
                 else if (heldObject != null)
