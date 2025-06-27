@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class Plant : Interactable
+public class Plant : MonoBehaviour
 {
-    public override void React(InteractionType type)
-    {
-        Debug.LogWarning("Plant doesn't use direct interaction anymore.");
-    }
 
     [Header("Read-Only Plant Stats (view-only)")]
     [SerializeField] private float waterLevel = 0f;

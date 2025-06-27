@@ -5,7 +5,7 @@ public class PlantInteract : Interactable
 {
     GameObject player;
     Rigidbody rb;
-    [SerializeField] float throwSpeed = 3;
+    [SerializeField] float throwSpeed = 50;
 
     private void Start()
     {

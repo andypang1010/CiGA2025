@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 if (heldObject == null)
                 {
-                    HoldPlant(plant);
+                    // HoldPlant(plant); THIS CLASS IS OBSOLETE.
                 }
 
                 else if (heldObject != null)
