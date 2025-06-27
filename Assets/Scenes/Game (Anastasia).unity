@@ -1540,7 +1540,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb216586f91090c4bbdb7efd6d156a28, type: 2}
+  - {fileID: 2100000, guid: 533e8b85ecd18684a88d29ac471c7d8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1898,7 +1898,7 @@ MonoBehaviour:
   pooNeeded: 1
   waterRate: 0.2
   sunRate: 0.2
-  sunArea: {fileID: 649429547}
+  sunArea: {fileID: 649429549}
   waterArea: {fileID: 1503175375}
   musicArea: {fileID: 898998862}
   pooArea: {fileID: 836393958}
@@ -1946,7 +1946,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fb216586f91090c4bbdb7efd6d156a28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

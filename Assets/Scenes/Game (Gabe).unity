@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 842977835}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: WaterArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 1437551529}
   m_Layer: 0
   m_Name: Fertilizer
-  m_TagString: Untagged
+  m_TagString: PooArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78de86dd647b2948b129b4e76f3300e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   sr: {fileID: 0}
 --- !u!136 &1742575312
 CapsuleCollider:
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1755302032}
   m_Layer: 0
   m_Name: Sun
-  m_TagString: Untagged
+  m_TagString: SunArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,7 +1869,7 @@ GameObject:
   - component: {fileID: 1870105028}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: MusicArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Interactable
   - Plant
+  - MusicArea
+  - SunArea
+  - WaterArea
+  - PooArea
   layers:
   - Default
   - TransparentFX
