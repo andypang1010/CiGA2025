@@ -24,7 +24,7 @@ public class WaterSource : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Plant plant))
+        if (other.gameObject.TryGetComponent(out Plant plant) && !plants.Contains(plant))
         {
             plants.Add(plant);
         }
