@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 1448520898}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1724,6 +1724,7 @@ MonoBehaviour:
   interactRange: 0.5
   gridDetectionRange: 2
   closestGrid: {fileID: 0}
+  waterObject: {fileID: 0}
 --- !u!1 &1923590043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1831,7 @@ Transform:
   m_GameObject: {fileID: 1923590043}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25, y: 0.51, z: -3.99}
+  m_LocalPosition: {x: -2.375, y: 0.51, z: -3.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1853,6 +1854,7 @@ MonoBehaviour:
   isDead: 0
   musicPlayed: 0
   pooCount: 0
+  isPerfect: 0
   waterNeeded: 1
   tooMuchWater: 2
   sunNeeded: 1
@@ -1860,6 +1862,8 @@ MonoBehaviour:
   pooNeeded: 1
   waterRate: 0.2
   sunRate: 0.2
+  perfectMaterial: {fileID: 0}
+  returnTime: 5
 --- !u!135 &1923590049
 SphereCollider:
   m_ObjectHideFlags: 0

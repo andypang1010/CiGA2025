@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
-    private GameObject waterObject;
+    public GameObject waterObject;
 
     private void Start()
     {
@@ -170,7 +170,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") && other.gameObject.TryGetComponent(out WaterSource _))
         {
             waterObject = other.gameObject;
         }
