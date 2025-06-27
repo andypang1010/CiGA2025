@@ -176,22 +176,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba44d62f4a3af498baedbed151d41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLevel: 0
+  waterLevel: 1.52
   sunLevel: 0
   isDead: 0
-  musicLevel: 0
+  musicPlayed: 0
+  pooCount: 1
+  isPerfect: 0
   waterNeeded: 1
   tooMuchWater: 50
   sunNeeded: 1
   tooMuchSun: 50
-  musicNeeded: 1
-  tooMuchMusic: 50
+  pooNeeded: 1
   waterRate: 1.83
   sunRate: 0.08
-  musicRate: 3.52
-  sunArea: {fileID: 0}
-  waterArea: {fileID: 0}
-  musicArea: {fileID: 0}
+  perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
+  returnTime: 5
 --- !u!54 &1374007860076822247
 Rigidbody:
   m_ObjectHideFlags: 0
