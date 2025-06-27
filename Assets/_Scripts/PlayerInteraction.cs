@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
+    private GameObject waterObject;
 
     private void Start()
     {
@@ -36,6 +37,17 @@ public class PlayerInteraction : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Water logic; IT IS NOT AN INTERACTION. Should not belong here. but i should make it work first.
+        if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
+        {
+            if (heldObject == null && Input.GetKey(KeyCode.Space))
+            {
+                water.StartWatering();
+            }
+        }
+
+
+
         if (!interactPressed) { return; }
         if (heldObject)
         {
@@ -71,7 +83,17 @@ public class PlayerInteraction : MonoBehaviour
 
         // get the interaction type
         InteractionType interactionType = InteractionType.Pickup;
+        // check held object
         if (heldObject) { interactionType = InteractionType.Drop; }
+        // check accident
+        else if (closestInteractable.TryGetComponent(out Accident accident))
+        {
+            if (!accident.isAccidentActive)
+            {
+                accident.isAccidentActive = true;
+                accident.accidentStartTime = Time.time;
+            }
+        }
         // MORE LOGIC： 
 
         Interact(closestInteractable, interactionType);
@@ -141,6 +163,24 @@ public class PlayerInteraction : MonoBehaviour
                 interactable.React(interactionType);
 
             }
+        }
+    }
+
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            waterObject = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            waterObject = null;
         }
     }
 }
