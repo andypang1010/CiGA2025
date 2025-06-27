@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    public float speed = 3;
     public SpriteRenderer sr;
     Rigidbody rb;
     bool interactPressed;
