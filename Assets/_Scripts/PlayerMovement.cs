@@ -7,8 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 3;
     public SpriteRenderer sr;
+    public Animator animator;
+
+    public float speed = 3;
     public Vector3 moveDirection;
     public Vector3 faceDirection;
     Rigidbody rb;
@@ -23,11 +25,15 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         moveDirection = new Vector3(x, 0, y).normalized;
+
+        // update animator parameters
+        animator.SetFloat("Speed", moveDirection.magnitude);
+
         // if x and y are not zero, update facedirection; otherwise keep the previous
         if (Mathf.Abs(x) > 0.01f || Mathf.Abs(y) > 0.01f)
         {
             faceDirection = new Vector3(x, 0, y).normalized;
-            // flip sprite?
+            sr.flipX = faceDirection.x < 0;
         }
     }
 
