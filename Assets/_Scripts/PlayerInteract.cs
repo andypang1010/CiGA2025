@@ -16,14 +16,20 @@ public class PlayerInteract : MonoBehaviour
                 heldObject = interactable.gameObject;
                 heldObject.transform.SetParent(heldPoint.transform);
                 heldObject.transform.localPosition = Vector3.zero;
-                heldObject.GetComponent<Rigidbody>().isKinematic = true;
+                Destroy(heldObject.GetComponent<Rigidbody>());
+            }
 
-                interactableObject = null; // Clear the interactable object after picking it up
-            }
-            else
+            else if (heldObject != null && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Already holding an object.");
+                heldObject.transform.SetParent(null);
+                heldObject.AddComponent<Rigidbody>();
+                heldObject = null; // Clear the held object after dropping it
             }
+        }
+
+        if (heldObject != null)
+        {
+            interactableObject = heldObject; // Update interactableObject to the currently held object
         }
     }
 
