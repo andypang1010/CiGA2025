@@ -31,30 +31,24 @@ public class Plant : Interactable
     public float sunRate = 0.2f;
     //public float musicRate = 0.2f;
 
-    [Header("Trigger Areas")]
-    public Collider sunArea;
-    public GameObject waterArea;
-    public GameObject musicArea;
-    public GameObject pooArea;
-
 
     private void OnTriggerStay(Collider other)
     {
         if (isDead) return;
 
-        if (other.gameObject == waterArea)
+        if (other.CompareTag("WaterArea"))
         {
             Water();
         }
-        else if (other.gameObject == sunArea)
+        else if (other.CompareTag("SunArea"))
         {
             ExposeToLight();
         }
-        else if (other.gameObject == musicArea)
+        else if (other.CompareTag("MusicArea"))
         {
             ListenToMusic();
         }
-        else if (other.gameObject == pooArea)
+        else if (other.CompareTag("PooArea"))
         {
             PooPoo();
         }
