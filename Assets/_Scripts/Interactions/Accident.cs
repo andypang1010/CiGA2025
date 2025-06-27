@@ -24,6 +24,8 @@ public class Accident : Interactable
     GameObject accidentQTE;
     GameObject qteTime;
 
+    bool accidentComplete = true;
+
     public override void React(InteractionType type)
     {
         // React is unused in area-based interaction
@@ -55,6 +57,16 @@ public class Accident : Interactable
             return;
         }
 
+        foreach (var t in qteTimes)
+        {
+            accidentComplete &= t.isPressed;
+        }
+
+        if (accidentComplete)
+        {
+            enabled = false;
+        }
+
         // If the accident is active, check the time and QTE states
         if (Time.time - accidentStartTime > qteTimes[qteTimes.Length - 1].time + qteTimeLimit / 2)
         {
@@ -64,15 +76,25 @@ public class Accident : Interactable
 
         qteTime.GetComponent<TMP_Text>().text = "Time: " + (Time.time - accidentStartTime);
 
+        bool qteMissed = true; // Track whether any QTE was missed
+
         // Check each QTE event
         foreach (var t in qteTimes)
         {
+            // End if the QTE time has passed and the player hasn't pressed the key
+            if (Time.time - accidentStartTime - t.time > qteTimeLimit && !t.isPressed)
+            {
+                isAccidentActive = false; // End the accident if the player missed the QTE or pressed space without a valid QTE
+                accidentQTE.SetActive(false); // Hide the QTE UI
+            }
+
             // Skip if the QTE was already pressed or if the time window has passed
             if (t.isPressed ||
                 (Time.time - accidentStartTime - t.time > qteTimeLimit || Time.time - accidentStartTime - t.time < -qteTimeLimit))
             {
                 continue;
             }
+
 
             // If the QTE time window is valid, show the QTE prompt
             if (Time.time - accidentStartTime - t.time <= qteTimeLimit / 2 && Time.time - accidentStartTime - t.time > -qteTimeLimit / 2)
@@ -87,6 +109,7 @@ public class Accident : Interactable
                 {
                     t.isPressed = true;
                     accidentQTE.SetActive(false); // Hide the QTE UI after pressing the key
+                    qteMissed = false; // Player pressed the key correctly within the window
                     break; // Exit after processing the input
                 }
             }
@@ -95,6 +118,13 @@ public class Accident : Interactable
                 // Hide the QTE UI if time window is not valid anymore
                 accidentQTE.SetActive(false);
             }
+        }
+
+        // If the player missed the QTE or pressed space when no QTE was active
+        if (qteMissed && Input.GetKeyDown(KeyCode.Space))
+        {
+            isAccidentActive = false; // End the accident if the player missed the QTE or pressed space without a valid QTE
+            accidentQTE.SetActive(false); // Hide the QTE UI
         }
     }
 }
