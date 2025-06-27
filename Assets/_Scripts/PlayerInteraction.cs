@@ -33,10 +33,7 @@ public class PlayerInteraction : MonoBehaviour
 
 
         // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
-    }
 
-    private void FixedUpdate()
-    {
         // Water logic; IT IS NOT AN INTERACTION. Should not belong here. but i should make it work first.
         if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
         {
@@ -45,7 +42,10 @@ public class PlayerInteraction : MonoBehaviour
                 water.StartWatering();
             }
         }
+    }
 
+    private void FixedUpdate()
+    {
 
 
         if (!interactPressed) { return; }
