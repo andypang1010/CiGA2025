@@ -178,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 446916888}
   - component: {fileID: 446916890}
-  - component: {fileID: 446916889}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -201,18 +200,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 499600097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &446916889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446916887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &446916890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,11 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78de86dd647b2948b129b4e76f3300e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  groundDistance: 0.3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  moveSpeed: 3
   sr: {fileID: 0}
 --- !u!136 &1742575312
 CapsuleCollider:
