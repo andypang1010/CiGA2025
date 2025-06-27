@@ -24,6 +24,8 @@ public class Accident : Interactable
     GameObject accidentQTE;
     GameObject qteTime;
 
+    bool accidentComplete = true;
+
     public override void React(InteractionType type)
     {
         // React is unused in area-based interaction
@@ -53,6 +55,16 @@ public class Accident : Interactable
 
             accidentQTE.SetActive(false);
             return;
+        }
+
+        foreach (var t in qteTimes)
+        {
+            accidentComplete &= t.isPressed;
+        }
+
+        if (accidentComplete)
+        {
+            enabled = false;
         }
 
         // If the accident is active, check the time and QTE states
