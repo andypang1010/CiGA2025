@@ -28,11 +28,13 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Hold to Play Music")]
     public float musicHoldDuration = 2.0f;  // How long to hold Space
-    private float musicHoldTimer = 0.0f;
-    private bool musicPlayed = false;   
-
-    [Header("Hold to Play Music UI")]
+    private float musicHoldTimer = 0.0f;  
     public Slider musicHoldSlider;
+
+    [Header("Hold to Water")]
+    public float waterHoldDuration = 2.0f; // seconds to hold before watering
+    private float waterHoldTimer = 0.0f;
+    public Slider waterHoldSlider;  // assign this in the Inspector
 
     bool interactPressed;
     GameObject heldObject;
@@ -57,13 +59,45 @@ public class PlayerInteraction : MonoBehaviour
 
     // === Water logic ===
     if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
+{
+    if (heldObject == null)
     {
-        if (heldObject == null && Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            water.StartWatering();
+            waterHoldTimer += Time.deltaTime;
+
+            if (waterHoldTimer >= waterHoldDuration)
+            {
+                Debug.Log("Hold complete! Starting watering...");
+                water.StartWatering();
+
+                // Reset for next cycle if you want repeated watering
+                waterHoldTimer = 0.0f;
+            }
+        }
+        else
+        {
+            // Reset if they release early
+            waterHoldTimer = 0.0f;
         }
     }
+    else
+    {
+        waterHoldTimer = 0.0f;
+    }
+}
+else
+{
+    waterHoldTimer = 0.0f;
+}
 
+// === Update water hold UI ===
+if (waterHoldSlider != null)
+{
+    waterHoldSlider.maxValue = waterHoldDuration;
+    waterHoldSlider.value = waterHoldTimer;
+    waterHoldSlider.gameObject.SetActive(waterObject != null);
+}
     // === Hold-to-Play Music logic ===
     if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
 {
