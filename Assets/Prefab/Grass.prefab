@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2308524833671226789}
   - component: {fileID: 4292750855236216153}
   - component: {fileID: 4132101069294612684}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Grass
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6260690212917025078}
   - component: {fileID: 1454695534476531703}
   - component: {fileID: 4398907492361903267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
