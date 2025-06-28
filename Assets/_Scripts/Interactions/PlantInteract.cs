@@ -56,6 +56,7 @@ public class PlantInteract : Interactable
                     rb.isKinematic = true;
                     if (agent != null) agent.enabled = true;
                     isHoldingThing = false;
+                    ResetScale();
                     break;
                 }
                 else
@@ -72,6 +73,7 @@ public class PlantInteract : Interactable
                 Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
                 rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
                 isHoldingThing = false;
+                ResetScale();
                 // if (agent != null) agent.enabled = true;
                 if (agent != null)
                 {
@@ -109,5 +111,11 @@ public class PlantInteract : Interactable
             agent.ResetPath();
             agent.enabled = true;
         }
+    }
+
+    private void ResetScale()
+    {
+        sbyte scale = 1;
+        transform.localScale = new Vector3 (scale, scale, scale);
     }
 }
