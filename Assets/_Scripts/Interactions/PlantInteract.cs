@@ -10,6 +10,7 @@ public class PlantInteract : Interactable
     [SerializeField] GameObject groundCheck;
     UnityEngine.AI.NavMeshAgent agent;
     private bool isHoldingThing = false;
+    private Vector3 originalScale;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class PlantInteract : Interactable
         {
             Debug.LogWarning("Plant has no NavMeshAgent — wandering won't work.");
         }
-
+        originalScale = transform.localScale;
         
     }
     public override void React(InteractionType type)
@@ -124,7 +125,6 @@ public class PlantInteract : Interactable
 
     private void ResetScale()
     {
-        sbyte scale = 1;
-        transform.localScale = new Vector3 (scale, scale, scale);
+        transform.localScale = originalScale;
     }
 }
