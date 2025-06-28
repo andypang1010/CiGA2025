@@ -92,22 +92,15 @@ public class Plant : MonoBehaviour
         HandleWandering();
     }
 
-   private void HandleWandering()
+    private void HandleWandering()
 {
-    if (!canWander || isDead || isPerfect) return;
-
-    // 🟢 Stop wandering if Y is too high
-    if (transform.position.y > startPosition.y)
-    {
-        agent.ResetPath();
-        isWandering = false;
-        return;
-    }
+    if (isDead || isPerfect) return;
 
     wanderTimer += Time.deltaTime;
 
     if (!isWandering && wanderTimer >= wanderInterval)
     {
+        // Roll the chance each time
         bool willWanderThisTime = Random.value <= wanderChance;
 
         if (willWanderThisTime)
@@ -119,7 +112,7 @@ public class Plant : MonoBehaviour
             wanderDurationTimer = wanderDuration;
         }
 
-        wanderTimer = 0f;
+        wanderTimer = 0f; // Reset either way
     }
 
     if (isWandering)
@@ -132,7 +125,6 @@ public class Plant : MonoBehaviour
         }
     }
 }
-
 
     private Vector3 GetRandomPoint(Vector3 center, float range)
     {
