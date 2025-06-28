@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public Animator animator;
     public GameObject heldPoint;
     /// <summary>
     /// This variable is currently UNUSED. originally, it's for snapping the held object's position before throwing.
@@ -16,6 +17,7 @@ public class PlayerInteraction : MonoBehaviour
     GameObject heldObject;
     PlayerMovement movement;
     public GameObject waterObject;
+
 
     private void Start()
     {
@@ -42,6 +44,8 @@ public class PlayerInteraction : MonoBehaviour
                 water.StartWatering();
             }
         }
+
+        animator.SetBool("HasHeldObject", heldObject != null);
     }
 
     private void FixedUpdate()
