@@ -32,6 +32,7 @@ public class AccidentManager : MonoBehaviour
             Accident accident = interactables[Random.Range(0, interactables.Count - 1)].GetOrAddComponent<Accident>();
             print("ACCIDENT AT: " + accident.gameObject);
             accident.qteTimes.Clear();
+            accident.accidentStartTime = Time.time;
 
             int numBeats = Random.Range(minBeats, maxBeats);
             float t = 0f;

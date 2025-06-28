@@ -16,10 +16,13 @@ public class Accident : Interactable
 
     public bool isAccidentActive;
     public bool accidentComplete = true;
-    public bool accidentFailed = false;
+    public bool accidentTimeout = false;
+
+    public float qteStartTime;
+    public float qteTimeLimit = 1f;
 
     public float accidentStartTime;
-    public float qteTimeLimit = 1f;
+    public float accidentDuration = 30f;
     public List<QTEData> qteTimes;
 
     GameObject accidentUI;
@@ -44,10 +47,18 @@ public class Accident : Interactable
 
     void Update()
     {
+        if (Time.time - accidentStartTime >= accidentDuration)
+        {
+            accidentTimeout = true;
+            FailAccident();
+
+            return;
+        }
+
         accidentUI.SetActive(isAccidentActive);
 
         // If the accident is not active, reset the QTE states and hide the QTE UI
-        if (!isAccidentActive || accidentFailed)
+        if (!isAccidentActive)
         {
             ResetAccident();
             return;
@@ -64,13 +75,13 @@ public class Accident : Interactable
         }
 
         // If the accident is active, check the time and QTE states
-        if (Time.time - accidentStartTime > qteTimes[qteTimes.Count - 1].time + qteTimeLimit / 2)
+        if (Time.time - qteStartTime > qteTimes[qteTimes.Count - 1].time + qteTimeLimit / 2)
         {
             isAccidentActive = false;
             accidentQTE.SetActive(false); // Hide the QTE UI when accident ends
         }
 
-        qteTime.GetComponent<TMP_Text>().text = "Time: " + (Time.time - accidentStartTime);
+        qteTime.GetComponent<TMP_Text>().text = "Time: " + (Time.time - qteStartTime);
 
         bool qteMissed = true; // Track whether any QTE was missed
 
@@ -78,20 +89,20 @@ public class Accident : Interactable
         foreach (var t in qteTimes)
         {
             // FAIL CONDITION 1: If the QTE time has passed and the player hasn't pressed the key
-            if (Time.time - accidentStartTime - t.time > qteTimeLimit && !t.isPressed)
+            if (Time.time - qteStartTime - t.time > qteTimeLimit && !t.isPressed)
             {
                 FailAccident();
             }
 
             // Skip if the QTE was already pressed or if the time window has passed
             if (t.isPressed ||
-                (Time.time - accidentStartTime - t.time > qteTimeLimit || Time.time - accidentStartTime - t.time < -qteTimeLimit))
+                (Time.time - qteStartTime - t.time > qteTimeLimit || Time.time - qteStartTime - t.time < -qteTimeLimit))
             {
                 continue;
             }
 
             // If the QTE time window is valid, show the QTE prompt
-            if (Time.time - accidentStartTime - t.time <= qteTimeLimit / 2 && Time.time - accidentStartTime - t.time > -qteTimeLimit / 2)
+            if (Time.time - qteStartTime - t.time <= qteTimeLimit / 2 && Time.time - qteStartTime - t.time > -qteTimeLimit / 2)
             {
                 if (!accidentQTE.activeSelf) // Show the QTE UI only if it's not already shown
                 {
@@ -123,7 +134,6 @@ public class Accident : Interactable
 
     private void FailAccident()
     {
-        accidentFailed = true; // Mark the accident as failed
         isAccidentActive = false; // End the accident if the player missed the QTE or pressed space without a valid QTE
         accidentQTE.SetActive(false); // Hide the QTE UI
     }
@@ -136,6 +146,5 @@ public class Accident : Interactable
         }
 
         accidentQTE.SetActive(false);
-        accidentFailed = false;
     }
 }
