@@ -7,7 +7,9 @@ public class PlantInteract : Interactable
     GameObject player;
     Rigidbody rb;
     [SerializeField] float throwSpeed = 50;
+    [SerializeField] GameObject groundCheck;
     UnityEngine.AI.NavMeshAgent agent;
+    private bool isHoldingThing = false;
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class PlantInteract : Interactable
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (agent == null)
         {
-    Debug.LogWarning("Plant has no NavMeshAgent — wandering won't work.");
+            Debug.LogWarning("Plant has no NavMeshAgent — wandering won't work.");
         }
 
         
@@ -36,7 +38,8 @@ public class PlantInteract : Interactable
                 transform.localPosition = Vector3.zero;
                 rb.isKinematic = true;
                 if (agent != null) agent.enabled = false;
-                    break;
+                isHoldingThing = true;
+                break;
 
             case InteractionType.Plant:
                 Debug.Log("I am being planted!");
@@ -52,6 +55,7 @@ public class PlantInteract : Interactable
                     transform.position = grid.transform.position + Vector3.up * 0.5f;
                     rb.isKinematic = true;
                     if (agent != null) agent.enabled = true;
+                    isHoldingThing = false;
                     break;
                 }
                 else
@@ -67,7 +71,7 @@ public class PlantInteract : Interactable
                 transform.SetParent(null);
                 Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
                 rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
-
+                isHoldingThing = false;
                 // if (agent != null) agent.enabled = true;
                 if (agent != null)
                 {
@@ -90,10 +94,17 @@ public class PlantInteract : Interactable
         // wait until the next fixed update to allow physics to settle
         yield return new WaitForFixedUpdate();
         // optionally, wait a bit longer if needed:
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
-        if (agent != null)
+        bool isGrounded = false;
+        if (groundCheck != null)
         {
+            isGrounded = groundCheck.GetComponent<GroundTest>().isGrounded;
+        }
+
+        if (agent != null && isGrounded)
+        {
+            Debug.Log("Plant " + gameObject.name + " is grounded, turning agent on.");
             agent.Warp(transform.position);
             agent.ResetPath();
             agent.enabled = true;

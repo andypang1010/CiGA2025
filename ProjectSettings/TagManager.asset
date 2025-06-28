@@ -12,6 +12,7 @@ TagManager:
   - PooArea
   - ReturnArea
   - Cow
+  - Ground
   layers:
   - Default
   - TransparentFX

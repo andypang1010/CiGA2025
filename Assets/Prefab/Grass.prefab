@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1489767465166317945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848753279974369286}
+  - component: {fileID: 806329730494709600}
+  - component: {fileID: 1552185802122732460}
+  m_Layer: 6
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &848753279974369286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489767465166317945}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8584412554697498795}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &806329730494709600
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489767465166317945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5755015, y: 0.6863787, z: 1}
+  m_Center: {x: 0.006073445, y: -0.28200257, z: 0}
+--- !u!114 &1552185802122732460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489767465166317945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a007ca650013a3c46a0be14ec3cc6ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTags:
+  - Ground
+  isGrounded: 0
 --- !u!1 &6260418340754702201
 GameObject:
   m_ObjectHideFlags: 0
@@ -38,6 +107,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6999770734194577039}
+  - {fileID: 848753279974369286}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6760988128716905429
@@ -107,17 +177,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 0
   sunLevel: 0
-  isDead: 0
-  musicPlayed: 0
+  musicLevel: 0
   pooCount: 0
   isPerfect: 0
+  isDead: 0
   waterNeeded: 1
   tooMuchWater: 50
   sunNeeded: 1
   tooMuchSun: 50
   pooNeeded: 1
+  tooMuchPoo: 5
+  musicNeeded: 1
+  tooMuchMusic: 2
   waterRate: 1.83
   sunRate: 0.08
+  sunDecayRate: 0.25
+  musicRate: 0.2
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
@@ -126,6 +201,9 @@ MonoBehaviour:
   wanderDuration: 10
   wanderRadius: 5
   animator: {fileID: 1454695534476531703}
+  isLit: 0
+  pooDecayInterval: 5
+  musicDecayInterval: 5
 --- !u!54 &849186420580916850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwSpeed: 50
+  groundCheck: {fileID: 1489767465166317945}
 --- !u!195 &4292750855236216153
 NavMeshAgent:
   m_ObjectHideFlags: 0
