@@ -85,33 +85,38 @@ public class Plant : MonoBehaviour
     }
 
     private void HandleWandering()
+{
+    if (isDead || isPerfect) return;
+
+    wanderTimer += Time.deltaTime;
+
+    if (!isWandering && wanderTimer >= wanderInterval)
     {
-        if (!canWander || isDead || isPerfect) return;
+        // Roll the chance each time
+        bool willWanderThisTime = Random.value <= wanderChance;
 
-        wanderTimer += Time.deltaTime;
-
-        if (!isWandering && wanderTimer >= wanderInterval)
+        if (willWanderThisTime)
         {
-            // Pick a new random destination on the NavMesh
             Vector3 newDestination = GetRandomPoint(startPosition, wanderRadius);
             agent.SetDestination(newDestination);
 
             isWandering = true;
             wanderDurationTimer = wanderDuration;
-            wanderTimer = 0f;
         }
 
-        if (isWandering)
+        wanderTimer = 0f; // Reset either way
+    }
+
+    if (isWandering)
+    {
+        wanderDurationTimer -= Time.deltaTime;
+        if (wanderDurationTimer <= 0f)
         {
-            wanderDurationTimer -= Time.deltaTime;
-            if (wanderDurationTimer <= 0f)
-            {
-                // Stop moving
-                agent.ResetPath();
-                isWandering = false;
-            }
+            agent.ResetPath();
+            isWandering = false;
         }
     }
+}
 
     private Vector3 GetRandomPoint(Vector3 center, float range)
     {
