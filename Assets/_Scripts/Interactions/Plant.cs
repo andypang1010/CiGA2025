@@ -95,6 +95,7 @@ public class Plant : MonoBehaviour
     private void HandleWandering()
 {
     if (isDead || isPerfect) return;
+    if (agent == null || !agent.enabled) return; 
 
     wanderTimer += Time.deltaTime;
 
