@@ -25,8 +25,9 @@ public class Plant : MonoBehaviour
     public int tooMuchMusic = 2;  
 
     [Header("Growth Rates (units per second)")]
-    public float waterRate = 0.2f;
-    public float sunRate = 0.2f;
+    public float waterRate = 1f;
+    public float sunRate = 0.5f;
+    public float sunDecayRate = 0.25f;
     public float musicRate = 0.2f;  
 
     [Header("Visuals")]
@@ -53,6 +54,9 @@ public class Plant : MonoBehaviour
 
     [Header("Animation Settings")]
     public Animator animator;
+
+    [Header("Sun Decay Settings")]
+    [SerializeField] private bool isLit = false;
 
     [Header("Poo Decay Settings")]
     public float pooDecayInterval = 5f; // how often it decays
@@ -85,6 +89,8 @@ public class Plant : MonoBehaviour
 
     private void Update()
     {
+
+        CheckDeath();
   
         if (isPerfect && isInReturnArea)
         {
@@ -104,9 +110,44 @@ public class Plant : MonoBehaviour
         }
     
         HandleWandering();
+        HandleSunDecay();
+        HandleWaterDecay();
         HandlePooDecay();
         HandleMusicDecay();
     }
+
+    private void CheckDeath()
+    {
+
+    }
+
+    private void HandleSunDecay()
+    {
+        if (sunLevel <= 0) return; // don't go negative
+
+        //decay if not in SunArea
+        if (!isLit)
+        {
+            sunLevel -= sunDecayRate*Time.deltaTime;
+        }
+    }
+
+    private void HandleWaterDecay()
+    {
+        if (waterLevel <= 0) return; // don't go negative
+
+        pooDecayTimer += Time.deltaTime;
+
+        if (pooDecayTimer >= pooDecayInterval)
+        {
+            pooCount--;
+            pooCount = Mathf.Max(0, pooCount); // just in case
+            Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
+
+            pooDecayTimer = 0f; // reset timer
+        }
+    }
+
     private void HandlePooDecay()
 {
     if (pooCount <= 0) return; // don't go negative
@@ -208,6 +249,11 @@ public class Plant : MonoBehaviour
              Debug.Log("ENTER");
             returnTimer = returnTime;
         }
+
+        if (other.CompareTag("SunArea"))
+        {
+            isLit= true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -216,6 +262,11 @@ public class Plant : MonoBehaviour
         {
             isInReturnArea = false;
             returnTimer = 0f;
+        }
+
+        if (other.CompareTag("SunArea"))
+        {
+            isLit = false;
         }
     }
 
