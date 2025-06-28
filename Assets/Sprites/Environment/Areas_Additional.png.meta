@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 26f6d7c28dd633948bb54fec8f34ff69
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MusicBG
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 937
+        width: 438
+        height: 990
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756bdc0d64594c641811a778d1b47fc9
+      internalID: -11352779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LightBG
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1438
+        width: 967
+        height: 458
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992f57a5c0017ec459df406c927f73ad
+      internalID: -1699831287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4776215352cfcbd4aacb0dcfe28caa89
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Areas_Additional_0: -1541884193
+      Areas_Additional_1: 1504984877
+      Areas_Additional_10: 352579374
+      Areas_Additional_11: 258765733
+      Areas_Additional_12: 794803599
+      Areas_Additional_13: 185453794
+      Areas_Additional_16: -1293840841
+      Areas_Additional_17: -240388786
+      Areas_Additional_18: 1663427322
+      Areas_Additional_19: 2144019202
+      Areas_Additional_2: -409900180
+      Areas_Additional_20: -989023325
+      Areas_Additional_21: 592020985
+      Areas_Additional_22: 1067477427
+      Areas_Additional_23: 423467907
+      Areas_Additional_24: 1686544186
+      Areas_Additional_25: 1376620282
+      Areas_Additional_26: -362996409
+      Areas_Additional_27: 1510219849
+      Areas_Additional_28: -1071051790
+      Areas_Additional_29: -219373180
+      Areas_Additional_3: 848377550
+      Areas_Additional_30: -1136286228
+      Areas_Additional_31: -83306435
+      Areas_Additional_32: -1413854373
+      Areas_Additional_33: -1572851432
+      Areas_Additional_34: -1227927918
+      Areas_Additional_35: -442277383
+      Areas_Additional_36: 99244834
+      Areas_Additional_37: -826845622
+      Areas_Additional_38: -433583628
+      Areas_Additional_39: 2030881077
+      Areas_Additional_4: -387112587
+      Areas_Additional_40: -1773386434
+      Areas_Additional_41: 94626606
+      Areas_Additional_42: -42115816
+      Areas_Additional_43: -1313493941
+      Areas_Additional_44: 2137354523
+      Areas_Additional_45: 1839720268
+      Areas_Additional_46: -173762205
+      Areas_Additional_47: 1248023338
+      Areas_Additional_48: -923888362
+      Areas_Additional_49: 1094793034
+      Areas_Additional_5: 849097475
+      Areas_Additional_6: -1605689042
+      Areas_Additional_7: -2133417288
+      Areas_Additional_8: -1485256696
+      Areas_Additional_9: -472446252
+      LightBG: -1699831287
+      MusicBG: -11352779
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
