@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Cow : Interactable
 {
+    public GameObject shitPoint;
     public float shitLevel = 0;
     public float shitSpeed = 1;
     public float hungerLevel = 0;
@@ -24,6 +25,7 @@ public class Cow : Interactable
         {
             // handle shit logic
             // TODO
+            Poop();
 
             shitLevel = 0;
         }
@@ -38,6 +40,18 @@ public class Cow : Interactable
                 // TODO
                 break;
         }
+    }
+
+    private void Poop()
+    {
+        // should have shit point
+        if (shitPoint == null)
+        {
+            Debug.LogError("Cow should have space to SHIT! Shit point not there!");
+            return; 
+        }
+
+        shitPoint.GetComponent<Shit>().InitShit();
     }
 
 }
