@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 542284335507817126}
   - component: {fileID: 3946290769904088618}
   - component: {fileID: 3718092875209147362}
-  - component: {fileID: 7543321607341244658}
   - component: {fileID: 6309679909520950313}
   m_Layer: 0
   m_Name: PLAYER
@@ -153,34 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2505140051012251428}
+  statsUI: {fileID: 0}
+  plantName: {fileID: 0}
+  waterSlider: {fileID: 0}
+  sunlightSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  shitSlider: {fileID: 0}
   heldPoint: {fileID: 6541039326597690760}
   throwPoint: {fileID: 5432992814127688124}
   gridPoint: {fileID: 8523505388087467201}
-  interactRange: 1
+  interactRange: 1.25
   gridDetectionRange: 2
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
---- !u!65 &7543321607341244658
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745915647827313341}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.9097091, z: 1}
-  m_Center: {x: 0, y: -0.5, z: 0.45}
+  musicObject: {fileID: 0}
 --- !u!65 &6309679909520950313
 BoxCollider:
   m_ObjectHideFlags: 0

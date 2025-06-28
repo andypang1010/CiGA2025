@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1951841938102500872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8685437073909626271}
+  - component: {fileID: 9004071903428619608}
+  - component: {fileID: 8736590171853721612}
+  m_Layer: 6
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8685437073909626271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951841938102500872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5447209357385787624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9004071903428619608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951841938102500872}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5755015, y: 0.60687846, z: 1}
+  m_Center: {x: 0.006073445, y: -0.24225238, z: 0}
+--- !u!114 &8736590171853721612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951841938102500872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a007ca650013a3c46a0be14ec3cc6ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTags:
+  - Ground
+  isGrounded: 0
 --- !u!1 &4474614719305879612
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,12 +203,12 @@ GameObject:
   - component: {fileID: 5447209357385787624}
   - component: {fileID: 5588506320659851410}
   - component: {fileID: 4315617089529964508}
-  - component: {fileID: 531386799557788987}
   - component: {fileID: 377516863719372951}
   - component: {fileID: 806323289502811007}
   - component: {fileID: 3153168119104227013}
   - component: {fileID: 7247318690663682136}
   - component: {fileID: 8302661527171324930}
+  - component: {fileID: 7609366803569457773}
   m_Layer: 6
   m_Name: Flower
   m_TagString: Plant
@@ -161,6 +230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2511118454916229418}
+  - {fileID: 8685437073909626271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5588506320659851410
@@ -216,27 +286,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &531386799557788987
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8376311601829622201}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &377516863719372951
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -278,17 +327,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 0
   sunLevel: 0
-  isDead: 0
-  musicPlayed: 0
+  musicLevel: 0
   pooCount: 0
   isPerfect: 0
+  isDead: 0
   waterNeeded: 1
   tooMuchWater: 50
   sunNeeded: 1
   tooMuchSun: 50
   pooNeeded: 1
+  tooMuchPoo: 5
+  musicNeeded: 1
+  tooMuchMusic: 2
   waterRate: 1.83
   sunRate: 0.08
+  sunDecayRate: 0.25
+  musicRate: 0.2
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
@@ -297,6 +351,9 @@ MonoBehaviour:
   wanderDuration: 2
   wanderRadius: 5
   animator: {fileID: 8740984321745965887}
+  isLit: 0
+  pooDecayInterval: 5
+  musicDecayInterval: 5
 --- !u!114 &3153168119104227013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwSpeed: 50
+  groundCheck: {fileID: 0}
 --- !u!195 &7247318690663682136
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -352,4 +410,25 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.58403695
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &7609366803569457773
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376311601829622201}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

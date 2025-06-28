@@ -82,10 +82,10 @@ GameObject:
   - component: {fileID: 5096198624417072481}
   - component: {fileID: 8550678806366045035}
   - component: {fileID: 849186420580916850}
-  - component: {fileID: 4317393173122111910}
+  - component: {fileID: 6219148407579615368}
+  - component: {fileID: 4132101069294612684}
   - component: {fileID: 2308524833671226789}
   - component: {fileID: 4292750855236216153}
-  - component: {fileID: 4132101069294612684}
   m_Layer: 6
   m_Name: Grass
   m_TagString: Plant
@@ -231,8 +231,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!65 &4317393173122111910
-BoxCollider:
+--- !u!135 &6219148407579615368
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -250,7 +250,28 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4132101069294612684
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260418340754702201}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5840369
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2308524833671226789
 MonoBehaviour:
@@ -288,27 +309,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &4132101069294612684
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6260418340754702201}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5840369
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8992081159924839788
 GameObject:
   m_ObjectHideFlags: 0

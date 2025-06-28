@@ -135,11 +135,11 @@ GameObject:
   - component: {fileID: 4568468758360788669}
   - component: {fileID: 3842495755008780821}
   - component: {fileID: 4805888755804837405}
-  - component: {fileID: 7926992298445672426}
   - component: {fileID: 1374007860076822247}
   - component: {fileID: 2490124234680314008}
   - component: {fileID: -7439004421324525386}
   - component: {fileID: 6906074724179648391}
+  - component: {fileID: 4113122408328112897}
   m_Layer: 6
   m_Name: Cactus
   m_TagString: Plant
@@ -258,27 +258,6 @@ MonoBehaviour:
   isLit: 0
   pooDecayInterval: 5
   musicDecayInterval: 5
---- !u!65 &7926992298445672426
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796475239365000019}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1374007860076822247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -362,6 +341,27 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5840369
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4113122408328112897
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796475239365000019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7965872223766014019
 GameObject:
