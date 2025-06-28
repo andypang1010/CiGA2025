@@ -31,6 +31,9 @@ public class PlayerInteraction : MonoBehaviour
     private float musicHoldTimer = 0.0f;
     private bool musicPlayed = false;   
 
+    [Header("Hold to Play Music UI")]
+    public Slider musicHoldSlider;
+
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
@@ -46,16 +49,8 @@ public class PlayerInteraction : MonoBehaviour
     {
     interactPressed = Input.GetKeyDown(KeyCode.E);
 
-    // === DEBUG for Music Source ===
-    if (musicObject != null)
-    {
-        Debug.Log($"Player is inside MusicSource: {musicObject.name}");
-    }
-    else
-    {
-        Debug.Log("Not inside any MusicSource");
-    }
 
+    
     // === Update Throw Point if needed ===
     Vector3 faceDir = movement.faceDirection;
     // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
@@ -71,40 +66,51 @@ public class PlayerInteraction : MonoBehaviour
 
     // === Hold-to-Play Music logic ===
     if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
-    {
-        if (heldObject == null)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                // Accumulate hold time
-                musicHoldTimer += Time.deltaTime;
+{
+    Debug.Log("Inside MusicSource trigger: " + musicObject.name);
 
-                // If held long enough, play music once
-                if (musicHoldTimer >= musicHoldDuration && !musicPlayed)
-                {
-                    music.StartPlayingMusic();
-                    musicPlayed = true;
-                }
-            }
-            else
+    if (heldObject == null)
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            musicHoldTimer += Time.deltaTime;
+            Debug.Log($"Holding Space: {musicHoldTimer}/{musicHoldDuration}");
+
+            if (musicHoldTimer >= musicHoldDuration)
             {
-                // Released early, reset
+                Debug.Log("Hold complete! Starting music...");
+                music.StartPlayingMusic();
+
                 musicHoldTimer = 0.0f;
-                musicPlayed = false;
             }
         }
         else
         {
-            // If holding an object, reset
+            if (musicHoldTimer > 0) Debug.Log("Released Space early, resetting timer.");
             musicHoldTimer = 0.0f;
-            musicPlayed = false;
+            
         }
     }
     else
     {
-        // If not inside any MusicSource, reset
+        Debug.Log("Holding object, resetting music hold.");
         musicHoldTimer = 0.0f;
-        musicPlayed = false;
+    
+    }
+}
+else
+{
+
+    musicHoldTimer = 0.0f;
+}
+
+    if (musicHoldSlider != null)
+    {
+    musicHoldSlider.maxValue = musicHoldDuration;
+    musicHoldSlider.value = musicHoldTimer;
+
+    // Optional: hide when not inside source
+    musicHoldSlider.gameObject.SetActive(musicObject != null);
     }
 
     // === Update animator ===

@@ -339,19 +339,9 @@ public class Plant : MonoBehaviour
 {
     if (isPerfect) return;
 
-    musicLevel += musicRate * Time.deltaTime;
+    musicLevel += musicRate;
     Debug.Log($"🎵 Music level: {musicLevel}");
 
-    if (musicLevel >= tooMuchMusic)
-    {
-        Debug.Log("🎵 Too much music! Plant is overwhelmed!");
-        isDead = true;
-    }
-    else if (musicLevel >= musicNeeded)
-    {
-        Debug.Log("🎵 Enough music!");
-        CheckPerfection();
-    }
 }
 
     private void CheckPerfection()

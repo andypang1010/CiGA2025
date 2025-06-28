@@ -746,11 +746,11 @@ MonoBehaviour:
   pooNeeded: 1
   tooMuchPoo: 5
   musicNeeded: 1
-  tooMuchMusic: 2
+  tooMuchMusic: 7
   waterRate: 1.83
   sunRate: 0.08
   sunDecayRate: 0.25
-  musicRate: 0.2
+  musicRate: 7
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
