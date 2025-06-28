@@ -2539,6 +2539,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3357769401556785484, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3718092875209147362, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: statsUI
       value: 
@@ -2563,6 +2567,14 @@ PrefabInstance:
       propertyPath: sunlightSlider
       value: 
       objectReference: {fileID: 1209484337}
+    - target: {fileID: 4255995839128292686, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416062374434360741, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2336218575738361970, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
