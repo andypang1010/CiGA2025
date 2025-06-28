@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Areas_0
+      name: WaterSpot1
       rect:
         serializedVersion: 2
         x: 1014
-        y: 2581
+        y: 2571
         width: 310
-        height: 288
+        height: 310
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,13 +119,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_1
+      name: WaterSpot2
       rect:
         serializedVersion: 2
-        x: 1332
-        y: 2576
-        width: 300
-        height: 296
+        x: 1328
+        y: 2571
+        width: 310
+        height: 310
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,13 +141,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_2
+      name: WaterSpot3
       rect:
         serializedVersion: 2
-        x: 1646
-        y: 2553
-        width: 307
-        height: 304
+        x: 1648
+        y: 2545
+        width: 310
+        height: 310
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +163,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_3
+      name: ReceiveSpot1
       rect:
         serializedVersion: 2
-        x: 1005
+        x: 991
         y: 2158
-        width: 298
-        height: 319
+        width: 325
+        height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,13 +185,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_4
+      name: ReceiveSpot2
       rect:
         serializedVersion: 2
-        x: 1323
+        x: 1309
         y: 2146
-        width: 302
-        height: 326
+        width: 325
+        height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,12 +207,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_5
+      name: ReceiveSpot3
       rect:
         serializedVersion: 2
-        x: 1646
+        x: 1630
         y: 2146
-        width: 292
+        width: 325
         height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -229,11 +229,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_6
+      name: CowSign
       rect:
         serializedVersion: 2
         x: 2205
-        y: 1853
+        y: 1856
         width: 455
         height: 444
       alignment: 0
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_8
+      name: SunSpot1
       rect:
         serializedVersion: 2
         x: 1014
@@ -295,11 +295,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_9
+      name: SunSpot2
       rect:
         serializedVersion: 2
         x: 1318
-        y: 1775
+        y: 1777
         width: 310
         height: 310
       alignment: 0
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_10
+      name: SunSpot3
       rect:
         serializedVersion: 2
         x: 1645
@@ -409,7 +409,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2162
-        y: 712
+        y: 709
         width: 432
         height: 1043
       alignment: 0
@@ -427,35 +427,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_15
+      name: PooSpot1
       rect:
         serializedVersion: 2
-        x: 2715
-        y: 1610
-        width: 19
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ca4fc3c92dd911479c019a3ee156afc
-      internalID: -843309896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_16
-      rect:
-        serializedVersion: 2
-        x: 2728
-        y: 1422
-        width: 249
-        height: 298
+        x: 2695
+        y: 1421
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,28 +444,6 @@ TextureImporter:
       bones: []
       spriteID: fb9f9fb55e4b04740865d140422f37aa
       internalID: 300584418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_17
-      rect:
-        serializedVersion: 2
-        x: 2707
-        y: 1579
-        width: 11
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22e24bb7a4a96d94892da4a7bf2a328c
-      internalID: 1588396147
       vertices: []
       indices: 
       edges: []
@@ -515,57 +471,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_19
+      name: PooSpot2
       rect:
         serializedVersion: 2
-        x: 2721
-        y: 1486
-        width: 13
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf2e7b3d9e20b304e85f252be9757b6e
-      internalID: 2042148669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_20
-      rect:
-        serializedVersion: 2
-        x: 2727
-        y: 1459
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 847d1a98832a36e459d8ab14f3360fff
-      internalID: 1968111806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_21
-      rect:
-        serializedVersion: 2
-        x: 2695
-        y: 1091
-        width: 280
-        height: 297
+        x: 2691
+        y: 1088
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -576,28 +488,6 @@ TextureImporter:
       bones: []
       spriteID: 4857862b96dc1e1429a8f16a55f5015a
       internalID: 1043169786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_22
-      rect:
-        serializedVersion: 2
-        x: 2980
-        y: 1250
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ade6b0edfdcaa1a4bb4db2b0ce8c5ad1
-      internalID: -1309677370
       vertices: []
       indices: 
       edges: []
@@ -647,79 +537,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_25
+      name: PooSpot3
       rect:
         serializedVersion: 2
-        x: 2962
-        y: 1172
-        width: 27
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68ec55a69435a564dadaf2cc9660ef37
-      internalID: 1758712087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_26
-      rect:
-        serializedVersion: 2
-        x: 2739
-        y: 1007
-        width: 53
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59c2d6ad5bba8bc45922e596404a0bf6
-      internalID: 398768969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_27
-      rect:
-        serializedVersion: 2
-        x: 2820
-        y: 1054
-        width: 21
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6fdd557a87d4684ca8f554d63cbd756
-      internalID: 1739410873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_28
-      rect:
-        serializedVersion: 2
-        x: 2696
-        y: 790
-        width: 257
-        height: 258
+        x: 2685
+        y: 772
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,28 +554,6 @@ TextureImporter:
       bones: []
       spriteID: fe1328f5bc32db04986bfd858a7db0a8
       internalID: -1532154395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_29
-      rect:
-        serializedVersion: 2
-        x: 2915
-        y: 978
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c31e72289f702c046a3457c37fca1a22
-      internalID: 1855401244
       vertices: []
       indices: 
       edges: []
@@ -779,94 +581,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_31
-      rect:
-        serializedVersion: 2
-        x: 2957
-        y: 958
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccc639b479a81524db05a317f786e4ca
-      internalID: 528637109
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_32
-      rect:
-        serializedVersion: 2
-        x: 2942
-        y: 877
-        width: 21
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 882dd7d16171b4b4bb136e5c367f084e
-      internalID: 1478111834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_33
-      rect:
-        serializedVersion: 2
-        x: 2780
-        y: 775
-        width: 51
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b93c2d9c58747214ba1c3038526b9e77
-      internalID: -1897819200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Areas_34
-      rect:
-        serializedVersion: 2
-        x: 2841
-        y: 782
-        width: 17
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f41ffee4e45d6a64193cf95f5f0872dc
-      internalID: -1443225875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Pond
       rect:
         serializedVersion: 2
@@ -889,7 +603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Areas_36
+      name: FishSign
       rect:
         serializedVersion: 2
         x: 2501
@@ -926,36 +640,28 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":24.0},"gridSpriteSize":{"x":498.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Areas_0: -633467929
-      Areas_1: 849134009
-      Areas_10: -565476806
+      Areas_11: -1715420262
+      Areas_12: 2124516130
+      Areas_13: 969120940
       Areas_15: -843309896
-      Areas_16: 300584418
       Areas_17: 1588396147
       Areas_19: 2042148669
-      Areas_2: 620055687
       Areas_20: 1968111806
-      Areas_21: 1043169786
       Areas_22: -1309677370
       Areas_25: 1758712087
       Areas_26: 398768969
       Areas_27: 1739410873
-      Areas_28: -1532154395
       Areas_29: 1855401244
-      Areas_3: -1244844678
       Areas_31: 528637109
       Areas_32: 1478111834
       Areas_33: -1897819200
       Areas_34: -1443225875
-      Areas_36: 1252211338
-      Areas_4: 136642719
-      Areas_5: -261743734
-      Areas_6: -989653672
-      Areas_8: 2054393674
-      Areas_9: -1377941828
+      Areas_7: 1686251490
       CowShed: -880214838
+      CowSign: -989653672
       Fence1: -1137812080
       Fence2: 1187304649
+      FishSign: 1252211338
       Lamp_Left: 245036408
       Lamp_Middle: 1965167005
       Lamp_Right: 983738818
@@ -963,6 +669,18 @@ TextureImporter:
       MusicSpot2: -1694841164
       MusicSpot3: 783847686
       Pond: -541918658
+      PooSpot1: 300584418
+      PooSpot2: 1043169786
+      PooSpot3: -1532154395
+      ReceiveSpot1: -1244844678
+      ReceiveSpot2: 136642719
+      ReceiveSpot3: -261743734
+      SunSpot1: 2054393674
+      SunSpot2: -1377941828
+      SunSpot3: -565476806
+      WaterSpot1: -633467929
+      WaterSpot2: 849134009
+      WaterSpot3: 620055687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
