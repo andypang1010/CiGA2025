@@ -8,11 +8,44 @@ public class Cow : Interactable
     public float hungerLevel = 0;
     public float hungerSpeed = 1;
 
+    [SerializeField] private GameObject accidentMark;
+
+    private void Start()
+    {
+        accidentMark.SetActive(false);
+    }
+
     // update 
     void Update()
     {
-        hungerLevel += Time.deltaTime * hungerSpeed;
+        // CHECK ACCIDENT
+        if (TryGetComponent<Accident>(out Accident acc))
+        {
+            if (acc.accidentComplete)
+            {
+                accidentMark.SetActive(false);
+            }
+            // an accident is active!
+            else if (!acc.accidentTimeout) // TODO: change after andy's update
+            {
+                accidentMark.SetActive(true);
+                // TODO: change to acc. anim
+            }
+            else
+            {
+                accidentMark.SetActive(false);
+                GoToDie();
+            }
 
+            return; // during accident, they cannot starve?
+        }
+        else
+        {
+            accidentMark.SetActive(false);
+        }
+
+
+        hungerLevel += Time.deltaTime * hungerSpeed;
         if (hungerLevel >= 100)
         {
             hungerLevel = 100;
@@ -52,6 +85,11 @@ public class Cow : Interactable
         }
 
         shitPoint.GetComponent<Shit>().InitShit();
+    }
+
+    private void GoToDie()
+    {
+        // TODO
     }
 
 }

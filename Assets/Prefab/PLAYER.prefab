@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1858509635442066030}
   - component: {fileID: 7328896591593410687}
   - component: {fileID: 9151131279712603625}
-  - component: {fileID: 5333304811288177071}
   - component: {fileID: 542284335507817126}
   - component: {fileID: 3946290769904088618}
   - component: {fileID: 3718092875209147362}
+  - component: {fileID: 7543321607341244658}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Untagged
@@ -95,29 +95,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5333304811288177071
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745915647827313341}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.85
-  m_Height: 1.5
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!54 &542284335507817126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,6 +159,27 @@ MonoBehaviour:
   gridDetectionRange: 2
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
+--- !u!65 &7543321607341244658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745915647827313341}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.9097091, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0.45}
 --- !u!1 &1881924976233688066
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 6541039326597690760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.651, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
