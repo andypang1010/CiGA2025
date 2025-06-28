@@ -32,9 +32,9 @@ public class AccidentManager : MonoBehaviour
         accidentQTE = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
 
-        accidentUI.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
-        accidentQTE.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         accidentUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
+        accidentQTE.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
+        qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
     }
 
     void Update()

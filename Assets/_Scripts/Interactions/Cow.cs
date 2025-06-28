@@ -21,12 +21,7 @@ public class Cow : Interactable
         // CHECK ACCIDENT
         if (TryGetComponent<Accident>(out Accident acc))
         {
-            if (acc.accidentComplete)
-            {
-                accidentMark.SetActive(false);
-            }
-            // an accident is active!
-            else if (!acc.accidentTimeout) // TODO: change after andy's update
+            if (!acc.accidentTimeout) // TODO: change after andy's update
             {
                 accidentMark.SetActive(true);
                 // TODO: change to acc. anim

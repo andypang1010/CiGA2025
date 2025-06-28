@@ -102,7 +102,7 @@ public class Accident : Interactable
             // If the QTE time window is valid, show the QTE prompt
             if (Time.time - qteStartTime - t.time <= qteTimeLimit / 2 && Time.time - qteStartTime - t.time > -qteTimeLimit / 2)
             {
-                if (!accidentQTE.activeSelf) // Show the QTE UI only if it's not already shown
+                if (!accidentQTE.GetComponent<Image>().enabled) // Show the QTE UI only if it's not already shown
                 {
                     accidentQTE.GetComponent<Image>().enabled = true;
                 }
