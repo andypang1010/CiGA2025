@@ -41,6 +41,13 @@ public class AccidentManager : MonoBehaviour
         qteUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
         qteBeat.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
+
+        plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Select(plant => plant.gameObject).ToList();
+
+        foreach(var plant in plants)
+        {
+            plant.GetComponent<NavMeshAgent>().enabled = false; // Disable all plants initially
+        }
     }
 
     void Update()
