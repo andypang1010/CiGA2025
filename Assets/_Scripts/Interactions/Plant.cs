@@ -305,4 +305,24 @@ public class Plant : MonoBehaviour
             }
         }
     }
+
+    public float GetWaterLevel()
+    {
+        return waterLevel;
+    }
+
+    public float GetSunLevel()
+    {
+        return sunLevel;
+    }
+
+    public bool GetMusicLevel()
+    {
+        return musicPlayed;
+    }
+
+    public int GetPooCount()
+    {
+        return pooCount;
+    }
 }
