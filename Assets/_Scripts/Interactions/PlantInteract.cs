@@ -50,6 +50,7 @@ public class PlantInteract : Interactable
                     // snap above the grid
                     transform.position = grid.transform.position + Vector3.up * 0.5f;
                     rb.isKinematic = true;
+                    if (agent != null) agent.enabled = true;
                     break;
                 }
                 else
