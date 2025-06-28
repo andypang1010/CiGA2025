@@ -6,10 +6,10 @@ public class Plant : MonoBehaviour
     [Header("Read-Only Plant Stats (view-only)")]
     [SerializeField] private float waterLevel = 0f;
     [SerializeField] private float sunLevel = 0f;
-    [SerializeField] public bool isDead = false;
     [SerializeField] private float musicLevel = 0f;
-    [SerializeField] private int pooCount = 0;
+    [SerializeField] private float pooCount = 0;
     [SerializeField] private bool isPerfect = false;
+    [SerializeField] public bool isDead = false;
 
     [Header("Growth Settings")]
     public float waterNeeded = 1f;
@@ -19,9 +19,10 @@ public class Plant : MonoBehaviour
     public float tooMuchSun = 2f;
 
     public int pooNeeded = 1;
+    public int tooMuchPoo = 5;
 
-    public float musicNeeded = 1f;   
-    public float tooMuchMusic = 2f;  
+    public int musicNeeded = 1;   
+    public int tooMuchMusic = 2;  
 
     [Header("Growth Rates (units per second)")]
     public float waterRate = 0.2f;
@@ -310,5 +311,25 @@ public class Plant : MonoBehaviour
                 plantRenderer.material = perfectMaterial;
             }
         }
+    }
+
+    public float GetWaterLevel()
+    {
+        return waterLevel;
+    }
+
+    public float GetSunLevel()
+    {
+        return sunLevel;
+    }
+
+    public float GetMusicLevel()
+    {
+        return musicLevel;
+    }
+
+    public float GetPooCount()
+    {
+        return pooCount;
     }
 }
