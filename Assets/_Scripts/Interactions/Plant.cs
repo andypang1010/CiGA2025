@@ -11,6 +11,12 @@ public class Plant : MonoBehaviour
     [SerializeField] private bool isPerfect = false;
     [SerializeField] public bool isDead = false;
 
+    [Header("Plant UI")]
+    public GameObject waterUI;
+    public GameObject sunUI;
+    public GameObject pooUI;
+    public GameObject musicUI;
+
     [Header("Growth Settings")]
     public float waterNeeded = 1f;
     public float tooMuchWater = 2f;
@@ -114,6 +120,11 @@ public class Plant : MonoBehaviour
         HandleWaterDecay();
         HandlePooDecay();
         HandleMusicDecay();
+
+        waterUI.SetActive(tooMuchWater - waterLevel <= tooMuchWater / 5 || waterLevel - 0 <= tooMuchWater / 5);
+        sunUI.SetActive(tooMuchSun - sunLevel <= tooMuchSun / 10 || sunLevel - 0 <= tooMuchSun / 10);
+        pooUI.SetActive(pooCount >= pooNeeded || pooCount <= 0);
+        musicUI.SetActive(tooMuchMusic - musicLevel <= tooMuchMusic / 5 || musicLevel - 0 <= tooMuchMusic / 5);
     }
 
     private void CheckDeath()
