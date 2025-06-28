@@ -95,7 +95,7 @@ public class PlayerInteraction : MonoBehaviour
             if (!accident.isAccidentActive)
             {
                 accident.isAccidentActive = true;
-                accident.accidentStartTime = Time.time;
+                accident.qteStartTime = Time.time;
             }
         }
         // MORE LOGIC： 
