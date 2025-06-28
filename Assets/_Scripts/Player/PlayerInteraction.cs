@@ -115,7 +115,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         statsUI.SetActive(true);
 
-        plantName.text = plant.name;
+        plantName.text = plant.name.Split("(")[0];
 
         waterSlider.value = plant.GetWaterLevel();
         waterSlider.maxValue = plant.tooMuchWater;
