@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 849186420580916850}
   - component: {fileID: 4317393173122111910}
   - component: {fileID: 2308524833671226789}
+  - component: {fileID: 4292750855236216153}
   m_Layer: 7
   m_Name: PlantC
   m_TagString: Plant
@@ -139,6 +140,11 @@ MonoBehaviour:
   sunRate: 0.08
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
+  canWander: 1
+  wanderChance: 0.582
+  wanderInterval: 5
+  wanderDuration: 10
+  wanderRadius: 5
 --- !u!54 &849186420580916850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200,3 +206,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwSpeed: 50
+--- !u!195 &4292750855236216153
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260418340754702201}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

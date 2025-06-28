@@ -33,6 +33,19 @@ public class Plant : MonoBehaviour
     private float returnTimer = 0f;
     private bool isInReturnArea = false;
 
+    [Header("AI Settings")]
+    public bool canWander = true;   // Enable/disable wandering for this plant
+    [Range(0f, 1f)] public float wanderChance = 0.5f;  // Chance that this plant decides to wander
+    public float wanderInterval = 5f;  // How often to pick a new target
+    public float wanderDuration = 2f;  // How long to move towards it
+    public float wanderRadius = 5f;    // How far from starting point
+
+    private UnityEngine.AI.NavMeshAgent agent;
+    private Vector3 startPosition;
+    private float wanderTimer = 0f;
+    private float wanderDurationTimer = 0f;
+    private bool isWandering = false;
+
     private void Start()
     {
         plantRenderer = GetComponent<Renderer>();
@@ -40,23 +53,87 @@ public class Plant : MonoBehaviour
         {
             plantRenderer = GetComponentInChildren<Renderer>();
         }
+        // --- Your existing Start() setup ---
+        plantRenderer = GetComponent<Renderer>();
+        if (plantRenderer == null) plantRenderer = GetComponentInChildren<Renderer>();
+
+        // NavMeshAgent setup
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        startPosition = transform.position;
+
+        // Random chance to decide whether to wander
+        canWander = Random.value <= wanderChance;
     }
 
     private void Update()
-{
-    if (isPerfect && isInReturnArea)
     {
-        returnTimer -= Time.deltaTime;
-
-        Debug.Log($"⏳ Return Timer: {Mathf.Max(0f, returnTimer):F2} seconds remaining");
-
-        if (returnTimer <= 0f)
+  
+        if (isPerfect && isInReturnArea)
         {
-            Debug.Log("🌿 PLANT SENT");
-            Destroy(gameObject);
+            returnTimer -= Time.deltaTime;
+            Debug.Log($" Return Timer: {Mathf.Max(0f, returnTimer):F2} seconds remaining");
+
+            if (returnTimer <= 0f)
+            {
+                Debug.Log("🌿 PLANT SENT");
+                Destroy(gameObject);
+            }
+        }
+
+    
+        HandleWandering();
+    }
+
+    private void HandleWandering()
+{
+    if (isDead || isPerfect) return;
+
+    wanderTimer += Time.deltaTime;
+
+    if (!isWandering && wanderTimer >= wanderInterval)
+    {
+        // Roll the chance each time
+        bool willWanderThisTime = Random.value <= wanderChance;
+
+        if (willWanderThisTime)
+        {
+            Vector3 newDestination = GetRandomPoint(startPosition, wanderRadius);
+            agent.SetDestination(newDestination);
+
+            isWandering = true;
+            wanderDurationTimer = wanderDuration;
+        }
+
+        wanderTimer = 0f; // Reset either way
+    }
+
+    if (isWandering)
+    {
+        wanderDurationTimer -= Time.deltaTime;
+        if (wanderDurationTimer <= 0f)
+        {
+            agent.ResetPath();
+            isWandering = false;
         }
     }
 }
+
+    private Vector3 GetRandomPoint(Vector3 center, float range)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomPos = center + Random.insideUnitSphere * range;
+            randomPos.y = center.y; // keep y level
+
+            UnityEngine.AI.NavMeshHit hit;
+            if (UnityEngine.AI.NavMesh.SamplePosition(randomPos, out hit, 2.0f, UnityEngine.AI.NavMesh.AllAreas))
+            {
+                return hit.position;
+            }
+        }
+        return center; // fallback
+    }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -86,7 +163,7 @@ public class Plant : MonoBehaviour
         {
             isInReturnArea = true;
              Debug.Log("ENTER");
-            returnTimer = returnTimer;
+            returnTimer = returnTime;
         }
     }
 
