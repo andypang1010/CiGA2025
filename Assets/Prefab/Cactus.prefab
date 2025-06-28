@@ -43,7 +43,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 4031331733568257384}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -194,7 +194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22417f785b6ea3b43bd23d5befe9cc47, type: 2}
+  - {fileID: 2100000, guid: 98444412abe05a847a8ac90198cf8475, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,17 +230,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 1.52
   sunLevel: 0
-  isDead: 0
-  musicPlayed: 0
+  musicLevel: 0
   pooCount: 1
   isPerfect: 0
+  isDead: 0
   waterNeeded: 1
   tooMuchWater: 50
   sunNeeded: 1
   tooMuchSun: 50
   pooNeeded: 1
+  tooMuchPoo: 5
+  musicNeeded: 1
+  tooMuchMusic: 2
   waterRate: 1.83
   sunRate: 0.08
+  musicRate: 0.2
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
@@ -249,6 +253,8 @@ MonoBehaviour:
   wanderDuration: 10
   wanderRadius: 5
   animator: {fileID: 2728387901001253936}
+  pooDecayInterval: 5
+  musicDecayInterval: 5
 --- !u!65 &7926992298445672426
 BoxCollider:
   m_ObjectHideFlags: 0
