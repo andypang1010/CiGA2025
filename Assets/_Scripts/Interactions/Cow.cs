@@ -4,9 +4,10 @@ public class Cow : Interactable
 {
     public GameObject shitPoint;
     public float shitLevel = 0;
-    public float shitSpeed = 1;
+    public float shitTime = 10;
     public float hungerLevel = 0;
     public float hungerSpeed = 1;
+    [SerializeField] Animator animator;
 
     [SerializeField] private GameObject accidentMark;
 
@@ -48,12 +49,12 @@ public class Cow : Interactable
             // TODO
         }
 
-        shitLevel += Time.deltaTime * shitSpeed;
-        if (shitLevel >= 100)
+        shitLevel += Time.deltaTime;
+        if (shitLevel >= shitTime)
         {
             // handle shit logic
             // TODO
-            Poop();
+            animator.SetTrigger("Poop");
 
             shitLevel = 0;
         }
@@ -70,7 +71,7 @@ public class Cow : Interactable
         }
     }
 
-    private void Poop()
+    public void Poop()
     {
         // should have shit point
         if (shitPoint == null)
@@ -79,7 +80,7 @@ public class Cow : Interactable
             return; 
         }
 
-        shitPoint.GetComponent<Shit>().InitShit();
+        shitPoint.GetComponent<Shit>().animator.SetTrigger("Poop");
     }
 
     private void GoToDie()

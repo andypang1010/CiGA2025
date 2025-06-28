@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6430350969200762820}
   - component: {fileID: 3924686467015778372}
   - component: {fileID: 8169158525119823221}
-  - component: {fileID: 1128714260931259922}
   - component: {fileID: 6597806468161938772}
   m_Layer: 6
   m_Name: Cow
@@ -86,28 +85,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &1128714260931259922
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871084895500985787}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f89b74a5d10af48469d0e171551c7c86, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6597806468161938772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,9 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shitPoint: {fileID: 7999945321891133742}
   shitLevel: 0
-  shitSpeed: 20
+  shitTime: 10
   hungerLevel: 0
   hungerSpeed: 1
+  animator: {fileID: 7501274488762747415}
   accidentMark: {fileID: 8872212608221377086}
 --- !u!1 &5551257484768292764
 GameObject:
@@ -137,6 +115,7 @@ GameObject:
   - component: {fileID: 4403217024326451490}
   - component: {fileID: 8557757612099189054}
   - component: {fileID: 7501274488762747415}
+  - component: {fileID: 3054521082590649097}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -236,6 +215,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3054521082590649097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551257484768292764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22387747e016b64686933acffb226b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cow: {fileID: 6597806468161938772}
 --- !u!1 &7999945321891133742
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +239,7 @@ GameObject:
   - component: {fileID: 2802708727515841200}
   - component: {fileID: 4837301195103575437}
   - component: {fileID: 4798431845034918711}
+  - component: {fileID: 4597442242941663802}
   - component: {fileID: 6270872486760562178}
   m_Layer: 6
   m_Name: Shiiii
@@ -264,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 7999945321891133742}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 2, y: -0.603, z: 0}
+  m_LocalPosition: {x: 2, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -314,7 +307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e65bb5f6c781e784d98c3214f38df448, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,7 +315,7 @@ SpriteRenderer:
   m_Size: {x: 0.81640625, y: 0.94140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4798431845034918711
@@ -340,6 +333,29 @@ MonoBehaviour:
   shitExpirationTime: 3
   isConsumed: 0
   isShitEnabled: 0
+  animator: {fileID: 4597442242941663802}
+--- !u!95 &4597442242941663802
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999945321891133742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 808352442b2f91d4aac4d0dc92411d48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &6270872486760562178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -360,7 +376,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.81640625, y: 0.94140625, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0.3}
 --- !u!1 &8872212608221377086
 GameObject:
   m_ObjectHideFlags: 0
