@@ -8,37 +8,69 @@ using UnityEngine.UI;
 
 public class AccidentManager : MonoBehaviour
 {
-    public float accidentFrequency = 0.05f;
-    public int minBeats = 3;
-    public int maxBeats = 7;
-
+    [Header("Accident Settings")]
     float checkInterval = 5f;
     float lastCheckTime = 0f;
-
+    public float accidentFrequency = 0.05f;
     GameObject playerHeldPoint;
 
-    GameObject accidentUI;
-    GameObject accidentQTE;
+    [Header("QTEs")]
+    public int minBeats = 3;
+    public int maxBeats = 7;
+    GameObject qteUI;
+    GameObject qteBeat;
     GameObject qteTime;
-
     [SerializeField] List<GameObject> interactables;
-    string[] accidentables = { "Cow" };
+
+    [Header("Chases")]
+    public int currentNumPlantsRunning = 0;
+    public int maxNumPlantsRunning = 1;
+    [SerializeField] List<GameObject> plants;
+
+    string[] accidentables = { "Cow", };
 
     private void Start()
     {
         playerHeldPoint = GameObject.Find("PLAYER").GetComponent<PlayerInteraction>().heldPoint;
 
-        accidentUI = GameObject.Find("Accident UI");
-        accidentQTE = GameObject.Find("Accident QTE");
+        qteUI = GameObject.Find("Accident UI");
+        qteBeat = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
 
-        accidentUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
-        accidentQTE.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
+        qteUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
+        qteBeat.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
     }
 
     void Update()
     {
+        //////////////////////////////// CHASE CODE ////////////////////////////////
+        if (Time.time - lastCheckTime < checkInterval || currentNumPlantsRunning >= maxNumPlantsRunning) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////////////////// QTE CODE ////////////////////////////////
         // Only check once per checkInterval seconds and if there is no active accident
         if (Time.time - lastCheckTime < checkInterval || HasAccident()) return;
 
