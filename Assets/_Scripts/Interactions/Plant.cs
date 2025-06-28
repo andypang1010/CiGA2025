@@ -7,7 +7,7 @@ public class Plant : MonoBehaviour
     [SerializeField] private float waterLevel = 0f;
     [SerializeField] private float sunLevel = 0f;
     [SerializeField] public bool isDead = false;
-    [SerializeField] private bool musicPlayed = false;
+    [SerializeField] private float musicLevel = 0f;
     [SerializeField] private int pooCount = 0;
     [SerializeField] private bool isPerfect = false;
 
@@ -20,9 +20,13 @@ public class Plant : MonoBehaviour
 
     public int pooNeeded = 1;
 
+    public float musicNeeded = 1f;   
+    public float tooMuchMusic = 2f;  
+
     [Header("Growth Rates (units per second)")]
     public float waterRate = 0.2f;
     public float sunRate = 0.2f;
+    public float musicRate = 0.2f;  
 
     [Header("Visuals")]
     public Material perfectMaterial;
@@ -119,14 +123,15 @@ public class Plant : MonoBehaviour
 }
     private void HandleMusicDecay()
 {
-    if (!musicPlayed) return;  // nothing to decay
+    if (musicLevel <= 0f) return;
 
     musicDecayTimer += Time.deltaTime;
 
     if (musicDecayTimer >= musicDecayInterval)
     {
-        musicPlayed = false;
-        Debug.Log("🎵 Music effect wore off!");
+        musicLevel--;
+        musicLevel = Mathf.Max(0f, musicLevel);
+        Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
         musicDecayTimer = 0f;
     }
 }
@@ -188,17 +193,9 @@ public class Plant : MonoBehaviour
     {
         if (isDead || isPerfect) return;
 
-        if (other.CompareTag("WaterArea"))
-        {
-            Water();
-        }
         else if (other.CompareTag("SunArea"))
         {
             ExposeToLight();
-        }
-        else if (other.CompareTag("MusicArea"))
-        {
-            ListenToMusic();
         }
     }
 
@@ -275,15 +272,24 @@ public class Plant : MonoBehaviour
         }
     }
 
-    private void ListenToMusic()
-    {
-        if (musicPlayed || isPerfect) return;
+    public void ListenToMusic()
+{
+    if (isPerfect) return;
 
-        musicPlayed = true;
-        musicDecayTimer = 0f;
-        Debug.Log("nice music!");
+    musicLevel += musicRate * Time.deltaTime;
+    Debug.Log($"🎵 Music level: {musicLevel}");
+
+    if (musicLevel >= tooMuchMusic)
+    {
+        Debug.Log("🎵 Too much music! Plant is overwhelmed!");
+        isDead = true;
+    }
+    else if (musicLevel >= musicNeeded)
+    {
+        Debug.Log("🎵 Enough music!");
         CheckPerfection();
     }
+}
 
     private void CheckPerfection()
     {
@@ -293,7 +299,7 @@ public class Plant : MonoBehaviour
             waterLevel >= waterNeeded &&
             sunLevel >= sunNeeded &&
             pooCount == pooNeeded &&
-            musicPlayed
+            musicLevel >= musicNeeded
         )
         {
             isPerfect = true;

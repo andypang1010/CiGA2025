@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
     public float gridDetectionRange = 2.5f;
     public GameObject closestGrid;
     public GameObject waterObject;
-
+    public GameObject musicObject;
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
@@ -39,7 +39,14 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         interactPressed = Input.GetKeyDown(KeyCode.E);
-        Debug.Log("Interact Pressed: " + interactPressed);
+        if (musicObject != null)
+{
+    Debug.Log($"Player is inside MusicSource: {musicObject.name}");
+}
+else
+{
+    Debug.Log("Not inside any MusicSource");
+}
 
         // update throwpoint to always stay in front of player
         Vector3 faceDir = movement.faceDirection;
@@ -55,6 +62,13 @@ public class PlayerInteraction : MonoBehaviour
                 water.StartWatering();
             }
         }
+        if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
+        {
+            if (heldObject == null && Input.GetKey(KeyCode.Space))
+                {
+                    music.StartPlayingMusic();
+                }
+}
 
         animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
 
@@ -216,6 +230,10 @@ public class PlayerInteraction : MonoBehaviour
         {
             waterObject = other.gameObject;
         }
+        if (other.gameObject.TryGetComponent(out MusicSource _))
+    {
+        musicObject = other.gameObject;
+    }
     }
 
     private void OnTriggerExit(Collider other)
@@ -224,5 +242,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             waterObject = null;
         }
+            if (other.gameObject.TryGetComponent(out MusicSource _))
+    {
+        musicObject = null;
+    }
     }
 }
