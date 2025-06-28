@@ -177,7 +177,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Interactable") && other.gameObject.TryGetComponent(out WaterSource _))
+        if (other.gameObject.TryGetComponent(out WaterSource _))
         {
             waterObject = other.gameObject;
         }
@@ -185,7 +185,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.gameObject.TryGetComponent(out WaterSource _))
         {
             waterObject = null;
         }

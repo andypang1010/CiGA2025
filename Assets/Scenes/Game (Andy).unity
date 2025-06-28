@@ -429,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &304867694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -674,9 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c88f63178cd3b041b674eacc3f048ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 10
   GameOverUI: {fileID: 1750590136}
   PauseMenuUI: {fileID: 304867693}
   pauseButton: {fileID: 925616428}
+  remainingTime: 0
 --- !u!1 &535843085
 GameObject:
   m_ObjectHideFlags: 0
