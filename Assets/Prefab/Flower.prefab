@@ -740,9 +740,9 @@ MonoBehaviour:
   pooUI: {fileID: 2258109144062996862}
   musicUI: {fileID: 782333363307288203}
   waterNeeded: 1
-  tooMuchWater: 50
+  tooMuchWater: 10
   sunNeeded: 1
-  tooMuchSun: 50
+  tooMuchSun: 10
   pooNeeded: 1
   tooMuchPoo: 5
   musicNeeded: 1
