@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &710115529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,7 +985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAccidentActive: 0
-  accidentComplete: 0
   accidentTimeout: 0
   qteStartTime: 0
   accidentStartTime: 0
@@ -1933,6 +1932,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98444412abe05a847a8ac90198cf8475, type: 2}
+    - target: {fileID: 8302661527171324930, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
+      propertyPath: m_Radius
+      value: 0.62464213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302661527171324930, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8376311601829622201, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
       propertyPath: m_Name
       value: PlantA
