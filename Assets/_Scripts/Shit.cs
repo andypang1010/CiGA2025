@@ -17,7 +17,8 @@ public class Shit : Interactable
 
     public override void React(InteractionType type)
     {
-        throw new System.NotImplementedException();
+        // TODO: interaction w/ shii?
+        return;
     }
 
     private void Update()
