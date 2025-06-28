@@ -1,0 +1,1374 @@
+fileFormatVersion: 2
+guid: 813fd77dc67fc8146a941de95e19f6ef
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cow_pooping_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfb5d1acaeb5df408942db6ac6b3340
+      internalID: 1855598285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_1
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 5400
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03be80c32e11f6c489dc757759c8d422
+      internalID: -1963524385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_2
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 5400
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94641996af872514bb53ee27f3fc16d1
+      internalID: -1304691353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_3
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 5400
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005cc4a735eb64148aadbe24109cf9e2
+      internalID: -597406702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_4
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 5400
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5b6ba40a404c049bfd39d0383bd0d4
+      internalID: -2050356388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4860
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f978113fd3258594da1a480e7e349587
+      internalID: 1920732248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_6
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 4860
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b3a66f86144fa4b88fda8cd37556fb
+      internalID: 1451213067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_7
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 4860
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e144c6029a6204b9427536bc81b24c
+      internalID: -1549611839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_8
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 4860
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f4ac651d5a51047a4311e46a7abab5
+      internalID: -1204408436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_9
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 4860
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3944d83793d57479f71e49923aaba6
+      internalID: 1726916221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a440adc10b70747b814023d013bc51
+      internalID: -1230773599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 4320
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4749cd7996f151e4b9af595dd1ce5eb7
+      internalID: 61106583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_12
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 4320
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf50e008453e89b44a43d9cbb82ca998
+      internalID: -1856455484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_13
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 4320
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b5b2e0df1985047868b681a5cb7129
+      internalID: 1388242988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_14
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 4320
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3531a4f37941be2498f4fafafdcec538
+      internalID: -1061476790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3780
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fca997ecee1ba14aad07b48004c1d97
+      internalID: -2023158028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_16
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 3780
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b346f9d8346fc4243b6680bae9d8a713
+      internalID: 1773048237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_17
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 3780
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744f21a698c5b0f4483275d73bf47829
+      internalID: -171917403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_18
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 3780
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97ef169c30db874d829b8f100975488
+      internalID: -225223329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_19
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 3780
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af82cbdbe4e0ee24681e083d4ca3b973
+      internalID: 1605392902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a3a1e1ed7886d4db2548a4d0588980
+      internalID: 374626738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_21
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 3240
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5508222751c21b74b817925391dc7e60
+      internalID: 158762730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_22
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 3240
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059210b9cb7510e4aaa3c384cf7a7fa1
+      internalID: -1810105374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_23
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 3240
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18248a575e6fb8446b1142b77b455aee
+      internalID: -651566639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_24
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 3240
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1362cae2adfb02e429fa27013de8e12d
+      internalID: 1143522438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2700
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce83e7e6d97f98946bf09d8f5ee4645e
+      internalID: -208078726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_26
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 2700
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a6835b71bf30a49ba4be6a708f3907
+      internalID: -1214956771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_27
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 2700
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39db7da60b467ec46ab74f0d9fe71e79
+      internalID: 190390496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_28
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 2700
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff778ebc1e832745b50fd3803babc74
+      internalID: 1220233809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_29
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 2700
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eef31cb07bb3694ca91ffeedab00d48
+      internalID: 500562500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229beb87a88925b45b8cedd05ddbb7c0
+      internalID: -1581549228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_31
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 2160
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039effd67811bdf41b8b771909ae7d16
+      internalID: 1020240866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_32
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 2160
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2437144b036660f479a02c62b54aa4ef
+      internalID: -1447357270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_33
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 2160
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4c8080fb37dcc408cf803eba1f9ba3
+      internalID: 429936351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_34
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 2160
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533a7d90471324344b8b196e0da2f859
+      internalID: -461910687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa248729bfe12e459a5766db04b399c
+      internalID: 1825888217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_36
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1620
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ed5cae3f841804bafb95f9b2ad5449
+      internalID: 2096692148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_37
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1620
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda464048be05ea42aa951e5461eebd4
+      internalID: 1718307722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_38
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 1620
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b250a991cd76d74cac2467259bdb15d
+      internalID: -1348462318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_39
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 1620
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056bb6b69451b534b9b9907e80c38171
+      internalID: 507498254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64b0705f03083c4396cbaa6d5258179
+      internalID: 620587492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_41
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1080
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b3e7fc6fd371046bde41f9112ecaa4
+      internalID: -736716062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_42
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1080
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f92b1792b87464084880b838ddde96
+      internalID: 1365995259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_43
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 1080
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267bfe82c62ca794998e21b1e1f467e4
+      internalID: -741005883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_44
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 1080
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8259051bee561f42a24ad30f855cbf0
+      internalID: -857543270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8ebcc1b44ff1f4487b157e3e9e2f4f
+      internalID: -450190240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_46
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 540
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17df302e641afa419a0cd769fb085af
+      internalID: 541062784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_47
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 540
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28cacaf49317d648b8e3b34d16d348c
+      internalID: 23538310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_48
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 540
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01819e044bd33e4ea515456949722ac
+      internalID: 746374564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_49
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 540
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0f7f682f3876342b7e3d8fa4829f79
+      internalID: -876882421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa1b1963548fd5419777afe9c827f84
+      internalID: -1706591013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_51
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 0
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1146579484a125e488620e8328e208c9
+      internalID: 1365020231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_52
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 0
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6446d47772bcb47b82021ad8b9fb7a
+      internalID: -848090333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_pooping_53
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 0
+        width: 821
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cf7a48fc236a74ebf02e049d5f5669
+      internalID: -1997793443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 72d0e29f22619294bbb0f8e35f50499a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":11.0},"gridSpriteSize":{"x":821.0,"y":540.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cow_pooping_0: 1855598285
+      cow_pooping_1: -1963524385
+      cow_pooping_10: -1230773599
+      cow_pooping_11: 61106583
+      cow_pooping_12: -1856455484
+      cow_pooping_13: 1388242988
+      cow_pooping_14: -1061476790
+      cow_pooping_15: -2023158028
+      cow_pooping_16: 1773048237
+      cow_pooping_17: -171917403
+      cow_pooping_18: -225223329
+      cow_pooping_19: 1605392902
+      cow_pooping_2: -1304691353
+      cow_pooping_20: 374626738
+      cow_pooping_21: 158762730
+      cow_pooping_22: -1810105374
+      cow_pooping_23: -651566639
+      cow_pooping_24: 1143522438
+      cow_pooping_25: -208078726
+      cow_pooping_26: -1214956771
+      cow_pooping_27: 190390496
+      cow_pooping_28: 1220233809
+      cow_pooping_29: 500562500
+      cow_pooping_3: -597406702
+      cow_pooping_30: -1581549228
+      cow_pooping_31: 1020240866
+      cow_pooping_32: -1447357270
+      cow_pooping_33: 429936351
+      cow_pooping_34: -461910687
+      cow_pooping_35: 1825888217
+      cow_pooping_36: 2096692148
+      cow_pooping_37: 1718307722
+      cow_pooping_38: -1348462318
+      cow_pooping_39: 507498254
+      cow_pooping_4: -2050356388
+      cow_pooping_40: 620587492
+      cow_pooping_41: -736716062
+      cow_pooping_42: 1365995259
+      cow_pooping_43: -741005883
+      cow_pooping_44: -857543270
+      cow_pooping_45: -450190240
+      cow_pooping_46: 541062784
+      cow_pooping_47: 23538310
+      cow_pooping_48: 746374564
+      cow_pooping_49: -876882421
+      cow_pooping_5: 1920732248
+      cow_pooping_50: -1706591013
+      cow_pooping_51: 1365020231
+      cow_pooping_52: -848090333
+      cow_pooping_53: -1997793443
+      cow_pooping_6: 1451213067
+      cow_pooping_7: -1549611839
+      cow_pooping_8: -1204408436
+      cow_pooping_9: 1726916221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,11 +16,6 @@ public class ShitGrid : MonoBehaviour
             hasShit = false;
             currentShit = null;
         }
-
-        // update plant info from grid occupied info
-        if (GetComponent<Grid>().isOccupied)
-        {
-        }
     }
 
 

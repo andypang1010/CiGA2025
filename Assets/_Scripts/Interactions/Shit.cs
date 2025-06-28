@@ -3,16 +3,20 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Shit : Interactable
 {
+    /// <summary>
+    /// This should coincide PRECISELY with the animator shit expir time. Remember to check!
+    /// </summary>
     public float shitExpirationTime = 3;
     public bool isConsumed = false;
     private float originalExpiration;
     public bool isShitEnabled = false;
+    public Animator animator;
     SpriteRenderer sr;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        sr.enabled = false;
+        // sr.enabled = false;
         originalExpiration = shitExpirationTime;
     }
 
@@ -23,7 +27,7 @@ public class Shit : Interactable
             case InteractionType.Consume:
                 // TODO: START playing ANIMATION
                 isConsumed = true;
-                sr.enabled = false;
+                // sr.enabled = false;
                 isShitEnabled = false;
                 break;
         }
@@ -39,7 +43,7 @@ public class Shit : Interactable
         if (shitExpirationTime <= 0.01f)
         {
             isShitEnabled = false;
-            sr.enabled = false;
+            // sr.enabled = false;
             shitExpirationTime = originalExpiration;
         }
         
@@ -47,7 +51,7 @@ public class Shit : Interactable
 
     public void InitShit()
     {
-        sr.enabled = true;
+        // sr.enabled = true;
         isConsumed = false;
         isShitEnabled = true;
         shitExpirationTime = originalExpiration;
