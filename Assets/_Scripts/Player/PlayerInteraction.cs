@@ -216,7 +216,7 @@ public class PlayerInteraction : MonoBehaviour
             // only invoke on the ones that are ready
             if (interactable != null && interactable.CanInteract())
             {
-                Debug.Log("Yes! Can Interact!");
+                Debug.Log("Processing interact type: " + interactionType);
                 interactable.React(interactionType);
 
             }

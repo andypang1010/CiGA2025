@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -29,13 +30,13 @@ public class PlantInteract : Interactable
         switch (type)
         {
             case InteractionType.Pickup:
-            Debug.Log("Yes! Player pickup.");
-            GameObject heldpoint = player.GetComponent<PlayerInteraction>().heldPoint;
-            transform.SetParent(heldpoint.transform, false);
-            transform.localPosition = Vector3.zero;
-            rb.isKinematic = true;
-            if (agent != null) agent.enabled = false;
-                break;
+                Debug.Log("Yes! Player pickup.");
+                GameObject heldpoint = player.GetComponent<PlayerInteraction>().heldPoint;
+                transform.SetParent(heldpoint.transform, false);
+                transform.localPosition = Vector3.zero;
+                rb.isKinematic = true;
+                if (agent != null) agent.enabled = false;
+                    break;
 
             case InteractionType.Plant:
                 Debug.Log("I am being planted!");
@@ -59,20 +60,43 @@ public class PlantInteract : Interactable
                     Debug.Log("The current grid is OCCUPIED! proceed to dropping.");
                     goto case InteractionType.Drop;
                 }
+
+
             case InteractionType.Drop:
-            rb.isKinematic = false;
-            transform.SetParent(null);
+                rb.isKinematic = false;
+                transform.SetParent(null);
+                Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
+                rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
 
-            if (agent != null) agent.enabled = true;
+                // if (agent != null) agent.enabled = true;
+                if (agent != null)
+                {
+                    // start coroutine to re-enable agent after landing
+                    StartCoroutine(ReenableAgentWhenGrounded());
+                }
 
-            Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
-            rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
-            break;
+                // if (agent != null) agent.enabled = true; This line will immediately activate the agent, so that we might be carried away!
+                break;
 
             case InteractionType.Fertilize:
                 GetComponent<Plant>().PooPoo();
                 break;
 
+        }
+    }
+
+    private IEnumerator ReenableAgentWhenGrounded()
+    {
+        // wait until the next fixed update to allow physics to settle
+        yield return new WaitForFixedUpdate();
+        // optionally, wait a bit longer if needed:
+        yield return new WaitForSeconds(1.5f);
+
+        if (agent != null)
+        {
+            agent.Warp(transform.position);
+            agent.ResetPath();
+            agent.enabled = true;
         }
     }
 }
