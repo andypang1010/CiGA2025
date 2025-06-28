@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4292750855236216153}
   - component: {fileID: 4132101069294612684}
   m_Layer: 7
-  m_Name: PlantC
+  m_Name: Grass
   m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
