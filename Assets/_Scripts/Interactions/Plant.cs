@@ -49,6 +49,15 @@ public class Plant : MonoBehaviour
     [Header("Animation Settings")]
     public Animator animator;
 
+    [Header("Poo Decay Settings")]
+    public float pooDecayInterval = 5f; // how often it decays
+    private float pooDecayTimer = 0f;
+
+    [Header("Music Decay Settings")]
+    public float musicDecayInterval = 5f;  // how long before music effect wears off
+    private float musicDecayTimer = 0f;
+
+
     private void Start()
     {
         plantRenderer = GetComponent<Renderer>();
@@ -90,7 +99,38 @@ public class Plant : MonoBehaviour
         }
     
         HandleWandering();
+        HandlePooDecay();
+        HandleMusicDecay();
     }
+    private void HandlePooDecay()
+{
+    if (pooCount <= 0) return; // don't go negative
+
+    pooDecayTimer += Time.deltaTime;
+
+    if (pooDecayTimer >= pooDecayInterval)
+    {
+        pooCount--;
+        pooCount = Mathf.Max(0, pooCount); // just in case
+        Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
+
+        pooDecayTimer = 0f; // reset timer
+    }
+}
+    private void HandleMusicDecay()
+{
+    if (!musicPlayed) return;  // nothing to decay
+
+    musicDecayTimer += Time.deltaTime;
+
+    if (musicDecayTimer >= musicDecayInterval)
+    {
+        musicPlayed = false;
+        Debug.Log("🎵 Music effect wore off!");
+        musicDecayTimer = 0f;
+    }
+}
+
 
     private void HandleWandering()
 {
@@ -240,6 +280,7 @@ public class Plant : MonoBehaviour
         if (musicPlayed || isPerfect) return;
 
         musicPlayed = true;
+        musicDecayTimer = 0f;
         Debug.Log("nice music!");
         CheckPerfection();
     }
