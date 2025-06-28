@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Grid:MonoBehaviour
+public class Grid : MonoBehaviour
 {
     public bool isOccupied = false;
 

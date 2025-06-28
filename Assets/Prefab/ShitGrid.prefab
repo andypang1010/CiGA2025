@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4129747600188498968}
   - component: {fileID: 8085549373280669171}
   - component: {fileID: 2824414213558830105}
+  - component: {fileID: 2234175964277443504}
   m_Layer: 8
   m_Name: ShitGrid
   m_TagString: Untagged
@@ -143,3 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4dcdf3737493294495f0ea39c3697c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2234175964277443504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143679264109231899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a99d2412a0ea0b478982b9b4768060b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOccupied: 0
