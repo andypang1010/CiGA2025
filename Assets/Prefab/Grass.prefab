@@ -493,7 +493,7 @@ MonoBehaviour:
   tooMuchPoo: 5
   musicNeeded: 1
   tooMuchMusic: 8
-  waterRate: 1.83
+  waterRate: 10
   sunRate: 0.08
   sunDecayRate: 0.25
   musicRate: 7

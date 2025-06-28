@@ -283,18 +283,13 @@ public class Plant : MonoBehaviour
 
     public void Water()
     {
-        waterLevel += waterRate * Time.deltaTime;
+        waterLevel += waterRate;
         Debug.Log($"Water level: {waterLevel}");
 
         if (waterLevel >= tooMuchWater)
         {
             Debug.Log("drowned!");
             isDead = true;
-        }
-        else if (waterLevel >= waterNeeded)
-        {
-            Debug.Log("watered up!");
-            CheckPerfection();
         }
     }
 
@@ -335,7 +330,7 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public void ListenToMusic()
+  public void ListenToMusic()
 {
     if (isPerfect) return;
 
