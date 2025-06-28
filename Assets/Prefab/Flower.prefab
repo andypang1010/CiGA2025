@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwSpeed: 50
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 1951841938102500872}
 --- !u!195 &7247318690663682136
 NavMeshAgent:
   m_ObjectHideFlags: 0
