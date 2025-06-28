@@ -31,14 +31,10 @@ public class PlantInteract : Interactable
             case InteractionType.Pickup:
             Debug.Log("Yes! Player pickup.");
             GameObject heldpoint = player.GetComponent<PlayerInteraction>().heldPoint;
-
             transform.SetParent(heldpoint.transform, false);
             transform.localPosition = Vector3.zero;
-
             rb.isKinematic = true;
-
             if (agent != null) agent.enabled = false;
-
                 break;
 
             case InteractionType.Plant:
