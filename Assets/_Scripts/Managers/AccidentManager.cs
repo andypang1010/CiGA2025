@@ -28,7 +28,7 @@ public class AccidentManager : MonoBehaviour
     public int maxNumPlantsRunning = 1;
     [SerializeField] List<GameObject> plants;
 
-    string[] accidentables = { "Cow", };
+    string[] qteAccidentables = { "Cow" };
 
     private void Start()
     {
@@ -77,7 +77,7 @@ public class AccidentManager : MonoBehaviour
         if ((int)UnityEngine.Random.Range(0, 1 / accidentFrequency) == 0)
         {
             lastCheckTime = Time.time;
-            foreach(var accidentable in accidentables)
+            foreach(var accidentable in qteAccidentables)
             {
                 // Find all objects with the specified tag
                 interactables.AddRange(GameObject.FindGameObjectsWithTag(accidentable));

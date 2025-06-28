@@ -37,7 +37,16 @@ public class PlantInteract : Interactable
                 transform.SetParent(heldpoint.transform, false);
                 transform.localPosition = Vector3.zero;
                 rb.isKinematic = true;
-                if (agent != null) agent.enabled = false;
+                if (agent != null)
+                {
+                    agent.enabled = false;
+                    GameObject.Find("GAME CONTROLLER").GetComponent<AccidentManager>().currentNumPlantsRunning = 
+                        Mathf.Clamp(
+                            GameObject.Find("GAME CONTROLLER").GetComponent<AccidentManager>().currentNumPlantsRunning - 1, 
+                            0, 
+                            GameObject.Find("GAME CONTROLLER").GetComponent<AccidentManager>().maxNumPlantsRunning
+                        );
+                }
                 isHoldingThing = true;
                 break;
 

@@ -347,9 +347,9 @@ MonoBehaviour:
   returnTime: 5
   canWander: 1
   wanderChance: 0.706
-  wanderInterval: 5
+  wanderInterval: 3
   wanderDuration: 2
-  wanderRadius: 5
+  wanderRadius: 7
   animator: {fileID: 8740984321745965887}
   isLit: 0
   pooDecayInterval: 5
@@ -375,7 +375,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8376311601829622201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
