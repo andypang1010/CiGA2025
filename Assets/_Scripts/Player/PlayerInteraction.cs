@@ -1,23 +1,33 @@
 ﻿using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public Animator animator;
+
+    [Header("Plant Stats")]
+    public GameObject statsUI;
+    public TMP_Text plantName;
+    public Slider waterSlider;
+    public Slider sunlightSlider;
+    public Slider musicSlider;
+    public Slider shitSlider;
+
+    [Header("Interaction Points")]
     public GameObject heldPoint;
-    /// <summary>
-    /// This variable is currently UNUSED. originally, it's for snapping the held object's position before throwing.
-    /// </summary>
     public GameObject throwPoint;
     public GameObject gridPoint;
     public float interactRange = 0.5f;
     public float gridDetectionRange = 2.5f;
     public GameObject closestGrid;
+    public GameObject waterObject;
+
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
-    public GameObject waterObject;
 
 
     private void Start()
@@ -47,6 +57,31 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
+
+        if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
+        {
+            // Update plant stats UI
+            statsUI.SetActive(true);
+
+            plantName.text = plant.name;
+
+            waterSlider.value = plant.GetWaterLevel();
+            waterSlider.maxValue = plant.tooMuchWater;
+
+            sunlightSlider.value = plant.GetSunLevel();
+            sunlightSlider.maxValue = plant.tooMuchSun;
+
+            musicSlider.value = plant.GetMusicLevel() ? 1 : 0;
+            musicSlider.maxValue = 1;
+
+            shitSlider.value = plant.GetPooCount();
+            shitSlider.maxValue = plant.pooNeeded;
+        }
+
+        else
+        {
+            statsUI.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
