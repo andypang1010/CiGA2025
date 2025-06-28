@@ -53,17 +53,21 @@ public class AccidentManager : MonoBehaviour
     void Update()
     {
         //////////////////////////////// CHASE CODE ////////////////////////////////
-        if (Time.time - lastCheckTime < checkInterval || currentNumPlantsRunning >= maxNumPlantsRunning) return;
+        if (currentNumPlantsRunning < maxNumPlantsRunning)
+        {
+            // Ignore all plants with NavMeshAgent
+            plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).Select(plant => plant.gameObject).ToList();
 
-        // Ignore all plants with NavMeshAgent
-        plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).Select(plant => plant.gameObject).ToList();
-
-        plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
-        currentNumPlantsRunning++;
+            plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
+            currentNumPlantsRunning++;
+        }
 
         //////////////////////////////// QTE CODE ////////////////////////////////
         // Only check once per checkInterval seconds and if there is no active accident
-        if (Time.time - lastCheckTime < checkInterval || HasAccident()) return;
+
+        if (Time.time - lastCheckTime < checkInterval) return;
+
+        if (HasActiveAccident()) return;
 
         // Check if an accident should occur
         if ((int)UnityEngine.Random.Range(0, 1 / accidentFrequency) == 0)
@@ -108,7 +112,7 @@ public class AccidentManager : MonoBehaviour
         }
     }
 
-    bool HasAccident()
+    bool HasActiveAccident()
     {
         Accident[] accidents = FindObjectsByType<Accident>(FindObjectsSortMode.None);
 
