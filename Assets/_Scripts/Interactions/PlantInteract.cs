@@ -6,6 +6,7 @@ public class PlantInteract : Interactable
     GameObject player;
     Rigidbody rb;
     [SerializeField] float throwSpeed = 50;
+    UnityEngine.AI.NavMeshAgent agent;
 
     private void Start()
     {
@@ -15,18 +16,29 @@ public class PlantInteract : Interactable
         { 
             Debug.LogError("Hello! Plant cannot find Player.");
         }
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (agent == null)
+        {
+    Debug.LogWarning("Plant has no NavMeshAgent — wandering won't work.");
+        }
+
+        
     }
     public override void React(InteractionType type)
     {
         switch (type)
         {
             case InteractionType.Pickup:
-                // get held point from player
-                Debug.Log("Yes! Player pickup.");
-                GameObject heldpoint = player.GetComponent<PlayerInteraction>().heldPoint;
-                transform.SetParent(heldpoint.transform);
-                transform.localPosition = Vector3.zero;
-                rb.isKinematic = true;
+            Debug.Log("Yes! Player pickup.");
+            GameObject heldpoint = player.GetComponent<PlayerInteraction>().heldPoint;
+
+            transform.SetParent(heldpoint.transform, false);
+            transform.localPosition = Vector3.zero;
+
+            rb.isKinematic = true;
+
+            if (agent != null) agent.enabled = false;
+
                 break;
 
             case InteractionType.Plant:
@@ -51,13 +63,14 @@ public class PlantInteract : Interactable
                     goto case InteractionType.Drop;
                 }
             case InteractionType.Drop:
-                rb.isKinematic = false;
-                transform.SetParent(null);
-                // GameObject throwPoint = player.GetComponent<PlayerInteraction>().throwPoint;
-                // transform.position = throwPoint.transform.position;
-                Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
-                rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
-                break;
+            rb.isKinematic = false;
+            transform.SetParent(null);
+
+            if (agent != null) agent.enabled = true;
+
+            Vector3 faceDir = player.GetComponent<PlayerMovement>().faceDirection;
+            rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
+            break;
 
             case InteractionType.Fertilize:
                 GetComponent<Plant>().PooPoo();

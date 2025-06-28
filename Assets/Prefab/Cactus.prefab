@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7927158931573259929}
   - component: {fileID: 2728387901001253936}
   - component: {fileID: 7800370564439944594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2490124234680314008}
   - component: {fileID: -7439004421324525386}
   - component: {fileID: 6906074724179648391}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cactus
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
