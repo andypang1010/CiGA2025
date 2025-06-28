@@ -25,6 +25,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject closestGrid;
     public GameObject waterObject;
     public GameObject musicObject;
+
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
@@ -40,13 +41,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         interactPressed = Input.GetKeyDown(KeyCode.E);
         if (musicObject != null)
-{
-    Debug.Log($"Player is inside MusicSource: {musicObject.name}");
-}
-else
-{
-    Debug.Log("Not inside any MusicSource");
-}
+        {
+            Debug.Log($"Player is inside MusicSource: {musicObject.name}");
+        }
+        else
+        {
+            Debug.Log("Not inside any MusicSource");
+        }
 
         // update throwpoint to always stay in front of player
         Vector3 faceDir = movement.faceDirection;
@@ -85,11 +86,11 @@ else
             sunlightSlider.value = plant.GetSunLevel();
             sunlightSlider.maxValue = plant.tooMuchSun;
 
-            musicSlider.value = plant.GetMusicLevel() ? 1 : 0;
-            musicSlider.maxValue = 1;
+            musicSlider.value = plant.GetMusicLevel();
+            musicSlider.maxValue = plant.tooMuchMusic;
 
             shitSlider.value = plant.GetPooCount();
-            shitSlider.maxValue = plant.pooNeeded;
+            shitSlider.maxValue = plant.tooMuchPoo;
         }
 
         else
