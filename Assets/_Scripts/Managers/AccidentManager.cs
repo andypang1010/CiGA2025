@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class AccidentManager : MonoBehaviour
@@ -47,28 +48,19 @@ public class AccidentManager : MonoBehaviour
         //////////////////////////////// CHASE CODE ////////////////////////////////
         if (Time.time - lastCheckTime < checkInterval || currentNumPlantsRunning >= maxNumPlantsRunning) return;
 
+        plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Select(plant => plant.gameObject).ToList();
 
+        // Ignore all active plants
+        foreach (GameObject plant in plants)
+        {
+            if (plant.GetComponent<NavMeshAgent>().enabled)
+            {
+                plants.Remove(plant);
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
+        currentNumPlantsRunning++;
 
         //////////////////////////////// QTE CODE ////////////////////////////////
         // Only check once per checkInterval seconds and if there is no active accident
