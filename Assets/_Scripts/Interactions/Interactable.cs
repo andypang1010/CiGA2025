@@ -8,6 +8,7 @@ public enum InteractionType
     Plant,
     Feed,
     Consume,
+    Fertilize,
     // …etc
 }
 

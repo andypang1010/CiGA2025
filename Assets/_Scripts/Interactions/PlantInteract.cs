@@ -29,6 +29,27 @@ public class PlantInteract : Interactable
                 rb.isKinematic = true;
                 break;
 
+            case InteractionType.Plant:
+                Debug.Log("I am being planted!");
+                GameObject grid = player.GetComponent<PlayerInteraction>().closestGrid;
+                if (grid == null) { 
+                    Debug.LogError("There's no grid nearby but a plant is being planted.");
+                    break;
+                }
+                if (!grid.GetComponent<Grid>().isOccupied)
+                {
+                    transform.SetParent(null);
+                    // snap above the grid
+                    transform.position = grid.transform.position + Vector3.up * 0.5f;
+                    rb.isKinematic = true;
+                    break;
+                }
+                else
+                {
+                    // it is OCCUPIED, GOTO DROP LOGIC
+                    Debug.Log("The current grid is OCCUPIED! proceed to dropping.");
+                    goto case InteractionType.Drop;
+                }
             case InteractionType.Drop:
                 rb.isKinematic = false;
                 transform.SetParent(null);
@@ -38,17 +59,8 @@ public class PlantInteract : Interactable
                 rb.AddForce(Vector3.up * 3 + faceDir * throwSpeed, ForceMode.Impulse);
                 break;
 
-            case InteractionType.Plant:
-                Debug.Log("I am being planted!");
-                GameObject grid = player.GetComponent<PlayerInteraction>().closestGrid;
-                if (grid == null) { 
-                    Debug.LogError("There's no grid nearby but a plant is being planted.");
-                    break;
-                }
-                transform.SetParent(null);
-                // snap above the grid
-                transform.position = grid.transform.position + Vector3.up * 0.5f;
-                rb.isKinematic = true;
+            case InteractionType.Fertilize:
+                GetComponent<Plant>().PooPoo();
                 break;
 
         }

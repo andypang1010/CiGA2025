@@ -4,8 +4,9 @@ using UnityEngine;
 public class Shit : Interactable
 {
     public float shitExpirationTime = 3;
+    public bool isConsumed = false;
     private float originalExpiration;
-    private bool isShitEnabled = false;
+    public bool isShitEnabled = false;
     SpriteRenderer sr;
 
     private void Start()
@@ -17,7 +18,15 @@ public class Shit : Interactable
 
     public override void React(InteractionType type)
     {
-        // TODO: interaction w/ shii?
+        switch (type)
+        {
+            case InteractionType.Consume:
+                // TODO: START playing ANIMATION
+                isConsumed = true;
+                sr.enabled = false;
+                isShitEnabled = false;
+                break;
+        }
         return;
     }
 
@@ -27,7 +36,6 @@ public class Shit : Interactable
         {
             shitExpirationTime -= Time.deltaTime;
         }
-
         if (shitExpirationTime <= 0.01f)
         {
             isShitEnabled = false;
@@ -40,6 +48,8 @@ public class Shit : Interactable
     public void InitShit()
     {
         sr.enabled = true;
+        isConsumed = false;
         isShitEnabled = true;
+        shitExpirationTime = originalExpiration;
     }
 }

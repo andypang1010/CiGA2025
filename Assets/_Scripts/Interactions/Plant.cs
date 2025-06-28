@@ -159,10 +159,6 @@ public class Plant : MonoBehaviour
         {
             ListenToMusic();
         }
-        else if (other.CompareTag("PooArea"))
-        {
-            PooPoo();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -201,6 +197,26 @@ public class Plant : MonoBehaviour
         }
     }
 
+    public void PooPoo()
+    {
+        if (isPerfect) return;
+
+        pooCount += 1;
+        if (pooCount > pooNeeded)
+        {
+            Debug.Log("too much poo TT!");
+        }
+        else if (pooCount < pooNeeded)
+        {
+            Debug.Log("more poo required!");
+        }
+        else if (pooCount == pooNeeded)
+        {
+            Debug.Log("poopoo is goodgood");
+            CheckPerfection();
+        }
+    }
+
     private void ExposeToLight()
     {
         sunLevel += sunRate * Time.deltaTime;
@@ -225,26 +241,6 @@ public class Plant : MonoBehaviour
         musicPlayed = true;
         Debug.Log("nice music!");
         CheckPerfection();
-    }
-
-    private void PooPoo()
-    {
-        if (isPerfect) return;
-
-        pooCount += 1;
-        if (pooCount > pooNeeded)
-        {
-            Debug.Log("too much poo TT!");
-        }
-        else if (pooCount < pooNeeded)
-        {
-            Debug.Log("more poo required!");
-        }
-        else if (pooCount == pooNeeded)
-        {
-            Debug.Log("poopoo is goodgood");
-            CheckPerfection();
-        }
     }
 
     private void CheckPerfection()
