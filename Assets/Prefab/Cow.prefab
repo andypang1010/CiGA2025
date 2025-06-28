@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8169158525119823221}
   - component: {fileID: 1128714260931259922}
   - component: {fileID: 6597806468161938772}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cow
-  m_TagString: Untagged
+  m_TagString: Cow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 4403217024326451490}
   - component: {fileID: 8557757612099189054}
   - component: {fileID: 7501274488762747415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 2802708727515841200}
   - component: {fileID: 4837301195103575437}
   - component: {fileID: 4798431845034918711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shiiii
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7252792485341188434}
   - component: {fileID: 6793848593294612409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: '!!!'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
