@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        if (heldObject == null) { Debug.LogError("Player should have a held point!!"); }
+        //if (heldObject == null) { Debug.LogError("Player should have a held point!!"); }
         // if (throwPoint == null) { Debug.LogError("Player should have a throw point!!"); }
         movement = GetComponent<PlayerMovement>();
     }

@@ -2610,6 +2610,10 @@ PrefabInstance:
       propertyPath: sunlightSlider
       value: 
       objectReference: {fileID: 1209484337}
+    - target: {fileID: 4255995839128292686, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2336218575738361970, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
@@ -2954,7 +2958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345731626644682158, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745989027374786943, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Value
@@ -2966,7 +2970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4255757309912387075, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4410576416488981556, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3018,7 +3022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7145798972854834887, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8907966512068104934, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Name

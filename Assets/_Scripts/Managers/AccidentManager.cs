@@ -55,16 +55,8 @@ public class AccidentManager : MonoBehaviour
         //////////////////////////////// CHASE CODE ////////////////////////////////
         if (Time.time - lastCheckTime < checkInterval || currentNumPlantsRunning >= maxNumPlantsRunning) return;
 
-        plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Select(plant => plant.gameObject).ToList();
-
-        // Ignore all active plants
-        foreach (GameObject plant in plants)
-        {
-            if (plant.GetComponent<NavMeshAgent>().enabled)
-            {
-                plants.Remove(plant);
-            }
-        }
+        // Ignore all plants with NavMeshAgent
+        plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).Select(plant => plant.gameObject).ToList();
 
         plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
         currentNumPlantsRunning++;
