@@ -46,6 +46,9 @@ public class Plant : MonoBehaviour
     private float wanderDurationTimer = 0f;
     private bool isWandering = false;
 
+    [Header("Animation Settings")]
+    public Animator animator;
+
     private void Start()
     {
         plantRenderer = GetComponent<Renderer>();
@@ -63,6 +66,7 @@ public class Plant : MonoBehaviour
 
         // Random chance to decide whether to wander
         canWander = Random.value <= wanderChance;
+
     }
 
     private void Update()
@@ -80,6 +84,10 @@ public class Plant : MonoBehaviour
             }
         }
 
+        if(isDead)
+        {
+            animator.SetTrigger("isDead");
+        }
     
         HandleWandering();
     }

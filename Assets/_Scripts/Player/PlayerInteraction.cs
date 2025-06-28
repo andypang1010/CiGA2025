@@ -45,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        animator.SetBool("HasHeldObject", heldObject != null);
+        animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
     }
 
     private void FixedUpdate()
