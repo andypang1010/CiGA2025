@@ -26,6 +26,11 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject waterObject;
     public GameObject musicObject;
 
+    [Header("Hold to Play Music")]
+    public float musicHoldDuration = 2.0f;  // How long to hold Space
+    private float musicHoldTimer = 0.0f;
+    private bool musicPlayed = false;   
+
     bool interactPressed;
     GameObject heldObject;
     PlayerMovement movement;
@@ -39,65 +44,96 @@ public class PlayerInteraction : MonoBehaviour
     }
     void Update()
     {
-        interactPressed = Input.GetKeyDown(KeyCode.E);
-        if (musicObject != null)
+    interactPressed = Input.GetKeyDown(KeyCode.E);
+
+    // === DEBUG for Music Source ===
+    if (musicObject != null)
+    {
+        Debug.Log($"Player is inside MusicSource: {musicObject.name}");
+    }
+    else
+    {
+        Debug.Log("Not inside any MusicSource");
+    }
+
+    // === Update Throw Point if needed ===
+    Vector3 faceDir = movement.faceDirection;
+    // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
+
+    // === Water logic ===
+    if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
+    {
+        if (heldObject == null && Input.GetKey(KeyCode.Space))
         {
-            Debug.Log($"Player is inside MusicSource: {musicObject.name}");
-        }
-        else
-        {
-            Debug.Log("Not inside any MusicSource");
-        }
-
-        // update throwpoint to always stay in front of player
-        Vector3 faceDir = movement.faceDirection;
-
-
-        // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
-
-        // Water logic; IT IS NOT AN INTERACTION. Should not belong here. but i should make it work first.
-        if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
-        {
-            if (heldObject == null && Input.GetKey(KeyCode.Space))
-            {
-                water.StartWatering();
-            }
-        }
-        if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
-        {
-            if (heldObject == null && Input.GetKey(KeyCode.Space))
-                {
-                    music.StartPlayingMusic();
-                }
-}
-
-        animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
-
-        if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
-        {
-            // Update plant stats UI
-            statsUI.SetActive(true);
-
-            plantName.text = plant.name;
-
-            waterSlider.value = plant.GetWaterLevel();
-            waterSlider.maxValue = plant.tooMuchWater;
-
-            sunlightSlider.value = plant.GetSunLevel();
-            sunlightSlider.maxValue = plant.tooMuchSun;
-
-            musicSlider.value = plant.GetMusicLevel();
-            musicSlider.maxValue = plant.tooMuchMusic;
-
-            shitSlider.value = plant.GetPooCount();
-            shitSlider.maxValue = plant.tooMuchPoo;
-        }
-
-        else
-        {
-            statsUI.SetActive(false);
+            water.StartWatering();
         }
     }
+
+    // === Hold-to-Play Music logic ===
+    if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
+    {
+        if (heldObject == null)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                // Accumulate hold time
+                musicHoldTimer += Time.deltaTime;
+
+                // If held long enough, play music once
+                if (musicHoldTimer >= musicHoldDuration && !musicPlayed)
+                {
+                    music.StartPlayingMusic();
+                    musicPlayed = true;
+                }
+            }
+            else
+            {
+                // Released early, reset
+                musicHoldTimer = 0.0f;
+                musicPlayed = false;
+            }
+        }
+        else
+        {
+            // If holding an object, reset
+            musicHoldTimer = 0.0f;
+            musicPlayed = false;
+        }
+    }
+    else
+    {
+        // If not inside any MusicSource, reset
+        musicHoldTimer = 0.0f;
+        musicPlayed = false;
+    }
+
+    // === Update animator ===
+    animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
+
+    // === Update Plant Stats UI ===
+    if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
+    {
+        statsUI.SetActive(true);
+
+        plantName.text = plant.name;
+
+        waterSlider.value = plant.GetWaterLevel();
+        waterSlider.maxValue = plant.tooMuchWater;
+
+        sunlightSlider.value = plant.GetSunLevel();
+        sunlightSlider.maxValue = plant.tooMuchSun;
+
+        musicSlider.value = plant.GetMusicLevel();
+        musicSlider.maxValue = plant.tooMuchMusic;
+
+        shitSlider.value = plant.GetPooCount();
+        shitSlider.maxValue = plant.tooMuchPoo;
+    }
+    else
+    {
+        statsUI.SetActive(false);
+    }
+}
 
     private void FixedUpdate()
     {
