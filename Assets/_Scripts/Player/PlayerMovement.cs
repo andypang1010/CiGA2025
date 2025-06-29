@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 moveDirection;
     public Vector3 faceDirection;
     Rigidbody rb;
+    public AudioSource footstep;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        footstep.Play(0);
     }
 
     void Update()
@@ -34,6 +36,16 @@ public class PlayerMovement : MonoBehaviour
         {
             faceDirection = new Vector3(x, 0, y).normalized;
             sr.flipX = faceDirection.x < 0;
+        }
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            footstep.UnPause();
+            Debug.Log("play walk sound");
+        }
+        else
+        {
+            footstep.Pause();
         }
     }
 

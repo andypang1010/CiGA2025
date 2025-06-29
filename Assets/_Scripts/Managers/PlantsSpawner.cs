@@ -26,6 +26,7 @@ public class PlantsSpawner : MonoBehaviour
 
     private float timer = 0f;
     private List<GameObject> spawnedPlants = new List<GameObject>();
+    public AudioSource spawnSound;
 
     private void Start()
     {
@@ -79,6 +80,7 @@ public class PlantsSpawner : MonoBehaviour
                 nextSpawnIndex++;
 
                 GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);
+                spawnSound.Play();
                 var plantScript = newPlant.GetComponent<Plant>();
                 plantScript.initialSun = data.initialSun;
                 plantScript.initialWater = data.initialWater;

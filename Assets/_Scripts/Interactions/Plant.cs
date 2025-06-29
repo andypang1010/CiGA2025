@@ -85,6 +85,11 @@ public class Plant : MonoBehaviour
     private float waterDecayTimer = 0f;
 
 
+    [Header("Audios")]
+    public AudioSource warnSound;
+    public AudioSource deathSound;
+
+
     private void Start()
     {
         plantInitiation();
@@ -147,11 +152,13 @@ public class Plant : MonoBehaviour
         if (waterLevel >= tooMuchWater)
         {
             Debug.Log("drowned!");
+            deathSound.Play();
             isDead = true;
         }
         else if (waterLevel <= 0)
         {
             Debug.Log("thirst");
+            deathSound.Play();
             isDead = true;
         }
 
@@ -159,12 +166,14 @@ public class Plant : MonoBehaviour
         if (sunLevel>= tooMuchSun)
         {
             Debug.Log("dried");
+            deathSound.Play();
             isDead = true;
             isBurnt = true;
         }
         else if (sunLevel <= 0)
         {
             Debug.Log("withered");
+            deathSound.Play();
             isDead = true;
         }
 
@@ -172,6 +181,7 @@ public class Plant : MonoBehaviour
         if(musicLevel <= 0)
         {
             Debug.Log("depressed");
+            deathSound.Play();
             isDead = true;
         }
 
@@ -179,12 +189,14 @@ public class Plant : MonoBehaviour
         if (pooCount > pooNeeded)
         {
             Debug.Log("too much poo TT!");
+            deathSound.Play();
             isDead = true;
             isShit = true;
         }
         else if (pooCount <= 0)
         {
             Debug.Log("malnutrition");
+            deathSound.Play();
             isDead = true;
         }
 
@@ -198,9 +210,12 @@ public class Plant : MonoBehaviour
         }else if(isShit) {
             animator.SetTrigger("isShit");
         }
-        else { animator.SetTrigger("isDead"); }
+        else { 
+            animator.SetTrigger("isDead"); 
+        }
         
         warningUI.SetActive(false);
+        warnSound.Stop();
     }
 
     private void HandleSunDecay()
@@ -344,7 +359,15 @@ public class Plant : MonoBehaviour
         }
         else if (other.CompareTag("PooArea"))
         {
-            warningUI.SetActive(pooCount >= pooNeeded);
+            if(pooCount>=pooNeeded)
+            {
+                warningUI.SetActive(true);
+                if (!warnSound.isPlaying)
+                {
+                    warnSound.Play();
+                }
+            }
+            
         }
     }
 
@@ -365,12 +388,26 @@ public class Plant : MonoBehaviour
         {
             isLit = false;
             warningUI.SetActive(false);
-        }else if (other.CompareTag("WaterArea"))
+            if (warnSound.isPlaying)
+            {
+                warnSound.Stop();
+            }
+        }
+        else if (other.CompareTag("WaterArea"))
         {
             warningUI.SetActive(false) ;
-        }else if (other.CompareTag("PooArea"))
+            if (warnSound.isPlaying)
+            {
+                warnSound.Stop();
+            }
+        }
+        else if (other.CompareTag("PooArea"))
         {
             warningUI.SetActive(false ) ;
+            if (warnSound.isPlaying)
+            {
+                warnSound.Stop();
+            }
         }
     }
 
@@ -379,7 +416,14 @@ public class Plant : MonoBehaviour
         if(isDead) return;
         waterLevel += waterRate;
 
-        warningUI.SetActive(waterLevel >= maxWater);
+        if (waterLevel >= maxWater)
+        {
+            warningUI.SetActive(true);
+            if (!warnSound.isPlaying)
+            {
+                warnSound.Play();
+            }
+        }
         //Debug.Log($"Water level: {waterLevel}");
     }
 
@@ -393,7 +437,16 @@ public class Plant : MonoBehaviour
     {
         if (isDead) return;
         sunLevel += sunRate * Time.deltaTime;
-        warningUI.SetActive(sunLevel >= maxSun);
+        if (sunLevel >= maxSun)
+        {
+            warningUI.SetActive(true);
+            if (!warnSound.isPlaying)
+            {
+                warnSound.Play();
+            }
+            
+            Debug.Log("Burnt");
+        }
         // Debug.Log($"Sun level: {sunLevel}");
     }
 

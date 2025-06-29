@@ -36,6 +36,7 @@ public class PlayerInteraction : MonoBehaviour
     public float waterHoldDuration = 2.0f; // seconds to hold before watering
     private float waterHoldTimer = 0.0f;
     public Slider waterHoldSlider;  // assign this in the Inspector
+    public AudioSource waterSound;
 
     bool interactPressed;
     GameObject heldObject;
@@ -77,11 +78,13 @@ public class PlayerInteraction : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     waterHoldTimer += Time.deltaTime;
+                    
 
                     if (waterHoldTimer >= waterHoldDuration)
                     {
                         Debug.Log("Hold complete! Starting watering...");
                         water.StartWatering();
+                        waterSound.Play();
 
                         // Reset for next cycle if you want repeated watering
                         waterHoldTimer = 0.0f;
@@ -94,6 +97,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     // Reset if they release early
                     waterHoldTimer = 0.0f;
+                    waterSound.Pause();
 
                     GetComponent<PlayerMovement>().enabled = true; // Disable movement while holding water
                 }

@@ -15,6 +15,7 @@ public class Cow : Interactable
     [SerializeField] Sprite deadSprite;
     [SerializeField] private GameObject accidentMark;
     private bool isDepressed = false;
+    public AudioSource poopSound;
 
     private void Start()
     {
@@ -83,6 +84,7 @@ public class Cow : Interactable
             // handle shit logic
             // TODO
             animator.SetTrigger("Poop");
+            poopSound.Play();
 
             shitLevel = 0;
         }
