@@ -6,9 +6,9 @@ public class PlantsSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
     public GameObject[] plantPrefabs;
-    public float spawnInterval = 5f;
-    public int maxPlants = 10;
-    public float plantCheckRadius = 0.5f; // Radius to check for overlaps
+    public float spawnInterval = 1;
+    public int maxPlants = 5;
+    public float plantCheckRadius = 1f; // Radius to check for overlaps
 
     [Header("Spawn Area")]
     public BoxCollider spawnArea;
