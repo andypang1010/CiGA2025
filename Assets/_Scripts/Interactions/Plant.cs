@@ -17,6 +17,8 @@ public class Plant : MonoBehaviour
     public GameObject sunUI;
     public GameObject pooUI;
     public GameObject musicUI;
+    public GameObject deathUI;
+    public GameObject warningUI;
 
     [Header("Growth Settings")]
     // 0(DEATH) - (POPUP) - minwater - maxwater - (WARNING) - tooMuchWater(DEATH)
@@ -30,7 +32,7 @@ public class Plant : MonoBehaviour
     public float maxSun = 5f;
     public float tooMuchSun = 10f;
 
-    public int initialPoo = 2; 
+    public int initialPoo = 2;
     public int pooNeeded = 1;
 
     public int initialMusic = 2;
@@ -39,7 +41,7 @@ public class Plant : MonoBehaviour
     [Header("Growth Rates (units per second)")]
     public float waterRate = 1f;
     public float sunRate = 0.5f;
-    public float musicRate = 0.2f;  
+    public float musicRate = 0.2f;
 
     [Header("Visuals")]
     public Material perfectMaterial;
@@ -69,12 +71,12 @@ public class Plant : MonoBehaviour
 
     [Header("Poo Decay Settings")]
     public float pooDecayInterval = 5f; // how often it decays
-    public float pooDecayAmount = 1f; 
+    public float pooDecayAmount = 1f;
     private float pooDecayTimer = 0f;
 
     [Header("Music Decay Settings")]
     public float musicDecayInterval = 5f;  // how long before music effect wears off
-    public float musicDecayAmount = 1f; 
+    public float musicDecayAmount = 1f;
     private float musicDecayTimer = 0f;
 
     [Header("Water Decay Settings")]
@@ -110,21 +112,24 @@ public class Plant : MonoBehaviour
 
         CheckDeath();
 
-        if(isDead)
+        if (isDead)
         {
             HandleDeath();
         }
-    
+
         HandleWandering();
         HandleSunDecay();
         HandleWaterDecay();
         HandlePooDecay();
         HandleMusicDecay();
 
-        waterUI.SetActive(waterLevel<=minWater);
-        sunUI.SetActive(sunLevel<=minSun);
-        pooUI.SetActive(pooCount<=1);
-        musicUI.SetActive(musicLevel<=1);
+        waterUI.SetActive(waterLevel <= minWater && !isDead);
+        sunUI.SetActive(sunLevel <= minSun && !isDead);
+        pooUI.SetActive(pooCount <= 1 && !isDead);
+        musicUI.SetActive(musicLevel <= 1 && !isDead);
+        deathUI.SetActive(isDead);
+        
+        
     }
     private void plantInitiation()
     {
@@ -353,6 +358,13 @@ public class Plant : MonoBehaviour
         if (other.CompareTag("SunArea"))
         {
             isLit = false;
+            warningUI.SetActive(false);
+        }else if (other.CompareTag("waterArea"))
+        {
+            warningUI.SetActive(false) ;
+        }else if (other.CompareTag("pooArea"))
+        {
+            warningUI.SetActive(false ) ;
         }
     }
 
@@ -360,6 +372,8 @@ public class Plant : MonoBehaviour
     {
         if(isDead) return;
         waterLevel += waterRate;
+
+        warningUI.SetActive(waterLevel >= maxWater);
         //Debug.Log($"Water level: {waterLevel}");
     }
 
@@ -367,12 +381,14 @@ public class Plant : MonoBehaviour
     {
         if (isDead) return;
         pooCount += 1;
+        warningUI.SetActive(pooCount>=pooNeeded);
     }
 
     private void ExposeToLight()
     {
         if (isDead) return;
         sunLevel += sunRate * Time.deltaTime;
+        warningUI.SetActive(sunLevel >= maxSun);
         // Debug.Log($"Sun level: {sunLevel}");
     }
 
