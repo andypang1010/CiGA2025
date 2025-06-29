@@ -3,6 +3,7 @@ using UnityEngine;
 public class Cow : Interactable
 {
     public bool testDeath = false;
+    public bool testDepressed = false;
     public bool isDead = false;
     public GameObject shitPoint;
     public float shitLevel = 0;
@@ -30,6 +31,12 @@ public class Cow : Interactable
             accidentMark.SetActive(true);
             return;
         }
+        if (testDepressed)
+        {
+            animator.SetTrigger("Depressed");
+            accidentMark.SetActive(true);
+            return;
+        }
 
         // CHECK ACCIDENT
         if (TryGetComponent<Accident>(out Accident acc))
@@ -38,6 +45,7 @@ public class Cow : Interactable
             {
                 accidentMark.SetActive(true);
                 // TODO: change to acc. anim
+                animator.SetTrigger("Depressed");
             }
             else
             {
