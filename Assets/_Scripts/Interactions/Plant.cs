@@ -67,15 +67,25 @@ public class Plant : MonoBehaviour
     public Animator animator;
 
     [Header("Sun Decay Settings")]
+    public float sunDecayInterval = 5f; // how often sun decays
+    public float sunDecayAmount = 1f; // how much sun to lose each interval
+    private float sunDecayTimer = 0f;
     [SerializeField] private bool isLit = false;
 
     [Header("Poo Decay Settings")]
     public float pooDecayInterval = 5f; // how often it decays
+    public float pooDecayAmount = 1f; 
     private float pooDecayTimer = 0f;
 
     [Header("Music Decay Settings")]
     public float musicDecayInterval = 5f;  // how long before music effect wears off
+    public float musicDecayAmount = 1f; 
     private float musicDecayTimer = 0f;
+
+    [Header("Water Decay Settings")]
+    public float waterDecayInterval = 5f;  // how often water decays
+    public float waterDecayAmount = 0.5f;  // how much water to lose each interval
+    private float waterDecayTimer = 0f;
 
 
     private void Start()
@@ -176,31 +186,50 @@ public class Plant : MonoBehaviour
     }
 
     private void HandleSunDecay()
+{
+    if (sunLevel <= 0) return; // don’t go negative
     {
         if (isDead) return; 
 
-        //decay if not in SunArea
-        if (!isLit)
+    if (!isLit)
+    {
+        sunDecayTimer += Time.deltaTime;
+
+        if (sunDecayTimer >= sunDecayInterval)
         {
-            sunLevel -= sunDecayRate*Time.deltaTime;
+            sunLevel -= sunDecayAmount;
+            sunLevel = Mathf.Max(0, sunLevel);
+
+            //Debug.Log($"☀️ Sun decayed! sunLevel now: {sunLevel}");
+
+            sunDecayTimer = 0f; // reset timer
         }
     }
+    else
+    {
+        // Reset if the plant is lit again
+        sunDecayTimer = 0f;
+    }
+}
 
     private void HandleWaterDecay()
+{
+    if (waterLevel <= 0) return; // don’t go negative
     {
         if (isDead) return; 
 
-        pooDecayTimer += Time.deltaTime;
+    waterDecayTimer += Time.deltaTime;
 
-        if (pooDecayTimer >= pooDecayInterval)
-        {
-            pooCount--;
-            pooCount = Mathf.Max(0, pooCount); // just in case
-            Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
+    if (waterDecayTimer >= waterDecayInterval)
+    {
+        waterLevel -= waterDecayAmount;
+        waterLevel = Mathf.Max(0, waterLevel);
 
-            pooDecayTimer = 0f; // reset timer
-        }
+       // Debug.Log($"💧 Water decayed! waterLevel now: {waterLevel}");
+
+        waterDecayTimer = 0f; // reset timer
     }
+}
 
     private void HandlePooDecay()
 {
@@ -210,7 +239,7 @@ public class Plant : MonoBehaviour
 
     if (pooDecayTimer >= pooDecayInterval)
     {
-        pooCount--;
+        pooCount -= pooDecayAmount;
         pooCount = Mathf.Max(0, pooCount); // just in case
         //Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
 
@@ -225,7 +254,7 @@ public class Plant : MonoBehaviour
 
     if (musicDecayTimer >= musicDecayInterval)
     {
-        musicLevel--;
+        musicLevel -= musicDecayAmount;
         musicLevel = Mathf.Max(0f, musicLevel);
         //Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
         musicDecayTimer = 0f;
