@@ -234,14 +234,14 @@ MonoBehaviour:
   heldPoint: {fileID: 6541039326597690760}
   throwPoint: {fileID: 5432992814127688124}
   gridPoint: {fileID: 8523505388087467201}
-  interactRange: 2
+  interactRange: 4
   gridDetectionRange: 3
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
   musicObject: {fileID: 0}
-  musicHoldDuration: 2
+  musicHoldDuration: 5
   musicHoldSlider: {fileID: 3406682762909448993}
-  waterHoldDuration: 2
+  waterHoldDuration: 1
   waterHoldSlider: {fileID: 0}
 --- !u!65 &6309679909520950313
 BoxCollider:
