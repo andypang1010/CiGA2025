@@ -27,6 +27,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject musicObject;
 
     [Header("Hold to Play Music")]
+    public AudioClip musicLoopClip;
+    public AudioSource _audioSource;
     public float musicHoldDuration = 2.0f;  // How long to hold Space
     private float musicHoldTimer = 0.0f;  
     public Slider musicHoldSlider;
@@ -40,6 +42,17 @@ public class PlayerInteraction : MonoBehaviour
     GameObject heldObject;
     PlayerMovement movement;
 
+    private void Awake()
+    {
+        // cache or add an AudioSource
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+            _audioSource = gameObject.AddComponent<AudioSource>();
+
+        _audioSource.clip = musicLoopClip;
+        _audioSource.loop = true;
+        _audioSource.playOnAwake = false;
+    }
 
     private void Start()
     {
@@ -107,7 +120,9 @@ if (waterHoldSlider != null)
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            musicHoldTimer += Time.deltaTime;
+                    if (!_audioSource.isPlaying)
+                        _audioSource.Play();
+                    musicHoldTimer += Time.deltaTime;
             Debug.Log($"Holding Space: {musicHoldTimer}/{musicHoldDuration}");
 
             if (musicHoldTimer >= musicHoldDuration)
@@ -122,15 +137,16 @@ if (waterHoldSlider != null)
         {
             if (musicHoldTimer > 0) Debug.Log("Released Space early, resetting timer.");
             musicHoldTimer = 0.0f;
-            
+            if (_audioSource.isPlaying) _audioSource.Stop();
         }
     }
     else
     {
         Debug.Log("Holding object, resetting music hold.");
         musicHoldTimer = 0.0f;
-    
-    }
+                if (_audioSource.isPlaying) _audioSource.Stop();
+
+            }
 }
 else
 {
