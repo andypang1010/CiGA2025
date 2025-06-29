@@ -256,7 +256,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
         // MORE LOGIC： 
-
+        Debug.Log("Interacting: " + interactionType + " with: " + closestInteractable.name);
         Interact(closestInteractable, interactionType);
 
         // post-processing for specific interactions
