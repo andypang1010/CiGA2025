@@ -16,8 +16,8 @@ public class AccidentManager : MonoBehaviour
     GameObject qteBeat;
     GameObject qteTime;
     [SerializeField] List<GameObject> interactables;
-    public float accidentFrequency = 0.05f;
-    float checkInterval = 5f;
+    public float accidentFrequency = 0.6f;
+    public float checkInterval = 5f;
     float lastCheckTime = 0f;
     GameObject playerHeldPoint;
 

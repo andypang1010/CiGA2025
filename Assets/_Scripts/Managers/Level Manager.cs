@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class LevelManager: MonoBehaviour
 {
 
     public float gameTime = 10f;
+    public float remainingTime;
 
     public GameObject GoodEndingUI;
     public GameObject SoSoEndingUI;
@@ -13,7 +16,9 @@ public class LevelManager: MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject pauseButton;
 
-    public float remainingTime;
+    public Volume volume;
+    Vignette vignette;
+
 
     private void Start()
     {
@@ -25,6 +30,16 @@ public class LevelManager: MonoBehaviour
         BadEndingUI.SetActive(false); // Hide the Game Over UI at the start
         PauseMenuUI.SetActive(false); // Hide the Pause Menu UI at the start
         pauseButton.SetActive(true); // Ensure the pause button is active at the start
+
+        if (volume != null)
+        {
+            volume.enabled = true; // Enable the volume component if it exists
+            volume.profile.TryGet(out vignette); // Try to get the Vignette effect from the volume profile
+        }
+        else
+        {
+            Debug.LogWarning("Volume component is not assigned in LevelManager.");
+        }
     }
 
     private void Update()
@@ -33,6 +48,7 @@ public class LevelManager: MonoBehaviour
         if (remainingTime > 0f)
         {
             remainingTime -= Time.deltaTime;
+            vignette.intensity.value = 0.4f;
 
             // If the game is paused
             if (Time.timeScale == 0f)
@@ -93,6 +109,8 @@ public class LevelManager: MonoBehaviour
 
             PauseMenuUI.SetActive(false); // Show the Pause Menu UI when the game is not active
             pauseButton.SetActive(false); // Hide the pause button when the game is not active
+
+            vignette.intensity.value = 0.55f;
         }
     }
 
