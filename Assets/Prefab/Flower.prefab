@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1452496, y: 3.5224671, z: -2.9746382}
-  m_LocalScale: {x: 0.7, y: 0.70000017, z: 0.70000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2511118454916229418}
@@ -197,7 +197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0202494, y: 1.111674, z: -3.660548}
-  m_LocalScale: {x: 0.7, y: 0.70000017, z: 0.70000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2511118454916229418}
@@ -297,8 +297,8 @@ Transform:
   m_GameObject: {fileID: 4474614719305879612}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.19999999, z: 0.19999999}
+  m_LocalPosition: {x: 0, y: 0.44, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 855800849781992916}
@@ -424,7 +424,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.6047506, y: 3.4609065, z: -2.8054972}
-  m_LocalScale: {x: 0.7, y: 0.70000017, z: 0.70000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2511118454916229418}
@@ -524,7 +524,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.4797506, y: 1.1116744, z: -3.6605475}
-  m_LocalScale: {x: 0.7, y: 0.70000017, z: 0.70000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2511118454916229418}
@@ -729,38 +729,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba44d62f4a3af498baedbed151d41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLevel: 0
+  waterLevel: 1.52
   sunLevel: 0
   musicLevel: 0
-  pooCount: 0
+  pooCount: 1
   isPerfect: 0
   isDead: 0
   waterUI: {fileID: 7123347211471620751}
   sunUI: {fileID: 6164862929471607315}
   pooUI: {fileID: 2258109144062996862}
   musicUI: {fileID: 782333363307288203}
-  waterNeeded: 1
+  waterNeeded: 5.5
   tooMuchWater: 10
-  sunNeeded: 1
-  tooMuchSun: 10
-  pooNeeded: 1
-  tooMuchPoo: 5
-  musicNeeded: 1
-  tooMuchMusic: 7
-  waterRate: 10
-  sunRate: 0.08
+  sunNeeded: 7
+  tooMuchSun: 12
+  pooNeeded: 2
+  tooMuchPoo: 4
+  musicNeeded: 2
+  tooMuchMusic: 3
+  waterRate: 2
+  sunRate: 1
   sunDecayRate: 0.25
-  musicRate: 7
+  musicRate: 0.2
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
-  wanderChance: 0.706
+  wanderChance: 0.742
   wanderInterval: 3
-  wanderDuration: 2
+  wanderDuration: 10
   wanderRadius: 7
-  animator: {fileID: 8740984321745965887}
+  animator: {fileID: 0}
   isLit: 0
-  pooDecayInterval: 10
+  pooDecayInterval: 30
   musicDecayInterval: 5
 --- !u!114 &3153168119104227013
 MonoBehaviour:
@@ -817,8 +817,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.58403695
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.65271705
+  m_Center: {x: 0, y: 0.06868011, z: 0}
 --- !u!135 &7609366803569457773
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -838,5 +838,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.60794127
+  m_Center: {x: 0, y: 0.10794127, z: 0}

@@ -2575,10 +2575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274fc71882896224fb0d275ac1605b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accidentFrequency: 0.05
   minBeats: 3
   maxBeats: 7
   interactables: []
+  accidentFrequency: 0.05
   currentNumPlantsRunning: 0
   maxNumPlantsRunning: 1
   plants: []
@@ -2595,7 +2595,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 1000
-  GameOverUI: {fileID: 1209484343}
+  GoodEndingUI: {fileID: 0}
+  SoSoEndingUI: {fileID: 0}
+  BadEndingUI: {fileID: 0}
   PauseMenuUI: {fileID: 1209484342}
   pauseButton: {fileID: 1209484341}
   remainingTime: 0
@@ -2872,11 +2874,6 @@ GameObject:
 --- !u!1 &1209484342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1345731626644682158, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-  m_PrefabInstance: {fileID: 1209484334}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1209484343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7145798972854834887, guid: a21b095dda5e32c449be8159b228d139, type: 3}
   m_PrefabInstance: {fileID: 1209484334}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1226351434

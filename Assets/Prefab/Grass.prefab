@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.92655, y: 2.1888595, z: -5.189319}
-  m_LocalScale: {x: 0.7, y: 0.70000005, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6999770734194577039}
@@ -128,7 +128,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0734499, y: 3.6228015, z: -3.141439}
-  m_LocalScale: {x: 0.7, y: 0.70000005, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6999770734194577039}
@@ -297,7 +297,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0515501, y: 3.8968005, z: -2.5723467}
-  m_LocalScale: {x: 0.7, y: 0.70000005, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6999770734194577039}
@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 4132101069294612684}
   - component: {fileID: 2308524833671226789}
   - component: {fileID: 4292750855236216153}
+  - component: {fileID: 4355599280146663850}
   m_Layer: 6
   m_Name: Grass
   m_TagString: Plant
@@ -475,38 +476,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba44d62f4a3af498baedbed151d41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLevel: 0
+  waterLevel: 1.52
   sunLevel: 0
   musicLevel: 0
-  pooCount: 0
+  pooCount: 1
   isPerfect: 0
   isDead: 0
   waterUI: {fileID: 7252033181045282041}
   sunUI: {fileID: 730150222822214121}
   pooUI: {fileID: 435309165423557431}
   musicUI: {fileID: 3160547524403254865}
-  waterNeeded: 1
-  tooMuchWater: 50
-  sunNeeded: 1
-  tooMuchSun: 50
-  pooNeeded: 1
-  tooMuchPoo: 5
-  musicNeeded: 1
-  tooMuchMusic: 8
-  waterRate: 10
-  sunRate: 0.08
+  waterNeeded: 6
+  tooMuchWater: 15
+  sunNeeded: 10
+  tooMuchSun: 15
+  pooNeeded: 2
+  tooMuchPoo: 10
+  musicNeeded: 2
+  tooMuchMusic: 5
+  waterRate: 2
+  sunRate: 1
   sunDecayRate: 0.25
-  musicRate: 7
+  musicRate: 0.2
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
-  wanderChance: 0.582
+  wanderChance: 0.742
   wanderInterval: 3
   wanderDuration: 10
   wanderRadius: 7
-  animator: {fileID: 1454695534476531703}
+  animator: {fileID: 0}
   isLit: 0
-  pooDecayInterval: 10
+  pooDecayInterval: 30
   musicDecayInterval: 5
 --- !u!54 &849186420580916850
 Rigidbody:
@@ -613,6 +614,51 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4355599280146663850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260418340754702201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ba44d62f4a3af498baedbed151d41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterLevel: 1.52
+  sunLevel: 0
+  musicLevel: 0
+  pooCount: 1
+  isPerfect: 0
+  isDead: 0
+  waterUI: {fileID: 0}
+  sunUI: {fileID: 0}
+  pooUI: {fileID: 0}
+  musicUI: {fileID: 0}
+  waterNeeded: 5.5
+  tooMuchWater: 10
+  sunNeeded: 7
+  tooMuchSun: 12
+  pooNeeded: 2
+  tooMuchPoo: 4
+  musicNeeded: 2
+  tooMuchMusic: 3
+  waterRate: 2
+  sunRate: 1
+  sunDecayRate: 0.25
+  musicRate: 0.2
+  perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
+  returnTime: 5
+  canWander: 1
+  wanderChance: 0.742
+  wanderInterval: 3
+  wanderDuration: 10
+  wanderRadius: 7
+  animator: {fileID: 0}
+  isLit: 0
+  pooDecayInterval: 30
+  musicDecayInterval: 5
 --- !u!1 &7252033181045282041
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +687,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.9484499, y: 2.1888595, z: -5.189319}
-  m_LocalScale: {x: 0.7, y: 0.70000005, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6999770734194577039}
@@ -741,8 +787,8 @@ Transform:
   m_GameObject: {fileID: 8992081159924839788}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1321182669389483729}

@@ -2595,7 +2595,7 @@ MonoBehaviour:
   - {fileID: 6796475239365000019, guid: 89178154a751f144496530f660a266c6, type: 3}
   - {fileID: 6260418340754702201, guid: 789b8955cfa1c2b47ba50d31dd781c55, type: 3}
   spawnInterval: 0.1
-  maxPlants: 10
+  maxPlants: 5
   plantCheckRadius: 1
   spawnArea: {fileID: 314986241}
 --- !u!4 &712862060
@@ -3068,7 +3068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &763532607
 Transform:
   m_ObjectHideFlags: 0
@@ -4216,7 +4216,7 @@ Transform:
   m_GameObject: {fileID: 1131949787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.12, z: -2.94}
+  m_LocalPosition: {x: 0.09, y: 0.7, z: -2.94}
   m_LocalScale: {x: 13.58, y: 1, z: 5.54}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4241,8 +4241,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.6582685, z: 1}
+  m_Center: {x: 0, y: 2.3291357, z: 0}
 --- !u!23 &1131949790
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4869,7 +4869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c88f63178cd3b041b674eacc3f048ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 10
+  gameTime: 180
   GoodEndingUI: {fileID: 525215655}
   SoSoEndingUI: {fileID: 899178146}
   BadEndingUI: {fileID: 2086634074}
@@ -6869,7 +6869,7 @@ Transform:
   m_GameObject: {fileID: 1571344425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.119999975, z: 1.46}
+  m_LocalPosition: {x: -1.5, y: 0.68, z: 1.46}
   m_LocalScale: {x: 8.81, y: 1, z: 3.93414}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6894,8 +6894,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.8842094, z: 1}
+  m_Center: {x: 0, y: 1.4421057, z: 0}
 --- !u!23 &1571344428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8333,7 +8333,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -8343,7 +8343,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ec83ac2a71415f947b929b0ffbd75926, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: db86b3ace54dfc34c8b6bcd40be45bae, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1845224360
 GameObject:
