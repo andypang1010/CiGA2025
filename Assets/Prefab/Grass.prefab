@@ -485,20 +485,19 @@ MonoBehaviour:
   pooUI: {fileID: 435309165423557431}
   musicUI: {fileID: 3160547524403254865}
   initialWater: 2
-  minWater: 1
-  maxWater: 5
+  minWater: 6
+  maxWater: 10
   tooMuchWater: 15
   initialSun: 2
-  minSun: 1
-  maxSun: 5
+  minSun: 10
+  maxSun: 12
   tooMuchSun: 15
-  pooNeeded: 2
+  pooNeeded: 9
   initialPoo: 2
   initialMusic: 2
   maxmusic: 5
   waterRate: 1
   sunRate: 0.5
-  sunDecayRate: 0.25
   musicRate: 0.34
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   canWander: 1
