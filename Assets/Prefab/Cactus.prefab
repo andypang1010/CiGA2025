@@ -875,16 +875,16 @@ MonoBehaviour:
   warningUI: {fileID: 2201356618161161407}
   initialWater: 2
   minWater: 7
-  maxWater: 8
-  tooMuchWater: 10
+  maxWater: 10
+  tooMuchWater: 15
   initialSun: 2
   minSun: 2
   maxSun: 99
   tooMuchSun: 100
-  initialPoo: 2
-  pooNeeded: 3
-  initialMusic: 2
-  maxmusic: 4
+  initialPoo: 4
+  pooNeeded: 8
+  initialMusic: 5
+  maxmusic: 10
   waterRate: 1.5
   sunRate: 0.5
   musicRate: 3
@@ -895,14 +895,10 @@ MonoBehaviour:
   wanderDuration: 10
   wanderRadius: 7
   animator: {fileID: 2728387901001253936}
-  sunDecayInterval: 5
   sunDecayAmount: 1
   isLit: 0
-  pooDecayInterval: 20
   pooDecayAmount: 1
-  musicDecayInterval: 15
   musicDecayAmount: 1
-  waterDecayInterval: 5
   waterDecayAmount: 0.5
   warnSound: {fileID: 8229031829401249862}
   deathSound: {fileID: 3508260820424926335}

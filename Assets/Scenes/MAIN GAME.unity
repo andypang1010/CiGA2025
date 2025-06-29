@@ -6159,6 +6159,10 @@ PrefabInstance:
       value: PlantSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: maxPlants
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
       propertyPath: spawnArea
       value: 
       objectReference: {fileID: 314986241}
@@ -6166,6 +6170,46 @@ PrefabInstance:
       propertyPath: spawnSound
       value: 
       objectReference: {fileID: 1505506528}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: spawnInterval
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[0].initialPoo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[0].initialSun
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[1].initialPoo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[2].initialPoo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[3].initialPoo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[0].initialMusic
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[0].initialWater
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[1].initialMusic
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495067663544822696, guid: 0dc8c94702f701f41b78a62673122bed, type: 3}
+      propertyPath: plantsToSpawn.Array.data[2].initialMusic
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -64,23 +64,23 @@ public class Plant : MonoBehaviour
     public Animator animator;
 
     [Header("Sun Decay Settings")]
-    public float sunDecayInterval = 5f; // how often sun decays
+    private float sunDecayInterval = 10f; // how often sun decays
     public float sunDecayAmount = 1f; // how much sun to lose each interval
     private float sunDecayTimer = 0f;
     [SerializeField] private bool isLit = false;
 
     [Header("Poo Decay Settings")]
-    public float pooDecayInterval = 5f; // how often it decays
+    private float pooDecayInterval = 15f; // how often it decays
     public float pooDecayAmount = 1f;
     private float pooDecayTimer = 0f;
 
     [Header("Music Decay Settings")]
-    public float musicDecayInterval = 5f;  // how long before music effect wears off
+    private float musicDecayInterval = 20f;  // how long before music effect wears off
     public float musicDecayAmount = 1f;
     private float musicDecayTimer = 0f;
 
     [Header("Water Decay Settings")]
-    public float waterDecayInterval = 5f;  // how often water decays
+    private float waterDecayInterval = 10f;  // how often water decays
     public float waterDecayAmount = 0.5f;  // how much water to lose each interval
     private float waterDecayTimer = 0f;
 
@@ -130,8 +130,8 @@ public class Plant : MonoBehaviour
 
         waterUI.SetActive(waterLevel <= minWater && !isDead);
         sunUI.SetActive(sunLevel <= minSun && !isDead);
-        pooUI.SetActive(pooCount <= 1 && !isDead);
-        musicUI.SetActive(musicLevel <= 1 && !isDead);
+        pooUI.SetActive(pooCount <= 3 && !isDead);
+        musicUI.SetActive(musicLevel <= 5 && !isDead);
         deathUI.SetActive(isDead);
         
         
@@ -453,7 +453,7 @@ public class Plant : MonoBehaviour
     public void ListenToMusic()
     {
         if (isDead) return;
-        musicLevel += musicRate;
+        musicLevel = maxmusic;
         //Debug.Log($"🎵 Music level: {musicLevel}");
 
     }
