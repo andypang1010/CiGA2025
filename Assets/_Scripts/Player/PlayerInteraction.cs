@@ -149,9 +149,11 @@ else
 
     // === Update animator ===
     animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
+    animator.SetBool("IsWatering", waterObject != null && (waterHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
+    animator.SetBool("IsSinging", musicObject != null && (musicHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
 
-    // === Update Plant Stats UI ===
-    if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
+        // === Update Plant Stats UI ===
+        if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
     {
         statsUI.SetActive(true);
 
