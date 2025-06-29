@@ -1,0 +1,99 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class LevelManager: MonoBehaviour
+{
+
+    public float gameTime = 10f;
+
+    public GameObject GoodEndingUI;
+    public GameObject SoSoEndingUI;
+    public GameObject BadEndingUI;
+    public GameObject PauseMenuUI;
+    public GameObject pauseButton;
+
+    public float remainingTime;
+
+    private void Start()
+    {
+        remainingTime = gameTime;
+        Time.timeScale = 1f; // Ensure the game time starts at normal speed
+
+        GoodEndingUI.SetActive(false); // Hide the Good Ending UI at the start
+        SoSoEndingUI.SetActive(false); // Hide the So-So Ending UI at the start
+        BadEndingUI.SetActive(false); // Hide the Game Over UI at the start
+        PauseMenuUI.SetActive(false); // Hide the Pause Menu UI at the start
+        pauseButton.SetActive(true); // Ensure the pause button is active at the start
+    }
+
+    private void Update()
+    {
+        // Check if game is still running
+        if (remainingTime > 0f)
+        {
+            remainingTime -= Time.deltaTime;
+
+            // If the game is paused
+            if (Time.timeScale == 0f)
+            {
+                GoodEndingUI.SetActive(false);
+                SoSoEndingUI.SetActive(false);
+                BadEndingUI.SetActive(false);
+                PauseMenuUI.SetActive(true); // Show the Pause Menu UI when the game is paused
+                pauseButton.SetActive(false); // Hide the pause button when the game is paused
+            }
+
+            // If the game is active
+            else
+            {
+                GoodEndingUI.SetActive(false);
+                SoSoEndingUI.SetActive(false);
+                BadEndingUI.SetActive(false);
+                PauseMenuUI.SetActive(false); // Hide the Pause Menu UI when the game is active
+                pauseButton.SetActive(true);
+            }
+        }
+
+        else
+        {
+            // End the game if time runs out
+            Time.timeScale = 0f; // Stop the game time
+
+            List<GameObject> plantsList = GameObject.FindGameObjectsWithTag("Plant").ToList();
+            int numPlantsAlive = plantsList.Count(plant => !plant.GetComponent<Plant>().isDead);
+
+            List<GameObject> cowsList = GameObject.FindGameObjectsWithTag("Cow").ToList();
+            int numCowsAlive = cowsList.Count(cow => !cow.GetComponent<Cow>().isDead);
+
+            // Determine the ending based on the number of alive plants and cows
+            if (numPlantsAlive == plantsList.Count && numCowsAlive == cowsList.Count)
+            {
+                // If all plants and cows are alive, show Good Ending UI
+                GoodEndingUI.SetActive(true);
+                SoSoEndingUI.SetActive(false);
+                BadEndingUI.SetActive(false);
+          
+            }
+            else if (numPlantsAlive > 0 || numCowsAlive > 0)
+            {
+                // If there are still plants or cows alive, show So-So Ending UI
+                GoodEndingUI.SetActive(false);
+                SoSoEndingUI.SetActive(true);
+                BadEndingUI.SetActive(false);
+                
+            }
+            else if (numPlantsAlive == 0 && numCowsAlive == 0)
+            {
+                // If all plants and cows are dead, show Bad Ending UI
+                GoodEndingUI.SetActive(false);
+                SoSoEndingUI.SetActive(false);
+                BadEndingUI.SetActive(true);
+            }
+
+            PauseMenuUI.SetActive(false); // Show the Pause Menu UI when the game is not active
+            pauseButton.SetActive(false); // Hide the pause button when the game is not active
+        }
+    }
+
+}
