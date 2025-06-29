@@ -8,7 +8,6 @@ public class Plant : MonoBehaviour
     [SerializeField] private float sunLevel = 0f;
     [SerializeField] private float musicLevel = 0f;
     [SerializeField] private float pooCount = 0;
-    [SerializeField] private bool isPerfect = false;
     [SerializeField] public bool isDead = false;
 
     [Header("Plant UI")]
@@ -44,11 +43,6 @@ public class Plant : MonoBehaviour
     [Header("Visuals")]
     public Material perfectMaterial;
     private Renderer plantRenderer;
-
-    [Header("Return Logic")]
-    public float returnTime = 5f;
-    private float returnTimer = 0f;
-    private bool isInReturnArea = false;
 
     [Header("AI Settings")]
     public bool canWander = true;   // Enable/disable wandering for this plant
@@ -90,6 +84,8 @@ public class Plant : MonoBehaviour
 
     private void Start()
     {
+        plantInitiation();
+
         plantRenderer = GetComponent<Renderer>();
         if (plantRenderer == null)
         {
@@ -124,12 +120,18 @@ public class Plant : MonoBehaviour
         HandlePooDecay();
         HandleMusicDecay();
 
-        waterUI.SetActive(tooMuchWater - waterLevel <= tooMuchWater / 5 || waterLevel - 0 <= tooMuchWater / 5);
-        sunUI.SetActive(tooMuchSun - sunLevel <= tooMuchSun / 10 || sunLevel - 0 <= tooMuchSun / 10);
-        pooUI.SetActive(pooCount >= pooNeeded || pooCount <= 0);
-        //musicUI.SetActive();
+        waterUI.SetActive(waterLevel<=minWater);
+        sunUI.SetActive(sunLevel<=minSun);
+        pooUI.SetActive(pooCount<=1);
+        musicUI.SetActive(musicLevel<=1);
     }
-
+    private void plantInitiation()
+    {
+        waterLevel = initialWater ;
+        sunLevel = initialSun ;
+        musicLevel = initialMusic;
+        pooCount = initialPoo;
+    }
     private void CheckDeath()
     {
         //return when dead
@@ -266,7 +268,7 @@ public class Plant : MonoBehaviour
 
     private void HandleWandering()
 {
-    if (isDead || isPerfect) return;
+    if (isDead) return;
     if (agent == null || !agent.enabled) return; 
 
     wanderTimer += Time.deltaTime;
@@ -318,7 +320,7 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (isDead || isPerfect) return;
+        if (isDead) return;
 
         else if (other.CompareTag("SunArea"))
         {
@@ -328,12 +330,6 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isPerfect && other.CompareTag("ReturnArea"))
-        {
-            isInReturnArea = true;
-             Debug.Log("ENTER");
-            returnTimer = returnTime;
-        }
 
         if (other.CompareTag("SunArea"))
         {
@@ -343,11 +339,6 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isPerfect && other.CompareTag("ReturnArea"))
-        {
-            isInReturnArea = false;
-            returnTimer = 0f;
-        }
 
         if (other.CompareTag("SunArea"))
         {
@@ -357,28 +348,28 @@ public class Plant : MonoBehaviour
 
     public void Water()
     {
+        if(isDead) return;
         waterLevel += waterRate;
         //Debug.Log($"Water level: {waterLevel}");
     }
 
     public void PooPoo()
     {
-        //if (isPerfect) return;
-
+        if (isDead) return;
         pooCount += 1;
     }
 
     private void ExposeToLight()
     {
+        if (isDead) return;
         sunLevel += sunRate * Time.deltaTime;
         // Debug.Log($"Sun level: {sunLevel}");
     }
 
   public void ListenToMusic()
 {
-    //if (isPerfect) return;
-
-    musicLevel += musicRate;
+        if (isDead) return;
+        musicLevel += musicRate;
     //Debug.Log($"🎵 Music level: {musicLevel}");
 
 }

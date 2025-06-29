@@ -479,37 +479,43 @@ MonoBehaviour:
   sunLevel: 0
   musicLevel: 0
   pooCount: 1
-  isPerfect: 0
   isDead: 0
   waterUI: {fileID: 7252033181045282041}
   sunUI: {fileID: 730150222822214121}
   pooUI: {fileID: 435309165423557431}
   musicUI: {fileID: 3160547524403254865}
-  waterNeeded: 6
+  initialWater: 2
   minWater: 1
   maxWater: 5
   tooMuchWater: 15
-  sunNeeded: 10
+  initialSun: 2
+  minSun: 1
+  maxSun: 5
   tooMuchSun: 15
   pooNeeded: 2
-  tooMuchPoo: 10
-  musicNeeded: 2
-  tooMuchMusic: 5
+  initialPoo: 2
+  initialMusic: 2
+  maxmusic: 5
   waterRate: 1
   sunRate: 0.5
   sunDecayRate: 0.25
   musicRate: 0.34
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
-  returnTime: 5
   canWander: 1
   wanderChance: 0.742
   wanderInterval: 3
   wanderDuration: 10
   wanderRadius: 7
   animator: {fileID: 1454695534476531703}
+  sunDecayInterval: 5
+  sunDecayAmount: 1
   isLit: 0
   pooDecayInterval: 20
+  pooDecayAmount: 1
   musicDecayInterval: 15
+  musicDecayAmount: 1
+  waterDecayInterval: 5
+  waterDecayAmount: 0.5
 --- !u!54 &849186420580916850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -796,7 +802,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 98
   m_Sprite: {fileID: 522878311, guid: cbc8a41b44ae82e4f8a4738f49f716c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
