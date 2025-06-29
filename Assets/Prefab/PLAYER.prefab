@@ -232,7 +232,7 @@ MonoBehaviour:
   heldPoint: {fileID: 6541039326597690760}
   throwPoint: {fileID: 5432992814127688124}
   gridPoint: {fileID: 8523505388087467201}
-  interactRange: 3
+  interactRange: 4
   gridDetectionRange: 3
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}

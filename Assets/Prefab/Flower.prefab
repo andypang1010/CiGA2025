@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 855800849781992916}
   - component: {fileID: 6985409470032248892}
   - component: {fileID: 6970633570249931781}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Music Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 8685437073909626271}
   - component: {fileID: 9004071903428619608}
   - component: {fileID: 8736590171853721612}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1923065580628871038}
   - component: {fileID: 4720366782759055771}
   - component: {fileID: 9022227429162292102}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Shit Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 5794313594856014914}
   - component: {fileID: 8740984321745965887}
   - component: {fileID: 2745574902026402801}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4113709779287560047}
   - component: {fileID: 953218364835866931}
   - component: {fileID: 246052837685148540}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sun Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 7994669546753547076}
   - component: {fileID: 7292710168890333721}
   - component: {fileID: 4967470448228152886}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Water Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
