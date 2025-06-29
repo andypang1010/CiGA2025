@@ -76,7 +76,7 @@ public class PlantsSpawner : MonoBehaviour
 
                 var data = plantsToSpawn[nextSpawnIndex];
                 var prefab = data.prefab;
-                Debug.Log("Next plant is: " + prefab.name);
+                //Debug.Log("Next plant is: " + prefab.name);
                 nextSpawnIndex++;
 
                 GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);

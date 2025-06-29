@@ -991,11 +991,11 @@ MonoBehaviour:
   wanderDuration: 10
   wanderRadius: 7
   animator: {fileID: 8740984321745965887}
-  sunDecayAmount: 1
+  sunDecayAmount: 0.4
   isLit: 0
-  pooDecayAmount: 1
-  musicDecayAmount: 1
-  waterDecayAmount: 0.5
+  pooDecayAmount: 0.4
+  musicDecayAmount: 0.4
+  waterDecayAmount: 0.25
   warnSound: {fileID: 7444381209515869450}
   deathSound: {fileID: 6034834936313232231}
 --- !u!114 &3153168119104227013

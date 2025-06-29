@@ -17,7 +17,7 @@ public class AccidentManager : MonoBehaviour
     GameObject qteTime;
     GameObject qteFailed;
     [SerializeField] List<GameObject> interactables;
-    public float accidentFrequency = 0.6f;
+    public float accidentChance = 0.6f;
     public float checkInterval = 5f;
     float lastCheckTime = 0f;
     GameObject playerHeldPoint;
@@ -73,8 +73,12 @@ public class AccidentManager : MonoBehaviour
 
         lastCheckTime = Time.time;
 
+        print("Last Checked Now @" + lastCheckTime);
+
         // Check if an accident should occur
-        if ((int)UnityEngine.Random.Range(0, 1 / accidentFrequency) == 0)
+        int randomNumber = UnityEngine.Random.Range(0, (int)(1 / accidentChance));
+        print("Accident Number: " + randomNumber + " out of range [0, " + (int)(1 / accidentChance) + "]");
+        if (randomNumber == 0)
         {
             foreach(var accidentable in qteAccidentables)
             {
@@ -130,7 +134,7 @@ public class AccidentManager : MonoBehaviour
         {
             foreach (var accident in accidents)
             {
-                hasAccident |= !accident.accidentTimeout;
+                hasAccident |= accident.accidentTimeout;
             }
         }
 

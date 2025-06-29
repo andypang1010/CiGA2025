@@ -20,7 +20,7 @@ public class Accident : Interactable
 
     public float qteStartTime;
     public float accidentStartTime;
-    public float accidentDuration = 30f;
+    public float accidentDuration = 50f;
     public List<QTEData> qteTimes;
 
     float qteTimeLimit = 0.6f;

@@ -895,11 +895,11 @@ MonoBehaviour:
   wanderDuration: 10
   wanderRadius: 7
   animator: {fileID: 2728387901001253936}
-  sunDecayAmount: 1
+  sunDecayAmount: 0.4
   isLit: 0
-  pooDecayAmount: 1
-  musicDecayAmount: 1
-  waterDecayAmount: 0.5
+  pooDecayAmount: 0.4
+  musicDecayAmount: 0.4
+  waterDecayAmount: 0.25
   warnSound: {fileID: 8229031829401249862}
   deathSound: {fileID: 3508260820424926335}
 --- !u!54 &1374007860076822247
