@@ -18,8 +18,11 @@ public class Plant : MonoBehaviour
     public GameObject musicUI;
 
     [Header("Growth Settings")]
+    // 0(DEATH) - (POPUP) - minwater - maxwater - (WARNING) - tooMuchWater(DEATH)
     public float waterNeeded = 1f;
-    public float tooMuchWater = 2f;
+    public float minWater = 1f;
+    public float maxWater = 5f;
+    public float tooMuchWater = 10f;
 
     public float sunNeeded = 1f;
     public float tooMuchSun = 2f;
@@ -109,11 +112,6 @@ public class Plant : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        if(isDead)
-        {
-            animator.SetTrigger("isDead");
-        }
     
         HandleWandering();
         HandleSunDecay();
@@ -129,6 +127,58 @@ public class Plant : MonoBehaviour
 
     private void CheckDeath()
     {
+        //return when dead
+        if(isDead) { return; }
+
+        //check water status
+        if (waterLevel >= tooMuchWater)
+        {
+            Debug.Log("drowned!");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+        else if (waterLevel <= 0)
+        {
+            Debug.Log("thirst");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+
+        //check sun status
+        if (sunLevel>= tooMuchSun)
+        {
+            Debug.Log("dried");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+        else if (sunLevel <= 0)
+        {
+            Debug.Log("withered");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+
+        //check music status
+        if(musicLevel <= 0)
+        {
+            Debug.Log("depressed");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+
+        //check poo status
+        if (pooCount > pooNeeded)
+        {
+            Debug.Log("too much poo TT!");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
+        else if (pooCount <= 0)
+        {
+            Debug.Log("malnutrition");
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }
 
     }
 
@@ -169,7 +219,7 @@ public class Plant : MonoBehaviour
     {
         pooCount--;
         pooCount = Mathf.Max(0, pooCount); // just in case
-        Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
+        //Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
 
         pooDecayTimer = 0f; // reset timer
     }
@@ -184,7 +234,7 @@ public class Plant : MonoBehaviour
     {
         musicLevel--;
         musicLevel = Mathf.Max(0f, musicLevel);
-        Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
+        //Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
         musicDecayTimer = 0f;
     }
 }
@@ -284,58 +334,28 @@ public class Plant : MonoBehaviour
     public void Water()
     {
         waterLevel += waterRate;
-        Debug.Log($"Water level: {waterLevel}");
-
-        if (waterLevel >= tooMuchWater)
-        {
-            Debug.Log("drowned!");
-            isDead = true;
-        }
+        //Debug.Log($"Water level: {waterLevel}");
     }
 
     public void PooPoo()
     {
-        if (isPerfect) return;
+        //if (isPerfect) return;
 
         pooCount += 1;
-        if (pooCount > pooNeeded)
-        {
-            Debug.Log("too much poo TT!");
-        }
-        else if (pooCount < pooNeeded)
-        {
-            Debug.Log("more poo required!");
-        }
-        else if (pooCount == pooNeeded)
-        {
-            Debug.Log("poopoo is goodgood");
-            CheckPerfection();
-        }
     }
 
     private void ExposeToLight()
     {
         sunLevel += sunRate * Time.deltaTime;
-        Debug.Log($"Sun level: {sunLevel}");
-
-        if (sunLevel >= tooMuchSun)
-        {
-            Debug.Log("dried!");
-            isDead = true;
-        }
-        else if (sunLevel >= sunNeeded)
-        {
-            Debug.Log("enough sun!");
-            CheckPerfection();
-        }
+        // Debug.Log($"Sun level: {sunLevel}");
     }
 
   public void ListenToMusic()
 {
-    if (isPerfect) return;
+    //if (isPerfect) return;
 
     musicLevel += musicRate;
-    Debug.Log($"🎵 Music level: {musicLevel}");
+    //Debug.Log($"🎵 Music level: {musicLevel}");
 
 }
 
