@@ -211,6 +211,7 @@ public class Plant : MonoBehaviour
         sunDecayTimer = 0f;
     }
 }
+}
 
     private void HandleWaterDecay()
 {
@@ -229,6 +230,7 @@ public class Plant : MonoBehaviour
 
         waterDecayTimer = 0f; // reset timer
     }
+}
 }
 
     private void HandlePooDecay()
@@ -401,3 +403,5 @@ public class Plant : MonoBehaviour
         return pooCount;
     }
 }
+
+
