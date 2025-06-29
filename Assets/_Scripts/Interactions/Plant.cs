@@ -203,118 +203,118 @@ public class Plant : MonoBehaviour
     }
 
     private void HandleSunDecay()
-{
-    if (sunLevel <= 0) return; // don’t go negative
     {
-        if (isDead) return; 
-
-    if (!isLit)
-    {
-        sunDecayTimer += Time.deltaTime;
-
-        if (sunDecayTimer >= sunDecayInterval)
+        if (sunLevel <= 0) return; // don’t go negative
         {
-            sunLevel -= sunDecayAmount;
-            sunLevel = Mathf.Max(0, sunLevel);
+            if (isDead) return; 
 
-            // Debug.Log($"☀️ Sun decayed! sunLevel now: {sunLevel}");
+            if (!isLit)
+            {
+                sunDecayTimer += Time.deltaTime;
 
-            sunDecayTimer = 0f; // reset timer
+                if (sunDecayTimer >= sunDecayInterval)
+                {
+                    sunLevel -= sunDecayAmount;
+                    sunLevel = Mathf.Max(0, sunLevel);
+
+                    // Debug.Log($"☀️ Sun decayed! sunLevel now: {sunLevel}");
+
+                    sunDecayTimer = 0f; // reset timer
+                }
+            }
+            else
+            {
+                // Reset if the plant is lit again
+                sunDecayTimer = 0f;
+            }
         }
     }
-    else
-    {
-        // Reset if the plant is lit again
-        sunDecayTimer = 0f;
-    }
-}
-}
 
     private void HandleWaterDecay()
-{
-    if (waterLevel <= 0) return; // don’t go negative
+    {
+        if (waterLevel <= 0) return; // don’t go negative
+        {
+            if (isDead) return; 
+
+            waterDecayTimer += Time.deltaTime;
+
+            if (waterDecayTimer >= waterDecayInterval)
+            {
+                waterLevel -= waterDecayAmount;
+                waterLevel = Mathf.Max(0, waterLevel);
+
+               // Debug.Log($"💧 Water decayed! waterLevel now: {waterLevel}");
+
+                waterDecayTimer = 0f; // reset timer
+            }
+        }
+    }
+
+    private void HandlePooDecay()
     {
         if (isDead) return; 
 
-    waterDecayTimer += Time.deltaTime;
+        pooDecayTimer += Time.deltaTime;
 
-    if (waterDecayTimer >= waterDecayInterval)
-    {
-        waterLevel -= waterDecayAmount;
-        waterLevel = Mathf.Max(0, waterLevel);
+        if (pooDecayTimer >= pooDecayInterval)
+        {
+            pooCount -= pooDecayAmount;
+            pooCount = Mathf.Max(0, pooCount); // just in case
+            // Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
 
-       // Debug.Log($"💧 Water decayed! waterLevel now: {waterLevel}");
-
-        waterDecayTimer = 0f; // reset timer
+            pooDecayTimer = 0f; // reset timer
+        }
     }
-}
-}
-
-    private void HandlePooDecay()
-{
-    if (isDead) return; 
-
-    pooDecayTimer += Time.deltaTime;
-
-    if (pooDecayTimer >= pooDecayInterval)
-    {
-        pooCount -= pooDecayAmount;
-        pooCount = Mathf.Max(0, pooCount); // just in case
-        // Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
-
-        pooDecayTimer = 0f; // reset timer
-    }
-}
     private void HandleMusicDecay()
-{
-    if (isDead) return;
-
-    musicDecayTimer += Time.deltaTime;
-
-    if (musicDecayTimer >= musicDecayInterval)
     {
-        musicLevel -= musicDecayAmount;
-        musicLevel = Mathf.Max(0f, musicLevel);
-        // Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
-        musicDecayTimer = 0f;
+        if (isDead) return;
+
+        musicDecayTimer += Time.deltaTime;
+
+        if (musicDecayTimer >= musicDecayInterval)
+        {
+            musicLevel -= musicDecayAmount;
+            musicLevel = Mathf.Max(0f, musicLevel);
+            // Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
+            musicDecayTimer = 0f;
+        }
     }
-}
 
 
     private void HandleWandering()
-{
-    if (isDead) return;
-    if (agent == null || !agent.enabled) return; 
-
-    wanderTimer += Time.deltaTime;
-
-    if (!isWandering && wanderTimer >= wanderInterval)
     {
-        // Roll the chance each time
-        bool willWanderThisTime = Random.value <= wanderChance;
+        if (isDead) return;
+        if (agent == null || !agent.enabled) return; 
 
-        if (willWanderThisTime)
+        wanderTimer += Time.deltaTime;
+
+        if (!isWandering && wanderTimer >= wanderInterval)
         {
-            Vector3 newDestination = GetRandomPoint(startPosition, wanderRadius);
-            agent.SetDestination(newDestination);
+            // Roll the chance each time
+            bool willWanderThisTime = Random.value <= wanderChance;
 
-            isWandering = true;
-            wanderDurationTimer = wanderDuration;
+            if (willWanderThisTime)
+            {
+                Vector3 newDestination = GetRandomPoint(startPosition, wanderRadius);
+                agent.SetDestination(newDestination);
+
+                isWandering = true;
+                wanderDurationTimer = wanderDuration;
+            }
+
+            wanderTimer = 0f; // Reset either way
         }
 
-        wanderTimer = 0f; // Reset either way
-    }
-
-    if (isWandering)
-    {
-        wanderDurationTimer -= Time.deltaTime;
-        if (wanderDurationTimer <= 0f)
+        if (isWandering)
         {
-            agent.ResetPath();
-            isWandering = false;
+            wanderDurationTimer -= Time.deltaTime;
+            if (wanderDurationTimer <= 0f)
+            {
+                agent.ResetPath();
+                isWandering = false;
+            }
         }
     }
-}
 
     private Vector3 GetRandomPoint(Vector3 center, float range)
     {
@@ -392,13 +392,13 @@ public class Plant : MonoBehaviour
         // Debug.Log($"Sun level: {sunLevel}");
     }
 
-  public void ListenToMusic()
-{
+    public void ListenToMusic()
+    {
         if (isDead) return;
         musicLevel += musicRate;
-    //Debug.Log($"🎵 Music level: {musicLevel}");
+        //Debug.Log($"🎵 Music level: {musicLevel}");
 
-}
+    }
 
     public float GetWaterLevel()
     {
