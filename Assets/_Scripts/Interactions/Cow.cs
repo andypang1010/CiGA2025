@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Cow : Interactable
 {
+    public bool isDead = false;
     public GameObject shitPoint;
     public float shitLevel = 0;
     public float shitTime = 10;
@@ -19,6 +20,8 @@ public class Cow : Interactable
     // update 
     void Update()
     {
+        if (isDead) return;
+
         // CHECK ACCIDENT
         if (TryGetComponent<Accident>(out Accident acc))
         {
@@ -86,6 +89,9 @@ public class Cow : Interactable
     private void GoToDie()
     {
         // TODO
+
+
+        isDead = true;
     }
 
 }

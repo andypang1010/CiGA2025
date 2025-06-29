@@ -24,10 +24,10 @@ public class ShitGrid : MonoBehaviour
     {
         if (other.TryGetComponent<Shit>(out Shit shit))
         {
-//            Debug.Log("Detected shit 1");
+            Debug.Log("Detected shit 1");
             if (shit.isShitEnabled && !shit.isConsumed)
             {
-               // Debug.Log("Detected shit 2; consuming shit");
+                Debug.Log("Detected shit 2");
                 hasShit = true;
                 currentShit = shit;
             }
@@ -35,7 +35,7 @@ public class ShitGrid : MonoBehaviour
 
         if (other.CompareTag("Plant"))
         {
-           // Debug.Log("Detected Plant");
+            Debug.Log("Detected Plant");
             hasPlant = true;
             currentPlant = other.gameObject;
         }
