@@ -2178,12 +2178,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77602b4672b1b584ab1c345398b7bbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantPrefabs:
-  - {fileID: 8376311601829622201, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
-  - {fileID: 6796475239365000019, guid: 89178154a751f144496530f660a266c6, type: 3}
-  - {fileID: 6260418340754702201, guid: 789b8955cfa1c2b47ba50d31dd781c55, type: 3}
-  spawnInterval: 0.1
-  maxPlants: 10
+  plantsToSpawn:
+  - prefab: {fileID: 8376311601829622201, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
+    initialSun: 0
+    initialWater: 0
+    initialMusic: 0
+    initialPoo: 0
+  - prefab: {fileID: 6260418340754702201, guid: 789b8955cfa1c2b47ba50d31dd781c55, type: 3}
+    initialSun: 0
+    initialWater: 0
+    initialMusic: 0
+    initialPoo: 0
+  - prefab: {fileID: 6796475239365000019, guid: 89178154a751f144496530f660a266c6, type: 3}
+    initialSun: 0
+    initialWater: 0
+    initialMusic: 0
+    initialPoo: 0
+  - prefab: {fileID: 8376311601829622201, guid: 7e963a253ca920d44b17e072c96d9920, type: 3}
+    initialSun: 0
+    initialWater: 0
+    initialMusic: 0
+    initialPoo: 0
+  - prefab: {fileID: 6260418340754702201, guid: 789b8955cfa1c2b47ba50d31dd781c55, type: 3}
+    initialSun: 0
+    initialWater: 0
+    initialMusic: 0
+    initialPoo: 0
+  spawnInterval: 5
+  maxPlants: 5
   plantCheckRadius: 1
   spawnArea: {fileID: 314986241}
 --- !u!4 &712862060
