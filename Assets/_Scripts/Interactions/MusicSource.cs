@@ -28,7 +28,7 @@ public class MusicSource : Interactable
         if (other.gameObject.TryGetComponent(out Plant plant) && !plants.Contains(plant))
         {
             plants.Add(plant);
-            Debug.Log($"🎵 Plant added: {plant.name}");
+            // Debug.Log($"🎵 Plant added: {plant.name}");
         }
     }
 
@@ -37,7 +37,7 @@ public class MusicSource : Interactable
         if (other.gameObject.TryGetComponent(out Plant plant))
         {
             plants.Remove(plant);
-            Debug.Log($"🎵 Plant removed: {plant.name}");
+           //  Debug.Log($"🎵 Plant removed: {plant.name}");
         }
     }
 }
