@@ -2,11 +2,22 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
+[System.Serializable]
+public class PlantSpawnData
+{
+    public GameObject prefab;
+    public float initialSun;
+    public float initialWater;
+    public float initialMusic;
+    public int initialPoo;
+}
+
 public class PlantsSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
-    public GameObject[] plantPrefabs;
-    public float spawnInterval = 1;
+    public List<PlantSpawnData> plantsToSpawn;
+    private int nextSpawnIndex = 0;
+    public float spawnInterval = 10;
     public int maxPlants = 5;
     public float plantCheckRadius = 1f; // Radius to check for overlaps
 
@@ -16,9 +27,14 @@ public class PlantsSpawner : MonoBehaviour
     private float timer = 0f;
     private List<GameObject> spawnedPlants = new List<GameObject>();
 
+    private void Start()
+    {
+        timer = spawnInterval; // so that we immediately spawn the first one
+    }
+
     void Update()
     {
-        if (plantPrefabs.Length == 0 || spawnArea == null) return;
+        if (plantsToSpawn.Count == 0 || spawnArea == null) return;
 
         // Clean up destroyed plants from the list
         spawnedPlants.RemoveAll(p => p == null);
@@ -55,8 +71,18 @@ public class PlantsSpawner : MonoBehaviour
 
         if (spotIsClear)
         {
-            GameObject prefab = plantPrefabs[Random.Range(0, plantPrefabs.Length)];
+            if (nextSpawnIndex >= plantsToSpawn.Count) return;            // nothing left to spawn
+
+            var data = plantsToSpawn[nextSpawnIndex];
+            var prefab = data.prefab;
+            Debug.Log("Next plant is: " + prefab.name);
+            nextSpawnIndex++;
+
             GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);
+            var plantScript = newPlant.GetComponent<Plant>();
+
+            // TODO: init stats
+
             newPlant.tag = "Plant"; // Just in case the prefab isn't tagged already
             spawnedPlants.Add(newPlant);
            // Debug.Log("🌱 Spawned plant at " + spawnPos);
