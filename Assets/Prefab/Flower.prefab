@@ -350,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 98
   m_Sprite: {fileID: -325871432, guid: 0e339d2266903c746b0ca9131fe24826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -733,37 +733,43 @@ MonoBehaviour:
   sunLevel: 0
   musicLevel: 0
   pooCount: 1
-  isPerfect: 0
   isDead: 0
   waterUI: {fileID: 7123347211471620751}
   sunUI: {fileID: 6164862929471607315}
   pooUI: {fileID: 2258109144062996862}
   musicUI: {fileID: 782333363307288203}
-  waterNeeded: 5.5
+  initialWater: 2
   minWater: 1
   maxWater: 5
   tooMuchWater: 10
-  sunNeeded: 7
+  initialSun: 2
+  minSun: 1
+  maxSun: 5
   tooMuchSun: 12
   pooNeeded: 2
-  tooMuchPoo: 4
-  musicNeeded: 2
-  tooMuchMusic: 3
+  initialPoo: 2
+  initialMusic: 2
+  maxmusic: 5
   waterRate: 1
   sunRate: 0.5
   sunDecayRate: 0.25
   musicRate: 0.34
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
-  returnTime: 5
   canWander: 1
   wanderChance: 0.742
   wanderInterval: 3
   wanderDuration: 10
   wanderRadius: 7
   animator: {fileID: 8740984321745965887}
+  sunDecayInterval: 5
+  sunDecayAmount: 1
   isLit: 0
   pooDecayInterval: 20
+  pooDecayAmount: 1
   musicDecayInterval: 15
+  musicDecayAmount: 1
+  waterDecayInterval: 5
+  waterDecayAmount: 0.5
 --- !u!114 &3153168119104227013
 MonoBehaviour:
   m_ObjectHideFlags: 0
