@@ -115,6 +115,8 @@ public class PlayerInteraction : MonoBehaviour
             waterHoldSlider.value = waterHoldTimer;
             waterHoldSlider.gameObject.SetActive(waterObject != null);
         }
+
+
         // === Hold-to-Play Music logic ===
         if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
         {

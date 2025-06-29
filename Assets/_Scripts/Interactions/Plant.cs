@@ -212,7 +212,7 @@ public class Plant : MonoBehaviour
             sunLevel -= sunDecayAmount;
             sunLevel = Mathf.Max(0, sunLevel);
 
-            Debug.Log($"☀️ Sun decayed! sunLevel now: {sunLevel}");
+            // Debug.Log($"☀️ Sun decayed! sunLevel now: {sunLevel}");
 
             sunDecayTimer = 0f; // reset timer
         }
@@ -238,7 +238,7 @@ public class Plant : MonoBehaviour
         waterLevel -= waterDecayAmount;
         waterLevel = Mathf.Max(0, waterLevel);
 
-       Debug.Log($"💧 Water decayed! waterLevel now: {waterLevel}");
+       // Debug.Log($"💧 Water decayed! waterLevel now: {waterLevel}");
 
         waterDecayTimer = 0f; // reset timer
     }
@@ -255,7 +255,7 @@ public class Plant : MonoBehaviour
     {
         pooCount -= pooDecayAmount;
         pooCount = Mathf.Max(0, pooCount); // just in case
-        Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
+        // Debug.Log($"Poo decayed! Current pooCount: {pooCount}");
 
         pooDecayTimer = 0f; // reset timer
     }
@@ -270,7 +270,7 @@ public class Plant : MonoBehaviour
     {
         musicLevel -= musicDecayAmount;
         musicLevel = Mathf.Max(0f, musicLevel);
-        Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
+        // Debug.Log($"🎵 Music decayed! musicLevel now: {musicLevel}");
         musicDecayTimer = 0f;
     }
 }

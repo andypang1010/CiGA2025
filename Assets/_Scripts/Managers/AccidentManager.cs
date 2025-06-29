@@ -57,7 +57,8 @@ public class AccidentManager : MonoBehaviour
         if (currentNumPlantsRunning < maxNumPlantsRunning)
         {
             // Ignore all plants with NavMeshAgent
-            plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).Select(plant => plant.gameObject).ToList();
+            plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).
+                Select(plant => plant.gameObject).ToList();
 
             plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
             currentNumPlantsRunning++;
