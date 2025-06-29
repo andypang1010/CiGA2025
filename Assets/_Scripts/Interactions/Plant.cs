@@ -9,6 +9,8 @@ public class Plant : MonoBehaviour
     [SerializeField] private float musicLevel = 0f;
     [SerializeField] private float pooCount = 0;
     [SerializeField] public bool isDead = false;
+    [SerializeField] public bool isBurnt = false;
+    [SerializeField] public bool isShit = false;
 
     [Header("Plant UI")]
     public GameObject waterUI;
@@ -28,8 +30,8 @@ public class Plant : MonoBehaviour
     public float maxSun = 5f;
     public float tooMuchSun = 10f;
 
+    public int initialPoo = 2; 
     public int pooNeeded = 1;
-    public int initialPoo = 2;
 
     public int initialMusic = 2;
     public int maxmusic = 5;
@@ -153,6 +155,7 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("dried");
             isDead = true;
+            isBurnt = true;
         }
         else if (sunLevel <= 0)
         {
@@ -172,6 +175,7 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("too much poo TT!");
             isDead = true;
+            isShit = true;
         }
         else if (pooCount <= 0)
         {
@@ -183,7 +187,14 @@ public class Plant : MonoBehaviour
 
     private void HandleDeath()
     {
-        animator.SetTrigger("isDead");
+        if (isBurnt)
+        {
+            animator.SetTrigger("isBurnt");
+        }else if(isShit) {
+            animator.SetTrigger("isShit");
+        }
+        else { animator.SetTrigger("isDead"); }
+        
     }
 
     private void HandleSunDecay()
