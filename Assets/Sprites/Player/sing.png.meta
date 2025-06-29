@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -93,14 +93,1787 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7080
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4c27156dbdaa647a501641409f5d20
+      internalID: 1053802625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_1
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 7080
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3350068cc1c7855428cb97951b55e161
+      internalID: -2105769448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_2
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 7080
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067569c5220d7224e81f55d63a353ea9
+      internalID: 1163246567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_3
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 7080
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef513cc9f91b894ea70b386732af10c
+      internalID: 822108521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_4
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 7080
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2762aaa9c56b8b449bbcb800a223a58e
+      internalID: -70940335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6608
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c4a2b1a861cfd4aa4c95b4b66b59e9
+      internalID: 546357108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_6
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 6608
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9bbfbe50bffb14aa78934f712661dc
+      internalID: -2057396123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_7
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 6608
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbf6feaa7f61984fbcb684d91c21424
+      internalID: 1638243085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_8
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 6608
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949b8a7503db3614f9d41e0dad7cc830
+      internalID: 770037532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_9
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 6608
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d866212dcc9d2b14ca3e086518fcb8da
+      internalID: -117872216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6136
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b96e36bf40e0564e9eab56d5cd8bc97
+      internalID: 1537287426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_11
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 6136
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3bc4791503c9540b809ac38ac55933
+      internalID: 1793981784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_12
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 6136
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ca3ea6529d9a04ea1fb09d7e073da4
+      internalID: 1808295636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_13
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 6136
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b163944c79efb40a3f58b4b8e8a90d
+      internalID: 966044195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_14
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 6136
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6af001fa892414086b2cac287ae01e
+      internalID: -1188291589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5664
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532706ea9eb5fa949996d46c3e80613d
+      internalID: -1443979634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_16
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 5664
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c1cf4ccb147a0438508bb54f8a6ec1
+      internalID: -89552958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_17
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 5664
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56381f013626be4d8e738962c6fbf1f
+      internalID: -1112285274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_18
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 5664
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283433bfddf284b44abdf04dc64be002
+      internalID: 1068666463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_19
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 5664
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc2eb24fc8ce234cafed18320d69070
+      internalID: -408069935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5192
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb720e9b454d01947afd606fb51ad8d3
+      internalID: -1222787785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_21
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 5192
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c440f293932677144ade24673b842b5b
+      internalID: 15264242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_22
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 5192
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76360fcaddaf8c4e87ac33f54016a80
+      internalID: -928216225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_23
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 5192
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a1f38e92d6c684e9596730f1bc37b4
+      internalID: -1498164614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_24
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 5192
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2d3655f74500d4597a9d1a0d4eef07
+      internalID: -902596905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4720
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a5811f7051063429eb05abad0cdd24
+      internalID: -2019252209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_26
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 4720
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc8ebdbe95c0584b974bdb80c9174d0
+      internalID: -323508823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_27
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 4720
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33297a293ccc49f478cff1aacdcf8fda
+      internalID: 708285499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_28
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 4720
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a338a57543d7fa84abe8ce438eb1543c
+      internalID: -1208866100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_29
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 4720
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a4805b5d427074dab3219a5f46cb56
+      internalID: 33283981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4248
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e122b265579055c4f91576a465b303de
+      internalID: 1403005182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_31
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 4248
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3ed092c7aeaa14cac529799ca0e803
+      internalID: 1882971869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_32
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 4248
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ee5c8f2188eea41ad35b8e3862a66b
+      internalID: -1469742471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_33
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 4248
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35fab42a6582084c85bc6a240ca68d2
+      internalID: -399541221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_34
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 4248
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30cfda2bd67d99498aa9db9449bb9e9
+      internalID: 547154472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3776
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034049f0d4831734ea5ac0c1c89cd9d5
+      internalID: 384910279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_36
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 3776
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb70c5278ebe234aa83ac46da758a90
+      internalID: 1597642885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_37
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 3776
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd41369de715194c82638b0dadef23f
+      internalID: -1075385956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_38
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 3776
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea268ac1937e9194cba8078af26e7693
+      internalID: 412831292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_39
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 3776
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfd00d78c7be344bb5f70c47578e38c
+      internalID: 517836471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3304
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ba985d7164b6940bce2f649ada021a
+      internalID: 1132443233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_41
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 3304
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97700639abfa56049935ff98a3216682
+      internalID: 1108801080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_42
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 3304
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e933b8c032fe79d43b40c5af78877f44
+      internalID: -816201427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_43
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 3304
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa82a54e0f88b54382c37d6c4b87b3f
+      internalID: 208746751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_44
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 3304
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d21f5ed3e0efb4fa151af197ca00da
+      internalID: 1181955356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2832
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854a34e937bf21c42b929f96bfefcf4a
+      internalID: -1822689054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_46
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 2832
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c13840bcdf255648a8529c6be87cd1d
+      internalID: -1698989071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_47
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 2832
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67c128d9cce26742bfbac7cfda3200f
+      internalID: -1955357832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_48
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 2832
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cef37c8f27c492429f0d294fd4cca0c
+      internalID: 1826659062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_49
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 2832
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df53e47c7822912428253e5b6f30e653
+      internalID: -1062186238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2360
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc85f2f26d134f4c893f792ea835c6c
+      internalID: 1908545687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_51
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 2360
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a138d3b40a1a49e44afe88be21d7aff7
+      internalID: 406918660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_52
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 2360
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52188448733e947469018af188284848
+      internalID: 891664032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_53
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 2360
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63a5b62696748a488b9797267592509
+      internalID: 1866888895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_54
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 2360
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c805ebe5fd98b32409e661e2f1d1608c
+      internalID: 66667028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1888
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34abf9f30739de142bf546e90c659f7f
+      internalID: -750022011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_56
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1888
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e92304cccca4b4786e9a884b1a6744
+      internalID: 1148116006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_57
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1888
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99daa9357e23c2449a186d6504702ac3
+      internalID: 1574223543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_58
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 1888
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac6829db374e4b469f74bcfc5c2ba50
+      internalID: 179203586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_59
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1888
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b261792e66b0894db32d6daca69e386
+      internalID: 1951864102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1416
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5396ad032783b1f4c9d38f40ac1a87aa
+      internalID: -1960019851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_61
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1416
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a74f332e0ec092459eae39de2f4126c
+      internalID: 473872083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_62
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1416
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e3c578d484a8446b6f7f074ba0c670
+      internalID: -35155835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_63
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 1416
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9614bb15fac6e6248ad9b42116460fdc
+      internalID: -1573947469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_64
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1416
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7788d0bd999e1c742a669c3c5f5400dd
+      internalID: -205821859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 944
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9878419032ce048afce8437d29b96d
+      internalID: 1379544837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_66
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 944
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e104bc6e9a52e4387f6a863d0b7362
+      internalID: -1770937257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_67
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 944
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e01a1955873c642afd6817a131d4d6
+      internalID: -380765702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_68
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 944
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d5e968a74d0564c99231647e6b4e3d
+      internalID: 2004014849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_69
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 944
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f300804eeb3a7478daa829f2032d2b
+      internalID: 164110667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c363c47db8d724f8b539258e0c61bb
+      internalID: -1342033386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_71
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 472
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9393de89ed0f343bdb716fecdde65f
+      internalID: -722981233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_72
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 472
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a30acfdc2dde6b4f834e1b5bb2d3c34
+      internalID: 759098075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_73
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 472
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de225bb4e5b37d41af39b50fc2185db
+      internalID: -1485739912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_74
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 472
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739d9fdfd50f2624fb92fd84f6cc8e6c
+      internalID: 2049560258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d8c1cae15c6064998b84ea8c279ab9
+      internalID: -1211940888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_76
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 0
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae44ae14b30141345bc733944a9fc7e5
+      internalID: 1003701716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_77
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 0
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d68ab0ba397c104186de310dcdd9de9
+      internalID: 1312427126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_78
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 0
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd9cd4fc21a3214395f6ab78ea8acf1
+      internalID: 535412725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sing_79
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 0
+        width: 725
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9a3647d77ee5748af00acc6af6541b
+      internalID: -1740066014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e611789ebabbf4944b1cb038a50bff36
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +1881,90 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":16.0},"gridSpriteSize":{"x":725.0,"y":472.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sing_0: 1053802625
+      sing_1: -2105769448
+      sing_10: 1537287426
+      sing_11: 1793981784
+      sing_12: 1808295636
+      sing_13: 966044195
+      sing_14: -1188291589
+      sing_15: -1443979634
+      sing_16: -89552958
+      sing_17: -1112285274
+      sing_18: 1068666463
+      sing_19: -408069935
+      sing_2: 1163246567
+      sing_20: -1222787785
+      sing_21: 15264242
+      sing_22: -928216225
+      sing_23: -1498164614
+      sing_24: -902596905
+      sing_25: -2019252209
+      sing_26: -323508823
+      sing_27: 708285499
+      sing_28: -1208866100
+      sing_29: 33283981
+      sing_3: 822108521
+      sing_30: 1403005182
+      sing_31: 1882971869
+      sing_32: -1469742471
+      sing_33: -399541221
+      sing_34: 547154472
+      sing_35: 384910279
+      sing_36: 1597642885
+      sing_37: -1075385956
+      sing_38: 412831292
+      sing_39: 517836471
+      sing_4: -70940335
+      sing_40: 1132443233
+      sing_41: 1108801080
+      sing_42: -816201427
+      sing_43: 208746751
+      sing_44: 1181955356
+      sing_45: -1822689054
+      sing_46: -1698989071
+      sing_47: -1955357832
+      sing_48: 1826659062
+      sing_49: -1062186238
+      sing_5: 546357108
+      sing_50: 1908545687
+      sing_51: 406918660
+      sing_52: 891664032
+      sing_53: 1866888895
+      sing_54: 66667028
+      sing_55: -750022011
+      sing_56: 1148116006
+      sing_57: 1574223543
+      sing_58: 179203586
+      sing_59: 1951864102
+      sing_6: -2057396123
+      sing_60: -1960019851
+      sing_61: 473872083
+      sing_62: -35155835
+      sing_63: -1573947469
+      sing_64: -205821859
+      sing_65: 1379544837
+      sing_66: -1770937257
+      sing_67: -380765702
+      sing_68: 2004014849
+      sing_69: 164110667
+      sing_7: 1638243085
+      sing_70: -1342033386
+      sing_71: -722981233
+      sing_72: 759098075
+      sing_73: -1485739912
+      sing_74: 2049560258
+      sing_75: -1211940888
+      sing_76: 1003701716
+      sing_77: 1312427126
+      sing_78: 535412725
+      sing_79: -1740066014
+      sing_8: 770037532
+      sing_9: -117872216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
