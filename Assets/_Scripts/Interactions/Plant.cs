@@ -19,19 +19,21 @@ public class Plant : MonoBehaviour
 
     [Header("Growth Settings")]
     // 0(DEATH) - (POPUP) - minwater - maxwater - (WARNING) - tooMuchWater(DEATH)
-    public float waterNeeded = 1f;
+    public float initialWater = 2f;
     public float minWater = 1f;
     public float maxWater = 5f;
     public float tooMuchWater = 10f;
 
-    public float sunNeeded = 1f;
-    public float tooMuchSun = 2f;
+    public float initialSun = 2f;
+    public float minSun = 1f;
+    public float maxSun = 5f;
+    public float tooMuchSun = 10f;
 
     public int pooNeeded = 1;
-    public int tooMuchPoo = 5;
+    public int initialPoo = 2;
 
-    public int musicNeeded = 1;   
-    public int tooMuchMusic = 2;  
+    public int initialMusic = 2;
+    public int maxmusic = 5;
 
     [Header("Growth Rates (units per second)")]
     public float waterRate = 1f;
@@ -112,6 +114,11 @@ public class Plant : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if(isDead)
+        {
+            HandleDeath();
+        }
     
         HandleWandering();
         HandleSunDecay();
@@ -122,7 +129,7 @@ public class Plant : MonoBehaviour
         waterUI.SetActive(tooMuchWater - waterLevel <= tooMuchWater / 5 || waterLevel - 0 <= tooMuchWater / 5);
         sunUI.SetActive(tooMuchSun - sunLevel <= tooMuchSun / 10 || sunLevel - 0 <= tooMuchSun / 10);
         pooUI.SetActive(pooCount >= pooNeeded || pooCount <= 0);
-        musicUI.SetActive(tooMuchMusic - musicLevel <= tooMuchMusic / 5 || musicLevel - 0 <= tooMuchMusic / 5);
+        //musicUI.SetActive();
     }
 
     private void CheckDeath()
@@ -135,13 +142,11 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("drowned!");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
         else if (waterLevel <= 0)
         {
             Debug.Log("thirst");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
 
         //check sun status
@@ -149,13 +154,11 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("dried");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
         else if (sunLevel <= 0)
         {
             Debug.Log("withered");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
 
         //check music status
@@ -163,7 +166,6 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("depressed");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
 
         //check poo status
@@ -171,15 +173,18 @@ public class Plant : MonoBehaviour
         {
             Debug.Log("too much poo TT!");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
         else if (pooCount <= 0)
         {
             Debug.Log("malnutrition");
             isDead = true;
-            animator.SetTrigger("isDead");
         }
 
+    }
+
+    private void HandleDeath()
+    {
+        animator.SetTrigger("isDead");
     }
 
     private void HandleSunDecay()
@@ -358,27 +363,6 @@ public class Plant : MonoBehaviour
     //Debug.Log($"🎵 Music level: {musicLevel}");
 
 }
-
-    private void CheckPerfection()
-    {
-        if (isPerfect) return;
-
-        if (
-            waterLevel >= waterNeeded &&
-            sunLevel >= sunNeeded &&
-            pooCount == pooNeeded &&
-            musicLevel >= musicNeeded
-        )
-        {
-            isPerfect = true;
-            Debug.Log("🌟 Plant is perfect!");
-
-            if (perfectMaterial != null && plantRenderer != null)
-            {
-                plantRenderer.material = perfectMaterial;
-            }
-        }
-    }
 
     public float GetWaterLevel()
     {
