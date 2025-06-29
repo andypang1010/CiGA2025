@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game (Andy)");
+        SceneManager.LoadScene("Game (Ana)");
     }
 
     public void Menu()
