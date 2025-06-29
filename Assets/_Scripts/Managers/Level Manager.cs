@@ -13,6 +13,7 @@ public class LevelManager: MonoBehaviour
     public GameObject GoodEndingUI;
     public GameObject SoSoEndingUI;
     public GameObject BadEndingUI;
+    public GameObject statsUI;
     public GameObject PauseMenuUI;
     public GameObject pauseButton;
 
@@ -28,6 +29,7 @@ public class LevelManager: MonoBehaviour
         GoodEndingUI.SetActive(false); // Hide the Good Ending UI at the start
         SoSoEndingUI.SetActive(false); // Hide the So-So Ending UI at the start
         BadEndingUI.SetActive(false); // Hide the Game Over UI at the start
+        statsUI.SetActive(false); // Hide the stats UI at the start
         PauseMenuUI.SetActive(false); // Hide the Pause Menu UI at the start
         pauseButton.SetActive(true); // Ensure the pause button is active at the start
 
@@ -56,6 +58,7 @@ public class LevelManager: MonoBehaviour
                 GoodEndingUI.SetActive(false);
                 SoSoEndingUI.SetActive(false);
                 BadEndingUI.SetActive(false);
+                statsUI.SetActive(false); // Show the stats UI when the game is paused
                 PauseMenuUI.SetActive(true); // Show the Pause Menu UI when the game is paused
                 pauseButton.SetActive(false); // Hide the pause button when the game is paused
             }
@@ -107,6 +110,7 @@ public class LevelManager: MonoBehaviour
                 BadEndingUI.SetActive(true);
             }
 
+            statsUI.SetActive(false); // Show the stats UI when the game is not active
             PauseMenuUI.SetActive(false); // Show the Pause Menu UI when the game is not active
             pauseButton.SetActive(false); // Hide the pause button when the game is not active
 

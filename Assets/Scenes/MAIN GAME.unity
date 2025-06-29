@@ -4250,7 +4250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946290769904088618, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: speed
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3946290769904088618, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: footstep
@@ -4889,9 +4889,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minBeats: 3
-  maxBeats: 7
+  maxBeats: 5
   interactables: []
-  accidentChance: 0.15
+  accidentChance: 0.2
   checkInterval: 7
   currentNumPlantsRunning: 0
   maxNumPlantsRunning: 1
@@ -4913,6 +4913,7 @@ MonoBehaviour:
   GoodEndingUI: {fileID: 1209484344}
   SoSoEndingUI: {fileID: 1209484343}
   BadEndingUI: {fileID: 1209484339}
+  statsUI: {fileID: 1209484340}
   PauseMenuUI: {fileID: 1209484342}
   pauseButton: {fileID: 1209484341}
   volume: {fileID: 1955753773}

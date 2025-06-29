@@ -20,7 +20,7 @@ public class Accident : Interactable
 
     public float qteStartTime;
     public float accidentStartTime;
-    public float accidentDuration = 50f;
+    public float accidentDuration = 45f;
     public List<QTEData> qteTimes;
 
     float qteTimeLimit = 0.6f;
@@ -164,7 +164,7 @@ public class Accident : Interactable
         isAccidentActive = true; // Ensure the accident is active
         accidentUI.GetComponent<Image>().enabled = true; // Show the accident UI
         qteTime.GetComponent<TMP_Text>().enabled = true; // Show the QTE time text
-        qteTime.GetComponent<TMP_Text>().text = "Time: " + (Time.time - qteStartTime);
+        qteTime.GetComponent<TMP_Text>().text = (Time.time - qteStartTime).ToString("f3");
     }
 
     private void HideQTE()
@@ -173,18 +173,17 @@ public class Accident : Interactable
         accidentUI.GetComponent<Image>().enabled = false; // Hide the accident UI
         accidentQTE.GetComponent<Image>().enabled = false; // Hide the QTE UI
         qteTime.GetComponent<TMP_Text>().enabled = false; // Hide the QTE time text
-        //qteFailed.GetComponent<Image>().enabled = false; // Show the QTE failed UI
+        qteFailed.GetComponent<Image>().enabled = false; // Show the QTE failed UI
     }
 
     private void ShowFailed()
     {
         qteFailed.GetComponent<Image>().enabled = true; // Show the QTE failed UI
-        Invoke(nameof(HideFailed), 0.5f); // Hide the QTE failed UI after 2 seconds
+        Invoke(nameof(HideFailed), 0.5f); // Hide the QTE failed UI after 0.5 seconds
     }
 
     private void HideFailed()
     {
-        qteFailed.GetComponent<Image>().enabled = false; // Hide the QTE failed UI
         HideQTE(); // Hide the QTE UI as well
     }
 

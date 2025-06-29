@@ -67,17 +67,14 @@ public class AccidentManager : MonoBehaviour
         //////////////////////////////// QTE CODE ////////////////////////////////
         // Only check once per checkInterval seconds and if there is no active accident
 
-        if (Time.time - lastCheckTime < checkInterval) return;
-
         if (HasActiveAccident()) return;
+
+        if (Time.time - lastCheckTime < checkInterval) return;
 
         lastCheckTime = Time.time;
 
-        print("Last Checked Now @" + lastCheckTime);
-
         // Check if an accident should occur
         int randomNumber = UnityEngine.Random.Range(0, (int)(1 / accidentChance));
-        print("Accident Number: " + randomNumber + " out of range [0, " + (int)(1 / accidentChance) + "]");
         if (randomNumber == 0)
         {
             foreach(var accidentable in qteAccidentables)
@@ -130,12 +127,9 @@ public class AccidentManager : MonoBehaviour
 
         bool hasAccident = false;
 
-        if (accidents.Length > 0)
+        foreach (var accident in accidents)
         {
-            foreach (var accident in accidents)
-            {
-                hasAccident |= accident.accidentTimeout;
-            }
+            hasAccident |= !accident.accidentTimeout;
         }
 
         return hasAccident;
