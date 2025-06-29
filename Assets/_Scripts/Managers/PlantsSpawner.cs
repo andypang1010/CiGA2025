@@ -19,7 +19,7 @@ public class PlantsSpawner : MonoBehaviour
     private int nextSpawnIndex = 0;
     public float spawnInterval = 10;
     public int maxPlants = 5;
-    public float plantCheckRadius = 1f; // Radius to check for overlaps
+    public float plantCheckRadius = 0.1f; // Radius to check for overlaps
 
     [Header("Spawn Area")]
     public BoxCollider spawnArea;
