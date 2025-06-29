@@ -186,8 +186,10 @@ public class Plant : MonoBehaviour
     }
 
     private void HandleSunDecay()
+{
+    if (sunLevel <= 0) return; // don’t go negative
     {
-        if (sunLevel <= 0) return; // don't go negative
+        if (isDead) return; 
 
     if (!isLit)
     {
