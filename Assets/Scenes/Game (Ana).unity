@@ -4096,7 +4096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c88f63178cd3b041b674eacc3f048ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 1000
+  gameTime: 180
   remainingTime: 0
   GoodEndingUI: {fileID: 525215655}
   SoSoEndingUI: {fileID: 899178146}
