@@ -233,7 +233,7 @@ MonoBehaviour:
   throwPoint: {fileID: 5432992814127688124}
   gridPoint: {fileID: 8523505388087467201}
   interactRange: 4
-  gridDetectionRange: 3
+  gridDetectionRange: 4.5
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
   musicObject: {fileID: 0}

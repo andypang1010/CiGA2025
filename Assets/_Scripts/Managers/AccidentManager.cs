@@ -15,6 +15,7 @@ public class AccidentManager : MonoBehaviour
     GameObject qteUI;
     GameObject qteBeat;
     GameObject qteTime;
+    GameObject qteFailed;
     [SerializeField] List<GameObject> interactables;
     public float accidentFrequency = 0.6f;
     public float checkInterval = 5f;
@@ -35,10 +36,12 @@ public class AccidentManager : MonoBehaviour
         qteUI = GameObject.Find("Accident UI");
         qteBeat = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
+        qteFailed = GameObject.Find("QTE Failed");
 
         qteUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
         qteBeat.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
+        qteFailed.GetComponent<Image>().enabled = false; // Make sure QTE failed UI is initially hidden
 
         plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Select(plant => plant.gameObject).ToList();
 
@@ -54,7 +57,8 @@ public class AccidentManager : MonoBehaviour
         if (currentNumPlantsRunning < maxNumPlantsRunning)
         {
             // Ignore all plants with NavMeshAgent
-            plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).Select(plant => plant.gameObject).ToList();
+            plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Where(plant => !plant.GetComponent<NavMeshAgent>().enabled).
+                Select(plant => plant.gameObject).ToList();
 
             plants[UnityEngine.Random.Range(0, plants.Count - 1)].GetComponent<NavMeshAgent>().enabled = true;
             currentNumPlantsRunning++;
@@ -67,10 +71,11 @@ public class AccidentManager : MonoBehaviour
 
         if (HasActiveAccident()) return;
 
+        lastCheckTime = Time.time;
+
         // Check if an accident should occur
         if ((int)UnityEngine.Random.Range(0, 1 / accidentFrequency) == 0)
         {
-            lastCheckTime = Time.time;
             foreach(var accidentable in qteAccidentables)
             {
                 // Find all objects with the specified tag
