@@ -386,7 +386,6 @@ GameObject:
   - component: {fileID: 4132101069294612684}
   - component: {fileID: 2308524833671226789}
   - component: {fileID: 4292750855236216153}
-  - component: {fileID: 4355599280146663850}
   m_Layer: 6
   m_Name: Grass
   m_TagString: Plant
@@ -616,53 +615,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4355599280146663850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6260418340754702201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ba44d62f4a3af498baedbed151d41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterLevel: 1.52
-  sunLevel: 0
-  musicLevel: 0
-  pooCount: 1
-  isPerfect: 0
-  isDead: 0
-  waterUI: {fileID: 0}
-  sunUI: {fileID: 0}
-  pooUI: {fileID: 0}
-  musicUI: {fileID: 0}
-  waterNeeded: 5.5
-  minWater: 1
-  maxWater: 5
-  tooMuchWater: 10
-  sunNeeded: 7
-  tooMuchSun: 12
-  pooNeeded: 2
-  tooMuchPoo: 4
-  musicNeeded: 2
-  tooMuchMusic: 3
-  waterRate: 2
-  sunRate: 1
-  sunDecayRate: 0.25
-  musicRate: 0.2
-  perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
-  returnTime: 5
-  canWander: 1
-  wanderChance: 0.742
-  wanderInterval: 3
-  wanderDuration: 10
-  wanderRadius: 7
-  animator: {fileID: 0}
-  isLit: 0
-  pooDecayInterval: 30
-  musicDecayInterval: 5
 --- !u!1 &7252033181045282041
 GameObject:
   m_ObjectHideFlags: 0
