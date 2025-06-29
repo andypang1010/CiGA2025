@@ -200,6 +200,7 @@ public class Plant : MonoBehaviour
         }
         else { animator.SetTrigger("isDead"); }
         
+        warningUI.SetActive(false);
     }
 
     private void HandleSunDecay()
@@ -341,6 +342,10 @@ public class Plant : MonoBehaviour
         {
             ExposeToLight();
         }
+        else if (other.CompareTag("PooArea"))
+        {
+            warningUI.SetActive(pooCount >= pooNeeded);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -350,6 +355,7 @@ public class Plant : MonoBehaviour
         {
             isLit= true;
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -381,7 +387,6 @@ public class Plant : MonoBehaviour
     {
         if (isDead) return;
         pooCount += 1;
-        warningUI.SetActive(pooCount>=pooNeeded);
     }
 
     private void ExposeToLight()
