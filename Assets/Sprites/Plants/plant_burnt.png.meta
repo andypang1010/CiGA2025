@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26eb3d72fb56a6648a501f2dd695ef80
+guid: 71725c23e3d9d554b9cfe270c1fa3937
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shit_on_plant_0
+      name: plant_burnt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffd390142d952694485a62a3fa8957b4
-      internalID: -1106095558
+      spriteID: e6fcc856118058940af2fafcb1bdba60
+      internalID: -1552669404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_1
+      name: plant_burnt_1
       rect:
         serializedVersion: 2
-        x: 298
+        x: 170
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab45287680463f94b8cd446bdfd7c044
-      internalID: 2060318232
+      spriteID: 23d4223fa5c10bf4daad1571b8432a18
+      internalID: -445206510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_2
+      name: plant_burnt_2
       rect:
         serializedVersion: 2
-        x: 596
+        x: 340
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1875ce447ab7b94ab6ebc095ed0f298
-      internalID: 2057324904
+      spriteID: 023e313654da8064fa1e7d1a77f49325
+      internalID: 979018305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_3
+      name: plant_burnt_3
       rect:
         serializedVersion: 2
-        x: 894
+        x: 510
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ca6527702cd3f40aee1a924f05b82a
-      internalID: 1007801735
+      spriteID: 24049eff97d42ac4caa0c525b1730ec8
+      internalID: -2106918796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_4
+      name: plant_burnt_4
       rect:
         serializedVersion: 2
-        x: 1192
+        x: 680
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 463c332dd888ee54a95c21573e8ad90b
-      internalID: 1870910256
+      spriteID: ee70b208f5194554385e48812e5124b0
+      internalID: -1444280100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_5
+      name: plant_burnt_5
       rect:
         serializedVersion: 2
-        x: 1490
+        x: 850
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0e61ecb666a4b54f9ba981a45d19146
-      internalID: 1632940701
+      spriteID: 887bcdc8347bd88428d106d42515073a
+      internalID: 812358427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shit_on_plant_6
+      name: plant_burnt_6
       rect:
         serializedVersion: 2
-        x: 1788
+        x: 1020
         y: 0
-        width: 298
-        height: 352
+        width: 170
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,8 +244,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c547d999832c40e4891498a3bd7e0792
-      internalID: 800606391
+      spriteID: 5646d637c1e24784f803adb58b905bc1
+      internalID: 1650708006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_7
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a8a779a0369a64eab4523d66e59c57
+      internalID: 1128256689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_8
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf41c323192d1ce47ba607aceeb3fd59
+      internalID: -1225318525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_9
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380e537169cbc68499069b1891b56073
+      internalID: -537345651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_10
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32771c0f21aab1043aa38f1f8b06725d
+      internalID: 2115188850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_11
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072c9ea3d7a2c904eb94423a1a40ab68
+      internalID: 1941343562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_burnt_12
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 170
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2837b89811d5246a5c864f8aa511cf
+      internalID: -936108324
       vertices: []
       indices: 
       edges: []
@@ -254,7 +386,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7f4ca7e7052c67945a5c08fcfa730470
+    spriteID: 8678e29d63cb8ef4cb80afd900aaf641
     internalID: 0
     vertices: []
     indices: 
@@ -264,15 +396,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":298.0,"y":352.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":13.0,"y":1.0},"gridSpriteSize":{"x":170.0,"y":362.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      shit_on_plant_0: -1106095558
-      shit_on_plant_1: 2060318232
-      shit_on_plant_2: 2057324904
-      shit_on_plant_3: 1007801735
-      shit_on_plant_4: 1870910256
-      shit_on_plant_5: 1632940701
-      shit_on_plant_6: 800606391
+      plant_burnt_0: -1552669404
+      plant_burnt_1: -445206510
+      plant_burnt_10: 2115188850
+      plant_burnt_11: 1941343562
+      plant_burnt_12: -936108324
+      plant_burnt_2: 979018305
+      plant_burnt_3: -2106918796
+      plant_burnt_4: -1444280100
+      plant_burnt_5: 812358427
+      plant_burnt_6: 1650708006
+      plant_burnt_7: 1128256689
+      plant_burnt_8: -1225318525
+      plant_burnt_9: -537345651
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
