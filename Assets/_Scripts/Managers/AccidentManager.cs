@@ -9,12 +9,6 @@ using UnityEngine.UI;
 
 public class AccidentManager : MonoBehaviour
 {
-    [Header("Accident Settings")]
-    float checkInterval = 5f;
-    float lastCheckTime = 0f;
-    public float accidentFrequency = 0.05f;
-    GameObject playerHeldPoint;
-
     [Header("QTEs")]
     public int minBeats = 3;
     public int maxBeats = 7;
@@ -22,6 +16,10 @@ public class AccidentManager : MonoBehaviour
     GameObject qteBeat;
     GameObject qteTime;
     [SerializeField] List<GameObject> interactables;
+    public float accidentFrequency = 0.05f;
+    float checkInterval = 5f;
+    float lastCheckTime = 0f;
+    GameObject playerHeldPoint;
 
     [Header("Chases")]
     public int currentNumPlantsRunning = 0;
