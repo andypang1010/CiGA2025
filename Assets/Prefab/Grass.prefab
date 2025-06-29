@@ -487,6 +487,8 @@ MonoBehaviour:
   pooUI: {fileID: 435309165423557431}
   musicUI: {fileID: 3160547524403254865}
   waterNeeded: 6
+  minWater: 1
+  maxWater: 5
   tooMuchWater: 15
   sunNeeded: 10
   tooMuchSun: 15
@@ -505,7 +507,7 @@ MonoBehaviour:
   wanderInterval: 3
   wanderDuration: 10
   wanderRadius: 7
-  animator: {fileID: 0}
+  animator: {fileID: 1454695534476531703}
   isLit: 0
   pooDecayInterval: 30
   musicDecayInterval: 5
@@ -637,6 +639,8 @@ MonoBehaviour:
   pooUI: {fileID: 0}
   musicUI: {fileID: 0}
   waterNeeded: 5.5
+  minWater: 1
+  maxWater: 5
   tooMuchWater: 10
   sunNeeded: 7
   tooMuchSun: 12
