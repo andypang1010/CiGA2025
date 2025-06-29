@@ -8,7 +8,7 @@ public class PlantSpawnData
     public GameObject prefab;
     public float initialSun;
     public float initialWater;
-    public float initialMusic;
+    public int initialMusic;
     public int initialPoo;
 }
 
@@ -51,47 +51,50 @@ public class PlantsSpawner : MonoBehaviour
     }
 
     private void TrySpawnPlant()
-{
-    for (int attempts = 0; attempts < 10; attempts++)
     {
-        Vector3 spawnPos = GetRandomPositionInArea();
-
-        // Check for other plant colliders nearby
-        Collider[] hits = Physics.OverlapSphere(spawnPos, plantCheckRadius);
-        bool spotIsClear = true;
-
-        foreach (Collider hit in hits)
+        for (int attempts = 0; attempts < 10; attempts++)
         {
-            if (hit.CompareTag("Plant"))
+            Vector3 spawnPos = GetRandomPositionInArea();
+
+            // Check for other plant colliders nearby
+            Collider[] hits = Physics.OverlapSphere(spawnPos, plantCheckRadius);
+            bool spotIsClear = true;
+
+            foreach (Collider hit in hits)
             {
-                spotIsClear = false;
-                break;
+                if (hit.CompareTag("Plant"))
+                {
+                    spotIsClear = false;
+                    break;
+                }
+            }
+
+            if (spotIsClear)
+            {
+                if (nextSpawnIndex >= plantsToSpawn.Count) { return; }// nothing left to spawn
+
+                var data = plantsToSpawn[nextSpawnIndex];
+                var prefab = data.prefab;
+                Debug.Log("Next plant is: " + prefab.name);
+                nextSpawnIndex++;
+
+                GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);
+                var plantScript = newPlant.GetComponent<Plant>();
+                plantScript.initialSun = data.initialSun;
+                plantScript.initialWater = data.initialWater;
+                plantScript.initialMusic = data.initialMusic;   
+                plantScript.initialPoo = data.initialPoo;
+                // TODO: init stats
+
+                newPlant.tag = "Plant"; // Just in case the prefab isn't tagged already
+                spawnedPlants.Add(newPlant);
+               // Debug.Log("🌱 Spawned plant at " + spawnPos);
+                return;
             }
         }
 
-        if (spotIsClear)
-        {
-            if (nextSpawnIndex >= plantsToSpawn.Count) return;            // nothing left to spawn
-
-            var data = plantsToSpawn[nextSpawnIndex];
-            var prefab = data.prefab;
-            Debug.Log("Next plant is: " + prefab.name);
-            nextSpawnIndex++;
-
-            GameObject newPlant = Instantiate(prefab, spawnPos, Quaternion.identity);
-            var plantScript = newPlant.GetComponent<Plant>();
-
-            // TODO: init stats
-
-            newPlant.tag = "Plant"; // Just in case the prefab isn't tagged already
-            spawnedPlants.Add(newPlant);
-           // Debug.Log("🌱 Spawned plant at " + spawnPos);
-            return;
-        }
+        Debug.LogWarning("Could not find a clear spot to spawn after 10 attempts.");
     }
-
-    Debug.LogWarning("Could not find a clear spot to spawn after 10 attempts.");
-}
 
     private Vector3 GetRandomPositionInArea()
     {
