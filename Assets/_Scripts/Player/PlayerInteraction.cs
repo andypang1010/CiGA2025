@@ -10,7 +10,6 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Plant Stats")]
     public GameObject statsUI;
-    public TMP_Text plantName;
     public Slider waterSlider;
     public Slider sunlightSlider;
     public Slider musicSlider;
@@ -30,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
     public AudioClip musicLoopClip;
     public AudioSource _audioSource;
     public float musicHoldDuration = 2.0f;  // How long to hold Space
-    private float musicHoldTimer = 0.0f;  
+    private float musicHoldTimer = 0.0f;
     public Slider musicHoldSlider;
 
     [Header("Hold to Water")]
@@ -62,136 +61,146 @@ public class PlayerInteraction : MonoBehaviour
     }
     void Update()
     {
-    interactPressed = Input.GetKeyDown(KeyCode.E);
+        interactPressed = Input.GetKeyDown(KeyCode.E);
 
 
-    
-    // === Update Throw Point if needed ===
-    Vector3 faceDir = movement.faceDirection;
-    // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
 
-    // === Water logic ===
-    if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
-{
-    if (heldObject == null)
-    {
-        if (Input.GetKey(KeyCode.Space))
+        // === Update Throw Point if needed ===
+        Vector3 faceDir = movement.faceDirection;
+        // throwPoint.transform.localPosition = new Vector3(faceDir.x, 0, faceDir.z);
+
+        // === Water logic ===
+        if (waterObject != null && waterObject.TryGetComponent(out WaterSource water))
         {
-            waterHoldTimer += Time.deltaTime;
-
-            if (waterHoldTimer >= waterHoldDuration)
+            if (heldObject == null)
             {
-                Debug.Log("Hold complete! Starting watering...");
-                water.StartWatering();
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    waterHoldTimer += Time.deltaTime;
 
-                // Reset for next cycle if you want repeated watering
+                    if (waterHoldTimer >= waterHoldDuration)
+                    {
+                        Debug.Log("Hold complete! Starting watering...");
+                        water.StartWatering();
+
+                        // Reset for next cycle if you want repeated watering
+                        waterHoldTimer = 0.0f;
+                    }
+
+                    GetComponent<Rigidbody>().linearVelocity = Vector3.zero; // Stop player movement while holding music
+                    GetComponent<PlayerMovement>().enabled = false; // Disable movement while holding water
+                }
+                else
+                {
+                    // Reset if they release early
+                    waterHoldTimer = 0.0f;
+
+                    GetComponent<PlayerMovement>().enabled = true; // Disable movement while holding water
+                }
+            }
+            else
+            {
                 waterHoldTimer = 0.0f;
             }
         }
         else
         {
-            // Reset if they release early
             waterHoldTimer = 0.0f;
         }
-    }
-    else
-    {
-        waterHoldTimer = 0.0f;
-    }
-}
-else
-{
-    waterHoldTimer = 0.0f;
-}
 
-// === Update water hold UI ===
-if (waterHoldSlider != null)
-{
-    waterHoldSlider.maxValue = waterHoldDuration;
-    waterHoldSlider.value = waterHoldTimer;
-    waterHoldSlider.gameObject.SetActive(waterObject != null);
-}
-    // === Hold-to-Play Music logic ===
-    if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
-{
-    Debug.Log("Inside MusicSource trigger: " + musicObject.name);
-
-    if (heldObject == null)
-    {
-        if (Input.GetKey(KeyCode.Space))
+        // === Update water hold UI ===
+        if (waterHoldSlider != null)
         {
+            waterHoldSlider.maxValue = waterHoldDuration;
+            waterHoldSlider.value = waterHoldTimer;
+            waterHoldSlider.gameObject.SetActive(waterObject != null);
+        }
+        // === Hold-to-Play Music logic ===
+        if (musicObject != null && musicObject.TryGetComponent(out MusicSource music))
+        {
+            Debug.Log("Inside MusicSource trigger: " + musicObject.name);
+
+            if (heldObject == null)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                {
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
                     musicHoldTimer += Time.deltaTime;
-            Debug.Log($"Holding Space: {musicHoldTimer}/{musicHoldDuration}");
+                    Debug.Log($"Holding Space: {musicHoldTimer}/{musicHoldDuration}");
 
-            if (musicHoldTimer >= musicHoldDuration)
+                    if (musicHoldTimer >= musicHoldDuration)
+                    {
+                        Debug.Log("Hold complete! Starting music...");
+                        music.StartPlayingMusic();
+
+                        musicHoldTimer = 0.0f;
+                    }
+
+                    GetComponent<Rigidbody>().linearVelocity = Vector3.zero; // Stop player movement while holding music
+                    GetComponent<PlayerMovement>().enabled = false; // Disable movement while holding music
+                }
+                else
+                {
+                    if (musicHoldTimer > 0) Debug.Log("Released Space early, resetting timer.");
+                    musicHoldTimer = 0.0f;
+
+                    if (_audioSource.isPlaying) _audioSource.Stop();
+                    GetComponent<PlayerMovement>().enabled = true; // Enable movement when not holding music
+                }
+            }
+            else
             {
-                Debug.Log("Hold complete! Starting music...");
-                music.StartPlayingMusic();
-
+                Debug.Log("Holding object, resetting music hold.");
                 musicHoldTimer = 0.0f;
+                if (_audioSource.isPlaying) _audioSource.Stop();
+
             }
         }
         else
         {
-            if (musicHoldTimer > 0) Debug.Log("Released Space early, resetting timer.");
+
             musicHoldTimer = 0.0f;
-            if (_audioSource.isPlaying) _audioSource.Stop();
         }
-    }
-    else
-    {
-        Debug.Log("Holding object, resetting music hold.");
-        musicHoldTimer = 0.0f;
-                if (_audioSource.isPlaying) _audioSource.Stop();
 
-            }
-}
-else
-{
+        if (musicHoldSlider != null)
+        {
+            musicHoldSlider.maxValue = musicHoldDuration;
+            musicHoldSlider.value = musicHoldTimer;
 
-    musicHoldTimer = 0.0f;
-}
+            // Optional: hide when not inside source
+            musicHoldSlider.gameObject.SetActive(musicObject != null);
+        }
 
-    if (musicHoldSlider != null)
-    {
-    musicHoldSlider.maxValue = musicHoldDuration;
-    musicHoldSlider.value = musicHoldTimer;
+        // === Update animator ===
+        animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
+        animator.SetBool("IsWatering", heldPoint.transform.childCount == 0 && waterObject != null && (waterHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
+        animator.SetBool("IsSinging", heldPoint.transform.childCount == 0 && musicObject != null && (musicHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
 
-    // Optional: hide when not inside source
-    musicHoldSlider.gameObject.SetActive(musicObject != null);
-    }
-
-    // === Update animator ===
-    animator.SetBool("HasHeldObject", heldPoint.transform.childCount > 0);
-    animator.SetBool("IsWatering", waterObject != null && (waterHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
-    animator.SetBool("IsSinging", musicObject != null && (musicHoldTimer > 0 || Input.GetKey(KeyCode.Space)));
+        GetComponentInChildren<SpriteRenderer>().flipX = animator.GetBool("IsSinging") ? true : false;
 
         // === Update Plant Stats UI ===
         if (heldPoint.transform.childCount > 0 && heldObject.TryGetComponent(out Plant plant))
-    {
-        statsUI.SetActive(true);
+        {
+            statsUI.SetActive(true);
 
-        plantName.text = plant.name.Split("(")[0];
+            waterSlider.value = plant.GetWaterLevel();
+            waterSlider.maxValue = plant.tooMuchWater;
 
-        waterSlider.value = plant.GetWaterLevel();
-        waterSlider.maxValue = plant.tooMuchWater;
+            sunlightSlider.value = plant.GetSunLevel();
+            sunlightSlider.maxValue = plant.tooMuchSun;
 
-        sunlightSlider.value = plant.GetSunLevel();
-        sunlightSlider.maxValue = plant.tooMuchSun;
-
-        musicSlider.value = plant.GetMusicLevel();
+            musicSlider.value = plant.GetMusicLevel();
             musicSlider.maxValue = plant.maxmusic;
 
-        shitSlider.value = plant.GetPooCount();
+            shitSlider.value = plant.GetPooCount();
             shitSlider.maxValue = plant.pooNeeded;
+        }
+        else
+        {
+            statsUI.SetActive(false);
+        }
     }
-    else
-    {
-        statsUI.SetActive(false);
-    }
-}
 
     private void FixedUpdate()
     {
@@ -200,7 +209,8 @@ else
         if (!interactPressed) { return; }
         if (heldObject)
         {
-            if (heldObject.GetComponent<Plant>() != null) {
+            if (heldObject.GetComponent<Plant>() != null)
+            {
                 // check if there's a grid nearby
                 GameObject grid = FindClosestPlantGrid();
                 if (grid != null)
@@ -275,7 +285,7 @@ else
         }
         return closestObject;
     }
-    
+
     private GameObject FindClosestObjectInRange()
     {
         GameObject[] interactables = Physics.OverlapSphere(transform.position,
@@ -326,9 +336,9 @@ else
             waterObject = other.gameObject;
         }
         if (other.gameObject.TryGetComponent(out MusicSource _))
-    {
-        musicObject = other.gameObject;
-    }
+        {
+            musicObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -337,9 +347,9 @@ else
         {
             waterObject = null;
         }
-            if (other.gameObject.TryGetComponent(out MusicSource _))
-    {
-        musicObject = null;
-    }
+        if (other.gameObject.TryGetComponent(out MusicSource _))
+        {
+            musicObject = null;
+        }
     }
 }
