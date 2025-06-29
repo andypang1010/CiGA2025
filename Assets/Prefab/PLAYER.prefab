@@ -239,6 +239,8 @@ MonoBehaviour:
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
   musicObject: {fileID: 0}
+  musicLoopClip: {fileID: 8300000, guid: 01cc5750410b32b4fbaf3f974f28cc3a, type: 3}
+  _audioSource: {fileID: 0}
   musicHoldDuration: 5
   musicHoldSlider: {fileID: 3406682762909448993}
   waterHoldDuration: 1
