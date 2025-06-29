@@ -4422,8 +4422,8 @@ MonoBehaviour:
   minBeats: 3
   maxBeats: 7
   interactables: []
-  accidentFrequency: 0.01
-  checkInterval: 10
+  accidentFrequency: 0.3
+  checkInterval: 5
   currentNumPlantsRunning: 0
   maxNumPlantsRunning: 1
   plants: []

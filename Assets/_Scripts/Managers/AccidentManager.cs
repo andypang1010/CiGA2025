@@ -67,10 +67,11 @@ public class AccidentManager : MonoBehaviour
 
         if (HasActiveAccident()) return;
 
+        lastCheckTime = Time.time;
+
         // Check if an accident should occur
         if ((int)UnityEngine.Random.Range(0, 1 / accidentFrequency) == 0)
         {
-            lastCheckTime = Time.time;
             foreach(var accidentable in qteAccidentables)
             {
                 // Find all objects with the specified tag
