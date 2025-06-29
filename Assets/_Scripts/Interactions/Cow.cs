@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Cow : Interactable
 {
+    public bool testDeath = false;
     public bool isDead = false;
     public GameObject shitPoint;
     public float shitLevel = 0;
@@ -9,7 +10,8 @@ public class Cow : Interactable
     public float hungerLevel = 0;
     public float hungerSpeed = 1;
     [SerializeField] Animator animator;
-
+    [SerializeField] GameObject sprite;
+    [SerializeField] Sprite deadSprite;
     [SerializeField] private GameObject accidentMark;
 
     private void Start()
@@ -21,6 +23,13 @@ public class Cow : Interactable
     void Update()
     {
         if (isDead) return;
+        if (testDeath)
+        {
+            GoToDie();
+            testDeath = false;
+            accidentMark.SetActive(true);
+            return;
+        }
 
         // CHECK ACCIDENT
         if (TryGetComponent<Accident>(out Accident acc))
@@ -89,8 +98,8 @@ public class Cow : Interactable
     private void GoToDie()
     {
         // TODO
-
-
+        animator.SetTrigger("Die");
+        sprite.GetComponent<SpriteRenderer>().sprite = deadSprite;
         isDead = true;
     }
 
