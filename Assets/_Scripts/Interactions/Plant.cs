@@ -359,10 +359,10 @@ public class Plant : MonoBehaviour
         {
             isLit = false;
             warningUI.SetActive(false);
-        }else if (other.CompareTag("waterArea"))
+        }else if (other.CompareTag("WaterArea"))
         {
             warningUI.SetActive(false) ;
-        }else if (other.CompareTag("pooArea"))
+        }else if (other.CompareTag("PooArea"))
         {
             warningUI.SetActive(false ) ;
         }
