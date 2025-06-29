@@ -496,10 +496,10 @@ MonoBehaviour:
   tooMuchPoo: 10
   musicNeeded: 2
   tooMuchMusic: 5
-  waterRate: 2
-  sunRate: 1
+  waterRate: 1
+  sunRate: 0.5
   sunDecayRate: 0.25
-  musicRate: 0.2
+  musicRate: 0.34
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   returnTime: 5
   canWander: 1
@@ -509,8 +509,8 @@ MonoBehaviour:
   wanderRadius: 7
   animator: {fileID: 1454695534476531703}
   isLit: 0
-  pooDecayInterval: 30
-  musicDecayInterval: 5
+  pooDecayInterval: 20
+  musicDecayInterval: 15
 --- !u!54 &849186420580916850
 Rigidbody:
   m_ObjectHideFlags: 0
