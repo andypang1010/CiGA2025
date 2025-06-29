@@ -977,11 +977,11 @@ MonoBehaviour:
   tooMuchSun: 12
   initialPoo: 2
   pooNeeded: 3
-  initialMusic: 2
-  maxmusic: 3
-  waterRate: 1
+  initialMusic: 4
+  maxmusic: 9
+  waterRate: 1.5
   sunRate: 0.5
-  musicRate: 0.34
+  musicRate: 4
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   canWander: 1
   wanderChance: 0.742

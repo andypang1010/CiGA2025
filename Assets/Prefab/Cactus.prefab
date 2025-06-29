@@ -883,9 +883,9 @@ MonoBehaviour:
   pooNeeded: 3
   initialMusic: 2
   maxmusic: 4
-  waterRate: 1
+  waterRate: 1.5
   sunRate: 0.5
-  musicRate: 0.34
+  musicRate: 3
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   canWander: 1
   wanderChance: 0.742

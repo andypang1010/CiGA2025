@@ -41,7 +41,7 @@ public class Plant : MonoBehaviour
     [Header("Growth Rates (units per second)")]
     public float waterRate = 1f;
     public float sunRate = 0.5f;
-    public float musicRate = 0.2f;
+    public float musicRate = 3f;
 
     [Header("Visuals")]
     public Material perfectMaterial;
