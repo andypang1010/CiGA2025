@@ -14,6 +14,7 @@ public class Cow : Interactable
     [SerializeField] GameObject sprite;
     [SerializeField] Sprite deadSprite;
     [SerializeField] private GameObject accidentMark;
+    private bool isDepressed = false;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class Cow : Interactable
             if (!acc.accidentTimeout) // TODO: change after andy's update
             {
                 accidentMark.SetActive(true);
+                isDepressed = true;
                 // TODO: change to acc. anim
                 animator.SetTrigger("Depressed");
             }
@@ -51,6 +53,7 @@ public class Cow : Interactable
             {
                 accidentMark.SetActive(false);
                 GoToDie();
+                isDepressed = false;
             }
 
             return; // during accident, they cannot starve?
@@ -58,6 +61,11 @@ public class Cow : Interactable
         else
         {
             accidentMark.SetActive(false);
+            if (isDepressed)
+            {
+                isDepressed = false;
+                animator.SetTrigger("Resolved");
+            }
         }
 
 
