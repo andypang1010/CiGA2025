@@ -502,7 +502,7 @@ MonoBehaviour:
   musicRate: 0.34
   perfectMaterial: {fileID: 2100000, guid: 820646210d266c241a1046f329826270, type: 2}
   canWander: 1
-  wanderChance: 0.742
+  wanderChance: 0.68
   wanderInterval: 3
   wanderDuration: 10
   wanderRadius: 7
