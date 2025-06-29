@@ -97,12 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7281ec62a3173df42bb320933fc510d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testDeath: 0
+  isDead: 0
   shitPoint: {fileID: 7999945321891133742}
   shitLevel: 0
   shitTime: 10
   hungerLevel: 0
   hungerSpeed: 1
   animator: {fileID: 7501274488762747415}
+  sprite: {fileID: 5551257484768292764}
+  deadSprite: {fileID: -1374075230, guid: 083e054a2a6da314585b84d22ddb2ff4, type: 3}
   accidentMark: {fileID: 8872212608221377086}
 --- !u!1 &5551257484768292764
 GameObject:
@@ -387,6 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7252792485341188434}
   - component: {fileID: 6793848593294612409}
+  - component: {fileID: 8688638843549465491}
   m_Layer: 6
   m_Name: '!!!'
   m_TagString: Untagged
@@ -464,3 +469,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8688638843549465491
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8872212608221377086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c746f2198eadd7e4cab0e48aa3d087b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
