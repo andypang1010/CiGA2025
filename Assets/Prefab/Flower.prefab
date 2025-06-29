@@ -760,7 +760,7 @@ MonoBehaviour:
   wanderRadius: 7
   animator: {fileID: 8740984321745965887}
   isLit: 0
-  pooDecayInterval: 5
+  pooDecayInterval: 10
   musicDecayInterval: 5
 --- !u!114 &3153168119104227013
 MonoBehaviour:
