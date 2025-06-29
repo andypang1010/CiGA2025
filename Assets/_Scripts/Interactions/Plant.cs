@@ -112,18 +112,6 @@ public class Plant : MonoBehaviour
     {
 
         CheckDeath();
-  
-        if (isPerfect && isInReturnArea)
-        {
-            returnTimer -= Time.deltaTime;
-            Debug.Log($" Return Timer: {Mathf.Max(0f, returnTimer):F2} seconds remaining");
-
-            if (returnTimer <= 0f)
-            {
-                Debug.Log("🌿 PLANT SENT");
-                Destroy(gameObject);
-            }
-        }
 
         if(isDead)
         {
@@ -198,8 +186,8 @@ public class Plant : MonoBehaviour
     }
 
     private void HandleSunDecay()
-{
-    if (sunLevel <= 0) return; // don’t go negative
+    {
+        if (sunLevel <= 0) return; // don't go negative
 
     if (!isLit)
     {
@@ -225,6 +213,8 @@ public class Plant : MonoBehaviour
     private void HandleWaterDecay()
 {
     if (waterLevel <= 0) return; // don’t go negative
+    {
+        if (isDead) return; 
 
     waterDecayTimer += Time.deltaTime;
 
@@ -241,7 +231,7 @@ public class Plant : MonoBehaviour
 
     private void HandlePooDecay()
 {
-    if (pooCount <= 0) return; // don't go negative
+    if (isDead) return; 
 
     pooDecayTimer += Time.deltaTime;
 
@@ -256,7 +246,7 @@ public class Plant : MonoBehaviour
 }
     private void HandleMusicDecay()
 {
-    if (musicLevel <= 0f) return;
+    if (isDead) return;
 
     musicDecayTimer += Time.deltaTime;
 
