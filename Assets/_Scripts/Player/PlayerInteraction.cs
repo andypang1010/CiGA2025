@@ -164,10 +164,10 @@ else
         sunlightSlider.maxValue = plant.tooMuchSun;
 
         musicSlider.value = plant.GetMusicLevel();
-        musicSlider.maxValue = plant.tooMuchMusic;
+            musicSlider.maxValue = plant.maxmusic;
 
         shitSlider.value = plant.GetPooCount();
-        shitSlider.maxValue = plant.tooMuchPoo;
+            shitSlider.maxValue = plant.pooNeeded;
     }
     else
     {
