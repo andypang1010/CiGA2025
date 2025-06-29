@@ -12,17 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 74ef4d475eb8b6f4cb23f595e6d65239
   - enabled: 1
-    path: Assets/Scenes/Game (Andy).unity
-    guid: 1ee57825a7268b047ac4670b27d43fd6
-  - enabled: 1
-    path: Assets/Scenes/Game (George).unity
-    guid: 13342dcdaff5e5b4e83f842319132e4d
-  - enabled: 1
-    path: Assets/Scenes/Game (Gabe).unity
-    guid: 7e17d382cd976a94891af93de1dcdcc4
-  - enabled: 1
-    path: Assets/Scenes/Game (Anastasia).unity
-    guid: 573c96e1748ec424fb6e764b25a6f5e4
+    path: Assets/Scenes/Main Game.unity
+    guid: 76b7dce8756fc634a891b3fc116cecfd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game (Ana)");
+        SceneManager.LoadScene("Main Game");
     }
 
     public void Menu()
