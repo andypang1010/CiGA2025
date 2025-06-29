@@ -126,8 +126,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
-                    if (!_audioSource.isPlaying)
-                        _audioSource.Play();
+                    if (!_audioSource.isPlaying) _audioSource.Play();
                     musicHoldTimer += Time.deltaTime;
                     Debug.Log($"Holding Space: {musicHoldTimer}/{musicHoldDuration}");
 
