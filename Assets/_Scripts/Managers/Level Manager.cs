@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -16,6 +17,7 @@ public class LevelManager: MonoBehaviour
     public GameObject statsUI;
     public GameObject PauseMenuUI;
     public GameObject pauseButton;
+    public GameObject timer;
 
     public Volume volume;
     Vignette vignette;
@@ -46,6 +48,8 @@ public class LevelManager: MonoBehaviour
 
     private void Update()
     {
+        timer.GetComponent<TMP_Text>().text = "Time Left: " + remainingTime.ToString("f1");
+
         // Check if game is still running
         if (remainingTime > 0f)
         {
@@ -61,6 +65,7 @@ public class LevelManager: MonoBehaviour
                 statsUI.SetActive(false); // Show the stats UI when the game is paused
                 PauseMenuUI.SetActive(true); // Show the Pause Menu UI when the game is paused
                 pauseButton.SetActive(false); // Hide the pause button when the game is paused
+                timer.SetActive(false);
             }
 
             // If the game is active
@@ -71,6 +76,7 @@ public class LevelManager: MonoBehaviour
                 BadEndingUI.SetActive(false);
                 PauseMenuUI.SetActive(false); // Hide the Pause Menu UI when the game is active
                 pauseButton.SetActive(true);
+                timer.SetActive(true);
             }
         }
 
@@ -113,6 +119,7 @@ public class LevelManager: MonoBehaviour
             statsUI.SetActive(false); // Show the stats UI when the game is not active
             PauseMenuUI.SetActive(false); // Show the Pause Menu UI when the game is not active
             pauseButton.SetActive(false); // Hide the pause button when the game is not active
+            timer.SetActive(false);
 
             vignette.intensity.value = 0.55f;
         }

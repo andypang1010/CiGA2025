@@ -1232,6 +1232,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314986239}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &322171899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4767988376573690614, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+  m_PrefabInstance: {fileID: 1209484334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &326960989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,6 +4922,7 @@ MonoBehaviour:
   statsUI: {fileID: 1209484340}
   PauseMenuUI: {fileID: 1209484342}
   pauseButton: {fileID: 1209484341}
+  timer: {fileID: 322171899}
   volume: {fileID: 1955753773}
 --- !u!82 &1208116706
 AudioSource:
@@ -5163,6 +5169,46 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_margin.z
+      value: -12.275513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294769916
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668197797155712052, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4886824896046523144, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5179,6 +5225,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
+    - target: {fileID: 6126173649205341079, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126173649205341079, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126173649205341079, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126173649205341079, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126173649205341079, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 6803420808023144128, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
