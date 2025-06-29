@@ -16,6 +16,7 @@ public class Accident : Interactable
 
     public bool isAccidentActive;
     public bool accidentTimeout;
+    public bool isQTEFailed;
 
     public float qteStartTime;
     public float accidentStartTime;
@@ -27,6 +28,7 @@ public class Accident : Interactable
     GameObject accidentUI;
     GameObject accidentQTE;
     GameObject qteTime;
+    GameObject qteFailed;
 
 
     public override void React(InteractionType type)
@@ -40,10 +42,12 @@ public class Accident : Interactable
         accidentUI = GameObject.Find("Accident UI");
         accidentQTE = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
+        qteFailed = GameObject.Find("QTE Failed");
 
-        accidentUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
+        qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
         accidentQTE.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         accidentUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
+        qteFailed.GetComponent<Image>().enabled = false; // Make sure QTE failed UI is initially hidden
     }
 
     void Update()
@@ -54,6 +58,11 @@ public class Accident : Interactable
             HideQTE();
 
             return;
+        }
+
+        if (isQTEFailed && !qteFailed.GetComponent<Image>().enabled)
+        {
+            ShowFailed();
         }
 
         // If the accident is not active, reset the QTE states and hide the QTE UI
@@ -89,6 +98,7 @@ public class Accident : Interactable
             // FAIL CONDITION 1: If the QTE time has passed and the player hasn't pressed the key
             if (Time.time - qteStartTime - t.time > qteTimeLimit && !t.isPressed)
             {
+                isQTEFailed = true; // Set the QTE failed state
                 HideQTE();
             }
 
@@ -126,7 +136,7 @@ public class Accident : Interactable
         // FAIL CONDITION 2: If the player pressed space when no QTE was active
         if (qteMissed && Input.GetKeyDown(KeyCode.Space))
         {
-            HideQTE();
+            isQTEFailed = true;
         }
     }
 
@@ -163,6 +173,19 @@ public class Accident : Interactable
         accidentUI.GetComponent<Image>().enabled = false; // Hide the accident UI
         accidentQTE.GetComponent<Image>().enabled = false; // Hide the QTE UI
         qteTime.GetComponent<TMP_Text>().enabled = false; // Hide the QTE time text
+        //qteFailed.GetComponent<Image>().enabled = false; // Show the QTE failed UI
+    }
+
+    private void ShowFailed()
+    {
+        qteFailed.GetComponent<Image>().enabled = true; // Show the QTE failed UI
+        Invoke(nameof(HideFailed), 0.5f); // Hide the QTE failed UI after 2 seconds
+    }
+
+    private void HideFailed()
+    {
+        qteFailed.GetComponent<Image>().enabled = false; // Hide the QTE failed UI
+        HideQTE(); // Hide the QTE UI as well
     }
 
     private void ResetAccident()
@@ -171,5 +194,7 @@ public class Accident : Interactable
         {
             t.isPressed = false; // Reset QTE states when accident is not active
         }
+
+        isQTEFailed = false; // Reset QTE failed state
     }
 }

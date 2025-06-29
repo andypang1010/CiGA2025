@@ -15,6 +15,7 @@ public class AccidentManager : MonoBehaviour
     GameObject qteUI;
     GameObject qteBeat;
     GameObject qteTime;
+    GameObject qteFailed;
     [SerializeField] List<GameObject> interactables;
     public float accidentFrequency = 0.6f;
     public float checkInterval = 5f;
@@ -35,10 +36,12 @@ public class AccidentManager : MonoBehaviour
         qteUI = GameObject.Find("Accident UI");
         qteBeat = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
+        qteFailed = GameObject.Find("QTE Failed");
 
         qteUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
         qteBeat.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
+        qteFailed.GetComponent<Image>().enabled = false; // Make sure QTE failed UI is initially hidden
 
         plants = FindObjectsByType<Plant>(FindObjectsSortMode.None).Select(plant => plant.gameObject).ToList();
 

@@ -4265,10 +4265,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 95749550679552614, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 530146869716624750, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4289,10 +4285,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 827926392823354856, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     - target: {fileID: 1026450148626581317, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4373,58 +4365,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1100880003778907739, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1345731626644682158, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745989027374786943, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2304756948282621252, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 2304756948282621252, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
     - target: {fileID: 2592721589423867836, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 2592721589423867836, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
     - target: {fileID: 3127976204129947709, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 3127976204129947709, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3138818624750439723, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3943966942989007114, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 3943966942989007114, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4255757309912387075, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4410576416488981556, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4433,8 +4389,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4786346195296412499, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_Value
+    - target: {fileID: 4886824896046523144, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5079686936835391713, guid: a21b095dda5e32c449be8159b228d139, type: 3}
@@ -4449,69 +4405,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 5208267850794585533, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5642311160343326562, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1208116702}
-    - target: {fileID: 5642311160343326562, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695560770867114476, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1208116702}
-    - target: {fileID: 5695560770867114476, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389285687319431981, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6803420808023144128, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 6803420808023144128, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145798972854834887, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7536370997955395521, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
-    - target: {fileID: 7536370997955395521, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 8907966512068104934, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Name
       value: Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907966512068104934, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071951147737285170, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127999092705978298, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1208116702}
-    - target: {fileID: 9127999092705978298, guid: a21b095dda5e32c449be8159b228d139, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
