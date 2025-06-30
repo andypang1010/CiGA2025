@@ -29,6 +29,7 @@ public class Accident : Interactable
     GameObject accidentQTE;
     GameObject qteTime;
     GameObject qteFailed;
+    GameObject qteHint;
 
 
     public override void React(InteractionType type)
@@ -43,11 +44,13 @@ public class Accident : Interactable
         accidentQTE = GameObject.Find("Accident QTE");
         qteTime = GameObject.Find("QTE Time");
         qteFailed = GameObject.Find("QTE Failed");
+        qteHint = GameObject.Find("QTE Hint");
 
         qteTime.GetComponent<TMP_Text>().enabled = false; // Make sure accident UI is initially hidden
         accidentQTE.GetComponent<Image>().enabled = false; // Make sure QTE is initially hidden
         accidentUI.GetComponent<Image>().enabled = false; // Make sure accident UI is initially hidden
         qteFailed.GetComponent<Image>().enabled = false; // Make sure QTE failed UI is initially hidden
+        qteHint.GetComponent<TMP_Text>().enabled = false;  
     }
 
     void Update()
@@ -165,6 +168,7 @@ public class Accident : Interactable
         accidentUI.GetComponent<Image>().enabled = true; // Show the accident UI
         qteTime.GetComponent<TMP_Text>().enabled = true; // Show the QTE time text
         qteTime.GetComponent<TMP_Text>().text = (Time.time - qteStartTime).ToString("f3");
+        qteHint.GetComponent<TMP_Text>().enabled = true;
     }
 
     private void HideQTE()
@@ -174,6 +178,7 @@ public class Accident : Interactable
         accidentQTE.GetComponent<Image>().enabled = false; // Hide the QTE UI
         qteTime.GetComponent<TMP_Text>().enabled = false; // Hide the QTE time text
         qteFailed.GetComponent<Image>().enabled = false; // Show the QTE failed UI
+        qteHint.GetComponent<TMP_Text>().enabled = false;
     }
 
     private void ShowFailed()
