@@ -211,6 +211,7 @@ MonoBehaviour:
   speed: 5
   moveDirection: {x: 0, y: 0, z: 0}
   faceDirection: {x: 0, y: 0, z: 0}
+  footstep: {fileID: 0}
 --- !u!114 &3718092875209147362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +233,8 @@ MonoBehaviour:
   heldPoint: {fileID: 6541039326597690760}
   throwPoint: {fileID: 5432992814127688124}
   gridPoint: {fileID: 8523505388087467201}
-  interactRange: 4
-  gridDetectionRange: 4.5
+  interactRange: 5
+  gridDetectionRange: 6
   closestGrid: {fileID: 0}
   waterObject: {fileID: 0}
   musicObject: {fileID: 0}
@@ -243,6 +244,7 @@ MonoBehaviour:
   musicHoldSlider: {fileID: 3406682762909448993}
   waterHoldDuration: 1
   waterHoldSlider: {fileID: 6661173401834548376}
+  waterSound: {fileID: 0}
 --- !u!65 &6309679909520950313
 BoxCollider:
   m_ObjectHideFlags: 0
