@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 5475dd4f0f5658f4d9aa367847ac0ed2, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9097353739cd95643b9902f555954d04, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -4271,8 +4271,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4495632325481898549, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495632325481898549, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495632325481898549, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: m_SortingOrder
       value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495632325481898549, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5400735642760315440, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4284,6 +4296,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416062374434360741, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151131279712603625, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151131279712603625, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151131279712603625, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151131279712603625, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
+      propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5042,19 +5070,19 @@ PrefabInstance:
       objectReference: {fileID: 1208116702}
     - target: {fileID: 530146869716624750, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 530146869716624750, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 551856004380495243, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 551856004380495243, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 827926392823354856, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5174,11 +5202,11 @@ PrefabInstance:
       objectReference: {fileID: 1208116702}
     - target: {fileID: 4410576416488981556, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4410576416488981556, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886824896046523144, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Enabled
@@ -5186,11 +5214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079686936835391713, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5079686936835391713, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208267850794585533, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5210,7 +5238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907966512068104934, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7707,7 +7735,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 4675
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
