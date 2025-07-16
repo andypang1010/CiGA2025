@@ -4282,7 +4282,7 @@ PrefabInstance:
       objectReference: {fileID: 1209484338}
     - target: {fileID: 3718092875209147362, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: interactRange
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3718092875209147362, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: sunlightSlider
@@ -4290,7 +4290,7 @@ PrefabInstance:
       objectReference: {fileID: 1209484337}
     - target: {fileID: 3718092875209147362, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: gridDetectionRange
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5400735642760315440, guid: 3089af5604399ee4690a22d06bed624c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4845,6 +4845,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371486834641881171, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2090413659954623576, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -4909,6 +4913,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1208116702}
+    - target: {fileID: 7651842501377735935, guid: a21b095dda5e32c449be8159b228d139, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8907966512068104934, guid: a21b095dda5e32c449be8159b228d139, type: 3}
       propertyPath: m_Name
       value: Game Canvas
